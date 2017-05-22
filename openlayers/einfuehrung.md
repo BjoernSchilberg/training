@@ -371,7 +371,51 @@ Testen Sie dies an dem ```GeoJSON```-Beispiel aus: https://bjoernschilberg.githu
 - [Metadaten der Vektor Geometrieebene abfragen](uebungen.md#metadaten-der-vektor-geometrieebene-abfragen)
 
 # Vektor Geometrieebenen stylen
-TODO
+
+## ol.style.Style-Objekt
+Vier Schlüssel:
+- fill
+- image
+- stroke 
+- text
+- zIndex (optional) 
+Rückgabe:
+Array von ol.style.Style-Objekten.
+
+## Layer style
+
+## Stildeklarationsböcke: Symbolizer
+
+## Style-Funktion
+
+## Pseudoklassen
+In CSS sprechen die CSS-Pseudoklassen :hover, :active und :focus auf unmittelbare Interaktion des Benutzers an. Die Pseudoklassen selektieren Elemente, die
+- mit dem Mauszeiger berührt werden (:hover; englisch to hover: schweben),
+- den Fokus (:focus) erhalten, zum Beispiel durch die Tabulatortaste (↹ ) oder
+- aktuell angeklickt sind (:active).
+Ursprünglich für Verweise gedacht, sind diese Pseudoklassen in allen relevanten
+Browsern auf beliebige Elemente anwendbar.
+
+In OpenLayers gibt es mit ```ol.interaction.Select``` ein ähnliches Konzept.
+
+```
+  new ol.interaction.Select({
+          style: new ol.style.Style({
+            stroke: new ol.style.Stroke({
+              color: 'red',
+              width: 3
+            }),
+            fill: new ol.style.Fill({
+              color: 'rgba(0, 0, 255, 0.1)'
+            })
+          })
+        })
+```
+
+### Übung
+
+-  [Features selektieren](uebungen.md#features-selektieren)
+
 
 # Todo
 - LonLat vs LatLon
