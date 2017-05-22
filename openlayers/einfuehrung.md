@@ -82,9 +82,11 @@ https://bjoernschilberg.github.io/trainings/openlayers/beispiele/erste_karte.htm
 - Panning per Drag&Drop
 - Pan-Steuerkreuz, Tastatur
 - Übersichtskarte
-- Ebenenübersicht
+- ~~Ebenenübersicht~~
 - ~~[Permalink](http://openlayers.org/en/latest/examples/permalink.html)~~
-- Navigations-Historie
+- ~~Navigations-Historie~~
+
+- http://openlayers.org/en/latest/apidoc/ol.control.html
 
 ### Übungen
 - [Steuerelemente einbinden](uebungen.md#steuerelemente-einbinden)
@@ -140,7 +142,7 @@ https://bjoernschilberg.github.io/trainings/openlayers/beispiele/erste_karte.htm
   - Dokumentation via jsdoc3
   - Fokus: Mobile first
   - Styling ausschließlich über CSS.
-  - ArcGIS Rest Tile Layer (Map und Image Services, kein Feature Service)
+  - [ArcGIS Rest Tile Layer](http://openlayers.org/en/latest/apidoc/ol.source.TileArcGISRest.html) (Map und Image Services, kein Feature Service)
   - autoPan von Overlay im sichtbaren Bereich
     - http://openlayers.org/en/latest/examples/popup.html
   - Neue Events für Feature Selection
@@ -155,7 +157,7 @@ https://bjoernschilberg.github.io/trainings/openlayers/beispiele/erste_karte.htm
 
     - https://github.com/openlayers/openlayers/issues/6263#issuecomment-267838202
 
-# Weitere Infos
+# Weitere Infos zu den einzelnen Versioen
 https://github.com/openlayers/openlayers/releases
 
 # Version3
@@ -163,13 +165,13 @@ https://github.com/openlayers/openlayers/releases
 - Dateline wrapping tile-sources
 - Circles in Draw interaction
 ## v3.4.0 — v3.10.0
--Einige experimentelle Features entfernt (two-way-binding, FeatureOverlay…)
--Spezifische Vektor sources entfernt; => format in Vector-source
--Translate Interaktion
--IE 9 mit ES5-Shims, Edge-Support
--Zahlreiche Bugfixes
--Performanceverbesserungen
--Bessere Dokumentation
+- Einige experimentelle Features entfernt (two-way-binding, FeatureOverlay,....)
+- Spezifische Vektor sources entfernt; => format in Vector-source
+- Translate Interaktion
+- IE 9 mit ES5-Shims, Edge-Support
+- Zahlreiche Bugfixes
+- Performanceverbesserungen
+- Bessere Dokumentation
 ## v3.11.0
 - Clientseitige Rasterreprojektion
   - http://openlayers.org/en/latest/examples/reprojection.html
@@ -184,8 +186,18 @@ https://github.com/openlayers/openlayers/releases
 - Multiline Labels (Vektoren)
 - ol.source.CartoDB
 - ol.source.ImageArcGISRest
-- --ol.source.MapQuest--
+- ~~ol.source.MapQuest~~
 - ol.source.Raster
+## v3.15.0
+- Support zooming out for ol.interaction.DragZoom  (#5031)
+## v3.16.0
+- Add ol.source.ImageArcGISRest for ArcGIS REST image layer support (#3880)
+## v3.17.0
+- ol.source.MapQuest removal
+## v3.18.0
+- Addition of Intersects and Within filters to ol.format.ogc.filter
+## v3.20.0
+- WebGL Support
 
 # Version4
 - Kein kompletter rewrite
