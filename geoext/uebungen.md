@@ -1,5 +1,5 @@
 # Erste ExtJS Anwendung
-Kopieren Sie ```uebungen/template.html``` nach ```uebungen/extjs.html```.
+Kopieren Sie [uebungen/template.html](uebungen/template.html) nach ```uebungen/extjs.html```.
 
 Fügen Sie die ExtJS-Biblothek und die Style-Definitionen hinzu.
 ```html
@@ -76,7 +76,7 @@ items: [
 - Ändern Sie den Titel und machen Sie das Fenster größer.
 
 # Map (Viewport)
-Schauen Sie sich das Beispiel und den Quelltext in ```beispiel/viewport.html``` genau an.
+Schauen Sie sich das Beispiel und den Quelltext in [beispiel/viewport.html](beispiel/viewport.html) genau an.
 
 ## Zusatzaufgaben zu ```beispiel/viewport.html```
 
@@ -109,6 +109,7 @@ konfiguriert, werden diese Änderung in der eigentlich Applikation beeinflussen.
 - Fügen Sie einen Layer mit GeoExt hinzu.
 
 # Fortgeschrittene Themen
+
 ## GeoExt mit Sencha CMD
 
 ### Voraussetzungen
