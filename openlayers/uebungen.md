@@ -153,12 +153,25 @@ new ol.layer.Image({
 ```
 ```style``` wird  nicht mehr dem Layer sondern der ```ol.source.ImageVector``` mitgegeben!
 
+## Interaktionen einbinden
+
+* https://openlayers.org/en/latest/apidoc/ol.interaction.html
+
+### Drag, Rotate und Zoom
+
+Fügen Sie die Interaktion ```DragRotateAndZoom``` Ihrer Karte (```Map```) hinzu. Tip:
+
+```javascript
+interactions: ol.interaction.defaults().extend([
+  //DragRotateAndZoom()
+]),
+```
 
 ## Steuerelemente einbinden
 
 * http://openlayers.org/en/latest/apidoc/ol.control.html
 
-## Einen Maßstabsbalken anzeigen
+### Einen Maßstabsbalken anzeigen
 - http://openlayers.org/en/latest/apidoc/ol.control.ScaleLine.html
 
 Fügen Sie den nachfolgenden Code-Schnipsel irgendwo innerhalb der ```ol.Map```-Konfiguration hinzu:
