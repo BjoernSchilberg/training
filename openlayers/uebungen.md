@@ -66,7 +66,7 @@
     </script>
 ```
 
-## Übung: Neue ```source``` für die erste_karten.html
+## Neue ```source``` für die erste_karten.html einbinden
 
 - Geben Sie eine neue [ol.source](http://openlayers.org/en/latest/apidoc/ol.source.html) für [ol.layer.Tile](http://openlayers.org/en/latest/apidoc/ol.layer.Tile.html) an.
 - Bspw. den ```Layer source for the Stamen tile server```.
@@ -155,6 +155,8 @@ new ol.layer.Image({
 
 
 ## Steuerelemente einbinden
+
+* http://openlayers.org/en/latest/apidoc/ol.control.html
 
 ## Einen Maßstabsbalken anzeigen
 - http://openlayers.org/en/latest/apidoc/ol.control.ScaleLine.html
