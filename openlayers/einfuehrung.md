@@ -244,15 +244,16 @@ new Map({
   })
 });
 ```
-Komplette Anleitung für die Verwendung mit rollup// https://gist.github.com/tschaub/32a5692bedac5254da24fa3b12072f35
+Komplette Anleitung für die Verwendung mit [rollup.js](https://rollupjs.org/)
+unter https://gist.github.com/tschaub/32a5692bedac5254da24fa3b12072f35
 
 
-## Weitere Möglichkeiten zum Bauen
-- Ermöglicht die Verwendung in JavaScript module bundler (webpack, rollupjs)
+## Wiederverwendbarkeit
+- Ermöglicht die Verwendung in JavaScript module bundler ([webpack](https://webpack.js.org/), [rollup.js](https://rollupjs.org/))
 - https://webpack.github.io/assets/what-is-webpack.png
-- Vorteile Reduzierung der gesamtegröße der Anwendung.
-- benötigt aber noch closure-Abhänigigkeiten.
-- Buildprozess dauert lange. Viele Abhängigkeiten
+- Vorteile Reduzierung der Gesamtgröße der Anwendung.
+- Benötigt aber noch closure-Abhänigigkeiten.
+- Buildprozess dauert lange. Viele Abhängigkeiten müssen aufgelöst werden.
 
 ## Verbesserungen getZoom / setZoom
 Vorher
@@ -269,7 +270,7 @@ Details:
 - https://github.com/openlayers/openlayers/issues/4333
 - https://github.com/openlayers/openlayers/pull/5674
 
-## Übung
+### Übung
 Testen Sie ```setZoom``` und ```getZoom``` in der Browser Console der Developer Tools/DevTools am Beispiel der [ersten Karte](https://bjoernschilberg.github.io/trainings/openlayers/beispiele/erste_karte.html).
 
 
