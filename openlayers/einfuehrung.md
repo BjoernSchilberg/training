@@ -357,8 +357,11 @@ Testen Sie dies an dem ```GeoJSON```-Beispiel aus: https://bjoernschilberg.githu
 
 # weitere Funktionen
 - PinchZoom & fraktionaler Zoom
-- forEachFeatureAtPixel etc.:
+- forEachFeatureAtPixel
 - Freihandzeichnen (für Redlinining, nicht für digitalisieren geeignet)
+
+## Übung
+- [Metadaten der Vektor Geometrieebene abfragen](uebungen.md#metadaten-der-vektor-geometrieebene-abfragen)
 
 # Vektor Geometrieebenen stylen
 TODO
