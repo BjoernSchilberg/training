@@ -322,6 +322,11 @@ map.on('singleclick', function(evt) {
 ## OpenLayers WMS NRW GetFeatureInfo Beispiel
 Zoom-Anzeigen fixen.
 
+## Kartenlabel
+
+## Klassifikation
+z.B. an den Westfalen Kreisen.
+
 ## Reprojektion
 
 ## ArcGIS Rest Feature Service
