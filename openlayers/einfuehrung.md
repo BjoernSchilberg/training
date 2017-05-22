@@ -74,7 +74,7 @@ https://bjoernschilberg.github.io/trainings/openlayers/beispiele/erste_karte.htm
 - Über zusätzliche Biblotheken, können auch CSV/Shape-Dateien/GeoTIFF direkt ein gebunden werden.
 
 ### Erste Übung
-- [Erste Karte](openlayers/uebungen.md#erste-karte)
+- [Erste Karte](uebungen.md#erste-karte)
 
 ## Interaktions-,Steuer- und Navigationsmöglichkeiten
 
