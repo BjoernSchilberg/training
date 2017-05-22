@@ -317,14 +317,18 @@ https://github.com/openlayers/openlayers/pull/5668
 ## overlaps & Vector / VectorTile
 ```javascript
 new ol.source.Vector({
-  url: 'state.geo.json',
+  url: 'data/westfalen_kreise.geojson',
   format: new ol.format.GeoJSON(),
   overlaps: false
 })
 ```
-Sinvoll bei nicht überlappenden Geometrien. Vorteil höhere Ausführungsgeschwindigkeit.
+Sinnvoll bei nicht überlappenden Geometrien. Vorteil höhere Ausführungsgeschwindigkeit.
 
 Details: https://github.com/openlayers/openlayers/pull/5196
+
+## Übung
+Testen Sie dies an dem ```GeoJSON```-Beispiel aus: https://bjoernschilberg.github.io/trainings/openlayers/beispiele/geojson.html
+
 
 ## rotateWithView
 - Bspw. auf Kartenlabels anwendbar.
