@@ -240,10 +240,12 @@ Nachher
 view.setZoom(1.5);
 view.getZoom(); // 1.5
 ```
-Details: Issue 4333, PR 5674
-https://github.com/openlayers/openlayers/issues/4333
-https://github.com/openlayers/openlayers/pull/5674
+Details: 
+- https://github.com/openlayers/openlayers/issues/4333
+- https://github.com/openlayers/openlayers/pull/5674
 
+## Übung
+Testen Sie ```setZoom``` und ```getZoom``` in der Browser Console der Developer Tools/DevTools am Beispiel der [ersten Karte](https://bjoernschilberg.github.io/trainings/openlayers/beispiele/erste_karte.html).
 
 
 ## Geometrien skalieren
