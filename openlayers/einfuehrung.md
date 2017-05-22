@@ -78,15 +78,16 @@ https://bjoernschilberg.github.io/trainings/openlayers/beispiele/erste_karte.htm
 
 ## Interaktions-,Steuer- und Navigationsmöglichkeiten
 
-- Zooming per Doppelklick, Mausrad, Zoombar, Zoombox, Tastatur
-- Panning per Drag&Drop
-- Pan-Steuerkreuz, Tastatur
-- Übersichtskarte
-- ~~Ebenenübersicht~~
-- ~~[Permalink](http://openlayers.org/en/latest/examples/permalink.html)~~
-- ~~Navigations-Historie~~
+- https://openlayers.org/en/latest/apidoc/ol.interaction.html
+  - Zooming per Doppelklick, Mausrad, Zoombar, Zoombox, Tastatur
+  - Panning per Drag&Drop
+  - Pan-Steuerkreuz, Tastatur
 
 - http://openlayers.org/en/latest/apidoc/ol.control.html
+  - Übersichtskarte
+  - ~~Ebenenübersicht~~
+  - ~~[Permalink](http://openlayers.org/en/latest/examples/permalink.html)~~
+- ~~Navigations-Historie~~
 
 ### Übungen
 - [Steuerelemente einbinden](uebungen.md#steuerelemente-einbinden)
