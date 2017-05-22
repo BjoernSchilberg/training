@@ -100,6 +100,8 @@ erstellt werden.
 
 ## Vektor Geometrieebenen stylen (GeoJSON)
 
+Stylen Sie die Westfalen Kreise nach Ihren Vorstellungen neu. Setzen Sie dazu am Layer ``ol.layer.Vector``` einen neuen ```ol.style.Style```, welcher die Linien ```ol.style.Stroke```der Polygone in Farbe ```color``` und Dicke ```width``` ausgestaltet. Wählen Sie für die Fläche der Polygone eine ansprechende Füllung mittels ```ol.style.Fill```.
+
 ## Metadaten der Vektor Geometrieebene abfragen.
 Jede Fläche repräsentiert ein [ol.Feature](http://openlayers.org/en/latest/apidoc/ol.Feature.html) Objekt des
 [ol.layer.Vector](http://openlayers.org/en/latest/apidoc/ol.layer.Vector.html), und jedes Feature hat bspw. die Attribute
