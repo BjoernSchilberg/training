@@ -129,9 +129,9 @@ https://docs.sencha.com/extjs/6.2.0/guides/core_concepts/components.html
 
 ## Layout
 https://docs.sencha.com/extjs/6.2.0/guides/core_concepts/layouts.html
-- Column [beispiele/layout-column.html]()
-- HBox [beispiele/layout-hbox.html]()
-- VBox [beispiele/layout-vbox.html]()
-- Accordion [beispiele/layout-accordion.html]()
-- Table [beispiele/layout-table.html]()
-- Border [beispiele/layout-border.html]()
+- Column [beispiele/layout-column.html](beispiele/layout-column.html)
+- HBox [beispiele/layout-hbox.html](beispiele/layout-hbox.html)
+- VBox [beispiele/layout-vbox.html](beispiele/layout-vbox.html)
+- Accordion [beispiele/layout-accordion.html](beispiele/layout-accordion.html)
+- Table [beispiele/layout-table.html](beispiele/layout-table.html)
+- Border [beispiele/layout-border.html](beispiele/layout-border.html)
