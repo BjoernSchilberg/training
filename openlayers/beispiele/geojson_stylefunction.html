@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>GeoJSON Style Function</title>
+  <!-- include a CSS stylesheet -->
+  <!-- CSS-Deklarationen (Stil) -->
+  <link rel="stylesheet" href="https://openlayers.org/en/v4.1.1/css/ol.css" type="text/css" />
+  <style>
+    #map {
+      height: 256px;
+      width: 512px;
+    }
+  </style>
+  <!-- include an external JavaScript file -->
+  <script src="https://openlayers.org/en/v4.1.1/build/ol.js"></script>
+</head>
+<!--HTML-Markup (Auszeichnung)-->
+
+<body>
+  <h1>GeoJSON Style Function</h1>
+  <!-- Container für den Karten-Viewport-->
+  <div id="map"></div>
+  <!-- JavaScript-Initialisierungs-Code (Verhalten) -->
+  <script>
+    var customStyleFunction = function(feature, resolution) {
+
+      if (parseFloat(feature.get('Einwohner')) <= 200) {
+        fillcolor = 'green';
+      }
+      else if (parseFloat(feature.get('Einwohner')) <= 300) {
+        fillcolor = 'yellow';
+      }
+      else if(parseFloat(feature.get('Einwohner')) <= 400) {
+        fillcolor = 'red';
+      }
+      return [new ol.style.Style({
+        stroke: new ol.style.Stroke({
+          color: 'blue',
+          width: 3
+        }),
+        fill: new ol.style.Fill({
+          color: fillcolor
+        })
+      })];
+    };
+    var map = new ol.Map({
+      // Wert des id-Attributs des Karten-Containers
+      // Alternativ: document.getElementById("map")
+      target: 'map',
+      //Liste (als JavaScript-Array) aller Kartenthemen
+      layers: [
+        new ol.layer.Tile({
+          source: new ol.source.OSM()
+        }),
+        new ol.layer.Vector({
+          title: 'Westfalen Kreise',
+          source: new ol.source.Vector({
+            url: 'data/westfalen_kreise.geojson',
+            format: new ol.format.GeoJSON()
+          }),
+          style: customStyleFunction,
+	  opacity: 0.5
+        })
+      ],
+      //Kartenausschnitt
+      view: new ol.View({
+        //Kartenzentrum
+        center: ol.proj.fromLonLat([7.013056, 51.450833]),
+        //initialen Zoomlevel 
+        zoom: 6
+      })
+    });
+  </script>
+</body>
+
+</html>

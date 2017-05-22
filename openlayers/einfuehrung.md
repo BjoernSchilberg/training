@@ -386,7 +386,76 @@ Array von ol.style.Style-Objekten.
 
 ## Stildeklarationsböcke: Symbolizer
 
+Ähnlich zu den Stildeklarationblöcken in CSS.
+```css
+h1 {
+  color: green;
+}
+```
+Gibt es in OpenLayer die Symbolizer. Diese sind Instanzen der Klassen im
+Namensraum ```ol.style```.
+
+Hier ein Beispiel für Polygon-Features mit transparent blauem Hintergrund und einem
+3-Pixel breiten Rahmen in blau.
+```
+new ol.style.Style({
+  stroke: new ol.style.Stroke({
+    color: 'blue',
+    width: 3
+  }),
+  fill: new ol.style.Fill({
+    color: 'rgba(0, 0, 255, 0.1)'
+  })
+})
+```
+Hierzu wurden zwei Symbolizer verwendet.
+
+Je nach Geometrietyp können verschiedene Symbolizer verwendet werden. Linien
+verhalten sich weitestgehend wie Polygone, akzeptieren jedoch keine Füllung.
+Punkte können mittels ```ol.style.Circle``` (für Kreissymbole) oder
+```ol.style.Icon``` (z.B. für png-Bilder) ausgestaltet werden.
+Weitere Klassen:
+- http://openlayers.org/en/latest/apidoc/ol.style.html
+
+Beispiel für Kreissymbole:
+```javascript
+new ol.style.Circle({
+  radius: 10,
+  fill: new ol.style.Fill({
+    color: 'red',
+    opacity: 0.6
+  }),
+  stroke: new ol.style.Stroke({
+    color: 'blue',
+    opacity: 0.4
+  })
+});
+```
+
+### Übung
+-  [Vektor Geometrieebenen stylen (GeoJSON)](uebungen.md#vektor-geometrieebenen-stylen-geojson)
+
 ## Style-Funktion
+Ein Vektorlayer akzeptiert als Wert für die style-Konfigurationsoption aber
+auch eine Funktion, in welcher unterschiedliche Stile anhand von
+Featureattributen zurückgegeben werden kann. Ist zum Beispiel bei Klassifikation sinnvoll.
+
+Der Funktion werden zwei Argumente übergeben: Das zu stylende ```feature``` und
+die aktuelle ```resolution```. Im folgenden Beispiel werden Features, welche
+ein Attribut ```class``` und ein Wert ```someClass``` besitzen speziell
+ausgestaltet.
+
+var layer = new ol.layer.Vector({
+  source: new ol.source.Vector(),
+  style: function(feature, resolution) {
+    if (feature.get('class') === 'someClass') {
+      // create styles...
+      return styles;
+    }
+  },
+});
+
+### Übung
 
 ## Pseudoklassen
 In CSS sprechen die CSS-Pseudoklassen ```:hover```, ```:active``` und
@@ -415,7 +484,6 @@ In OpenLayers gibt es mit ```ol.interaction.Select``` ein ähnliches Konzept.
 ```
 
 ### Übung
-
 -  [Features selektieren](uebungen.md#features-selektieren)
 
 

@@ -348,15 +348,18 @@ map.on('singleclick', function(evt) {
 
 ```
 
+## Vektor Geometrieebenen klassifizieren (GeoJSON)
+Klassifizieren Sie die Einwohnerzahlen ```Einwohner``` Westfalen Kreise
+```data/data/westfalen_kreise.geojson``` mittels einer Style-Funktion.
+Sie können dazu das folgende Beispiel verwenden:
+https://bjoernschilberg.github.io/trainings/openlayers/beispiele/geojson_style.html
+
 ## Popup
 
 ## OpenLayers WMS NRW GetFeatureInfo Beispiel
 Zoom-Anzeigen fixen.
 
 ## Kartenlabel
-
-## Klassifikation
-z.B. an den Westfalen Kreisen.
 
 ## Reprojektion
 
