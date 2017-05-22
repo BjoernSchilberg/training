@@ -66,6 +66,8 @@
     </script>
 ```
 
+#Weitere Daten- & Layerquellen einbinden
+
 ## Neue ```source``` für die erste_karten.html einbinden
 
 - Geben Sie eine neue [ol.source](http://openlayers.org/en/latest/apidoc/ol.source.html) für [ol.layer.Tile](http://openlayers.org/en/latest/apidoc/ol.layer.Tile.html) an.
@@ -152,11 +154,11 @@ new ol.layer.Image({
 ```
 ```style``` wird  nicht mehr dem Layer sondern der ```ol.source.ImageVector``` mitgegeben!
 
-## Interaktionen einbinden
+# Interaktionen einbinden
 
 * https://openlayers.org/en/latest/apidoc/ol.interaction.html
 
-### Drag, Rotate und Zoom
+## Drag, Rotate und Zoom
 
 Fügen Sie die Interaktion ```DragRotateAndZoom``` Ihrer Karte (```Map```) hinzu. Tip:
 
@@ -166,11 +168,11 @@ interactions: ol.interaction.defaults().extend([
 ]),
 ```
 
-## Steuerelemente einbinden
+# Steuerelemente einbinden
 
 * http://openlayers.org/en/latest/apidoc/ol.control.html
 
-### Einen Maßstabsbalken anzeigen
+## Einen Maßstabsbalken anzeigen
 - http://openlayers.org/en/latest/apidoc/ol.control.ScaleLine.html
 
 Fügen Sie den nachfolgenden Code-Schnipsel irgendwo innerhalb der ```ol.Map```-Konfiguration hinzu:
@@ -180,7 +182,7 @@ controls: ol.control.defaults().extend([
 ]),
 ```
 
-### Stylen des Maßstabsbalken
+## Stylen des Maßstabsbalken
 In der CSS-Deklaration:
 ```css
 .ol-scale-line, .ol-scale-line:not([ie8andbelow]) {
@@ -189,7 +191,7 @@ In der CSS-Deklaration:
 }
 ```
 
-### Maßstabsbalken auslagern
+## Maßstabsbalken auslagern
 Der Maßstabsbalken soll in ein separates ```<div>```-Element außerhalb der Karte plaziert werden.
 ```html
 <div id="scale-line" class="scale-line"></div>
@@ -216,7 +218,7 @@ Passen Sie die CSS-Deklaration entsprechend an:
 }
 ```
 
-### Eine OverviewMap anzeigen
+## Eine OverviewMap anzeigen
 - Fügen Sie [ol.control.OverviewMap](http://openlayers.org/en/latest/apidoc/ol.control.OverviewMap.html) hinzu.
 - Positionieren Sie die ```OverviewMap``` links oben. Passen Sie CSS-Deklaration entsprechend an.
 ```css
@@ -231,23 +233,40 @@ Passen Sie die CSS-Deklaration entsprechend an:
 ```javascript
 className: 'ol-overviewmap ol-custom-overviewmap'
 ```
-### MousePosition anzeigen
+
+## MousePosition anzeigen
 
 - Fügen Sie der Karten die MousePostion hinzu.
 - Wird diese in lat lon angezeigt? Wenn nicht ändern Sie die Anzeige zu lat lon mit der Angabe von ```projection```.
 - Werden Ihnen zuviele Nachkommastellen angezeigt? ```coordinateFormat``` in Verbindung mit ```ol.coordinate``` schafft Abhilfe.
 
-### ZoomToMaxExtent
+## ZoomToMaxExtent
 Zoomen Sie auf die Ausdehnung von Deutschland. Die BoundingBox kann über http://boundingbox.klokantech.com/ ermittelt werden.
 Achtung: Die Angaben sind in ```EPSG:4326``` und müssen in OpenLayers-Standardprojektion ```EPSG:3857``` transformiert werden. Tip: ```ol.proj.transformExtent```
 - https://de.wikipedia.org/wiki/World_Geodetic_System_1984
 - https://en.wikipedia.org/wiki/Web_Mercator
 
-### ZoomSlider
+## ZoomSlider
 Fügen Sie einer beliegenden Karte einen ZoomSilder hinzu. Indem Sie die Console der [Firefox Developer Tools](https://developer.mozilla.org/son/docs/Tools) oder [Chrome DevTools](https://developer.chrome.com/devtools) benutzen.
 ```javascript
 map.addControl(new ol.control.ZoomSlider());
 ```
+
+# Zeichnen / Modifizieren / Entfernen eigener Geometrien (Features)
+TODO
+## Aufgabe 1
+Fügen Sie der Karte folgende Controls hinzu:
+- Control zum Zeichnen von Punkten
+- Control zum Zeichnen von Linien
+- Control zum Zeichnen von Polygonen
+- Control zum Zeichnen von Rechtecken
+
+## Aufgabe 2
+- DragFeature
+- ModifyFeature
+- Control zum Entfernen von Geometrien
+
+# Fortgeschrittene Themen (optional)
 
 ## WMS-Ebene einbinden
 - Dienst, welcher Rasterdaten konform zur [OGC Web Map Service (WMS)-Spezifikation](http://www.opengeospatial.org/standards/wmshttp://www.opengeospatial.org/standards/wms) ausliefert
@@ -296,29 +315,13 @@ map.on('singleclick', function(evt) {
 
 ```
 
-## Zeichnen / Modifizieren / Entfernen eigener Geometrien (Features)
-TODO
-### Aufgabe 1
-Fügen Sie der Karte folgende Controls hinzu:
-- Control zum Zeichnen von Punkten
-- Control zum Zeichnen von Linien
-- Control zum Zeichnen von Polygonen
-- Control zum Zeichnen von Rechtecken
+## Popup
 
-### Aufgabe 2
-- DragFeature
-- ModifyFeature
-- Control zum Entfernen von Geometrien
+## Reprojektion
 
-## Fortgeschrittene Themen (optional)
-
-### Popup
-
-### Reprojektion
-
-### ArcGIS Rest Feature Service
+## ArcGIS Rest Feature Service
 https://openlayers.org/en/latest/examples/vector-esri.html
 mit https://services1.arcgis.com/W47q82gM5Y2xNen1/ArcGIS/rest/services
 
-### weitere Vektoren (CSV,KML, GeoRSS)
+## weitere Vektoren (CSV,KML, GeoRSS)
 http://openlayers.org/workshop/en/layers/vector.html
