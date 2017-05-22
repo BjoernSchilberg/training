@@ -214,6 +214,7 @@ https://github.com/openlayers/openlayers/releases
 - Add ol.source.ImageArcGISRest for ArcGIS REST image layer support (#3880)
 ## v3.17.0
 - ol.source.MapQuest removal
+- Retina/HiDPI support out of the box
 ## v3.18.0
 - Addition of Intersects and Within filters to ol.format.ogc.filter
 ## v3.20.0
