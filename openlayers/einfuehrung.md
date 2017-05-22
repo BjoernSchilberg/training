@@ -66,6 +66,8 @@ https://bjoernschilberg.github.io/trainings/openlayers/beispiele/erste_karte.htm
   - Zooming per Doppelklick, Mausrad, Zoombar, Zoombox, Tastatur
   - Panning per Drag&Drop
   - Pan-Steuerkreuz, Tastatur
+  - Auswählen (Select)
+  - Zeichnen (Draw)
 
 - http://openlayers.org/en/latest/apidoc/ol.control.html
   - Übersichtskarte
