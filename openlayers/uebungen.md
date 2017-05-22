@@ -170,6 +170,15 @@ interactions: ol.interaction.defaults().extend([
 ]),
 ```
 
+## Features selektieren
+Ändern Sie dazu das Beispiel:
+https://bjoernschilberg.github.io/trainings/openlayers/beispiele/geojson_style.html
+Erweitern Sie die vorhanden Interaktionen um ```ol.interaction.Select```.
+Erweitern Sie ```ol.interaction.Select``` um eine ```style```-Option.
+Orientieren Sie sich dabei an dem bereits vorhandenen Style von
+```ol.source.Vector```. Achten Sie dabei darauf sinnvolle und andere Angaben
+bei ```color``` zu wählen.
+
 # Steuerelemente einbinden
 
 * http://openlayers.org/en/latest/apidoc/ol.control.html
