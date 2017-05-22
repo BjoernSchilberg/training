@@ -14,7 +14,7 @@
   - ```php -S localhost:8000```
 
 ## Erste Karte
-- Kopieren Sie das Template aus ```uebungen/template.html``` nach ```erste_karte.html```.
+- Kopieren Sie das Template aus [uebungen/template.html](uebungen/template.html) nach ```erste_karte.html```.
 - Fügen Sie die nachfolgenden Bestandteile (HTML-Markup, CSS-Deklarationen, JavaScript-Initialisierungs-Code) einer OpenLayers-Karte an die richtige Stellen des kopierten Templates ein.
 - Ändern Sie den Titel ```<title>``` und die Überschrift ```<h1>``` sinvoll.
 
