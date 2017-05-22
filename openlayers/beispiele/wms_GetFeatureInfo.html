@@ -18,52 +18,53 @@
 <body>
   <h1>OpenLayers WMS NRW GetFeatureInfo Beispiel</h1>
   <div id="map"></div>
-    <div id="info"></div>
+  <div id="info"></div>
 
   <script type="text/javascript">
- var wmsSource = new ol.source.TileWMS({
-            url: 'https://www.wms.nrw.de/geobasis/wms_nw_dtk25',
-            params: {
-              LAYERS: 'nw_dtk25_info',
-              TILED: true,
-            }
-      });
+    var wmsSource = new ol.source.TileWMS({
+      url: 'https://www.wms.nrw.de/geobasis/wms_nw_dtk25',
+      params: {
+        LAYERS: 'nw_dtk25_info',
+        TILED: true,
+      }
+    });
 
-      var wmsLayer = new ol.layer.Tile({
-        source: wmsSource
-      });
- var wmsSource2 = new ol.source.TileWMS({
-            url: 'https://www.wms.nrw.de/geobasis/wms_nw_dtk25',
-            params: {
-              LAYERS: 'nw_dtk25_col',
-              TILED: true,
-            }
-      });
+    var wmsLayer = new ol.layer.Tile({
+      source: wmsSource
+    });
+    var wmsSource2 = new ol.source.TileWMS({
+      url: 'https://www.wms.nrw.de/geobasis/wms_nw_dtk25',
+      params: {
+        LAYERS: 'nw_dtk25_col',
+        TILED: true,
+      }
+    });
 
-      var wmsLayer2 = new ol.layer.Tile({
-        source: wmsSource2
-      });
-var view = new ol.View({
-        projection: 'EPSG:4326',
-        center: [7.112222, 51.430556],
-        zoom: 14,
-      });
+    var wmsLayer2 = new ol.layer.Tile({
+      source: wmsSource2
+    });
+    var view = new ol.View({
+      projection: 'EPSG:4326',
+      center: [7.112222, 51.430556],
+      zoom: 14,
+    });
     var map = new ol.Map({
       target: 'map',
-      layers: [wmsLayer2,wmsLayer],
-      view: view 
+      layers: [wmsLayer2, wmsLayer],
+      view: view
     });
- map.on('singleclick', function(evt) {
-        document.getElementById('info').innerHTML = '';
-        var viewResolution = /** @type {number} */ (view.getResolution());
-        var url = wmsSource.getGetFeatureInfoUrl(
-            evt.coordinate, viewResolution, 'EPSG:4326',
-            {'INFO_FORMAT': 'text/html'});
-        if (url) {
-          document.getElementById('info').innerHTML =
-              '<iframe width=650 height=570 seamless src="' + url + '"></iframe>';
-        }
-      });
+    map.on('singleclick', function(evt) {
+      document.getElementById('info').innerHTML = '';
+      var viewResolution = /** @type {number} */ (view.getResolution());
+      var url = wmsSource.getGetFeatureInfoUrl(
+        evt.coordinate, viewResolution, 'EPSG:4326', {
+          'INFO_FORMAT': 'text/html'
+        });
+      if (url) {
+        document.getElementById('info').innerHTML =
+          '<iframe width=650 height=570 seamless src="' + url + '"></iframe>';
+      }
+    });
   </script>
 </body>
 

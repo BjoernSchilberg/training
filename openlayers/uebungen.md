@@ -275,8 +275,27 @@ layers: [
 
 
 ## Abfrage von Informationen mittels GetFeatureInfo (WMS)
-TODO
 
+Fügen Sie den Layer ```nw_dtk25_info``` des Dienstes https://www.wms.nrw.de/geobasis/wms_nw_dtk25 als wmsSource dem wmsLayer hinzu. Fügen Sie den wmsLayer der Karte (```map```) hinzu.
+
+Registrieren Sie eine Funktion, die bei jedem
+[singleclick](http://openlayers.org/en/latest/apidoc/ol.MapBrowserEvent.html#event:singleclick)-Event,
+welcher auf der ol.Map gefeuert wird, die Funktion
+[getGetFeatureInfoUrl](https://openlayers.org/en/latest/apidoc/ol.source.TileWMS.html#getGetFeatureInfoUrl)
+des TileWMS Dienstes aufruft und gegebenenfalls weitere
+Informationen ausgibt.
+
+```javascript
+map.on('singleclick', function(evt) {
+  document.getElementById('info').innerHTML = '';
+  var viewResolution = /* FIX ME */ ;
+  var url = wmsSource.getGetFeatureInfoUrl( /* FIX ME */ );
+  if (url) {
+    document.getElementById('info').innerHTML = '<iframe width=650 height=570 seamless src="' + url + '"></iframe>';
+  }
+});
+
+```
 
 ## Zeichnen / Modifizieren / Entfernen eigener Geometrien (Features)
 TODO
