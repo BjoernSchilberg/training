@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>ExtJS Component Tree</title>
+  <!-- include a CSS stylesheet -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.2.0/classic/theme-triton/resources/theme-triton-all.css" type="text/css" />
+
+  <!-- include an external JavaScript file -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.2.0/ext-all.js"></script>
+</head>
+
+<body>
+  <script>
+    Ext.onReady(function() {
+      var win = Ext.create('Ext.container.Viewport', {
+        layout: 'border',
+        defaults: {
+          xtype: 'panel',
+          bodyPadding: 15,
+          collapsible: true,
+          split: false,
+          margin: 5
+        },
+        items: [
+
+          {
+            xtype: 'treepanel',
+            width: '20%',
+            bodyPadding: 0,
+            title: 'TreePanel',
+            region: 'west',
+            rootVisible: false,
+            store: {
+              data: {
+                text: 'Root',
+                children: [{
+                  text: 'Child 1',
+                  leaf: true
+                }, {
+                  text: 'Child 2',
+                  leaf: true
+                }, {
+                  text: 'Child 3',
+                  leaf: true
+                }, {
+                  text: 'Child 4',
+                  children: [{
+                    text: 'GrandChild 1',
+                    leaf: true
+                  }, {
+                    text: 'GrandChild 2',
+                    leaf: true
+                  }]
+                }]
+              }
+            }
+          }
+
+
+        ]
+      });
+
+
+      win.show()
+    });
+  </script>

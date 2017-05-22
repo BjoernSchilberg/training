@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Viewport Example</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.2.0/classic/theme-triton/resources/theme-triton-all.css" type="text/css" />
+  <link rel="stylesheet" href="https://openlayers.org/en/v4.1.1/css/ol.css" type="text/css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.2.0/ext-all.js"></script>
+  <link rel="stylesheet" href="http://geoext.github.io/geoext3/v3.0.0/resources/css/gx-popup.css" type="text/css" />
+  <script src="https://openlayers.org/en/v4.1.1/build/ol.js"></script>
+  <script src="https://geoext.github.io/geoext3/v3.0.0/GeoExt.js"></script>
+</head>
+
+<body>
+  <script>
+    // Gobale Variable mit Namen map
+    // Wert: undefined
+    // später wird die ol.Map Instanz in map gespeichert
+    // Global zum einfacheren Debuggen in der Konsole.
+    // Globale Variablen sind nur im Beispiel ok. Nicht im Produktiv Betrieb!
+    // https://softwareengineering.stackexchange.com/questions/277279/why-are-globals-bad-in-javascript/277283#277283
+    var map;
+    var mapComponent;
+    var mapPanel;
+
+    //anonyme Funktion wird an Ext.onReady übergeben
+    // wird ausgeführt wenn das Dokument und die externen Resourcen geladen wurden.
+    // und der DOM (Document Object Model) aufgebaut wurde und breit zur Manipulation ist.
+    Ext.onReady(function() {
+
+      //OpenLayers-Teil
+      //ol.Map-Instanz
+      // map wurde bereits oben global definiert
+      map = new ol.Map({
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM()
+          })
+        ],
+        view: new ol.View({
+          center: ol.proj.fromLonLat([7.013056, 51.450833]),
+          zoom: 12
+        })
+      });
+
+      //GeoExt-Teil
+      // Erstellt ein Instanz der Klasse GeoExt.component.Map
+      // bekommt die map als Konfigurationsobjekt.
+      // Speichert nach dem Erstellen die Instanz  in mapComponent
+      mapComponent = Ext.create('GeoExt.component.Map', {
+        map: map
+      });
+
+      //ExtJS-Teil
+      //http://docs.sencha.com/extjs/6.2.0/classic/Ext.container.Viewport.html
+      // A specialized container representing the viewable application area (the browser viewport).
+
+      // The Viewport renders itself to the document body, and automatically sizes
+      // itself to the size of the browser viewport and manages window resizing. There
+      // may only be one Viewport created in a page.
+
+      // Viewport hat die Größe des Browser viewport.
+      // Auf alle Kind-Objekte (konfiguriert über items) wird das layout angewendet
+      // Das layout sorgt dafür das Kind-Objekte ( in diesem Beispiel
+      // mapComponent)  genauso groß sind wie der Viewport selbst.
+
+      // Wird das Browser-Fenster verändert, ändert sich auch der Viewport und mit diesem die mapComponent.
+      // Es wird immmer die gesamte Browser-Fensterfläche ausgenutzt.
+
+      var vp = Ext.create('Ext.container.Viewport', {
+        layout: 'fit',
+        items: mapComponent
+        
+      });
+
+    });
+  </script>
+</body>
+
+</html>

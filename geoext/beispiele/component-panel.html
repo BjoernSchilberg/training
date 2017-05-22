@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>ExtJS Component Panel</title>
+  <!-- include a CSS stylesheet -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.2.0/classic/theme-triton/resources/theme-triton-all.css" type="text/css" />
+
+  <!-- include an external JavaScript file -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.2.0/ext-all.js"></script>
+</head>
+
+<body>
+  <script>
+    Ext.onReady(function() {
+      var win = Ext.create('Ext.container.Viewport', {
+    layout: 'border',
+    defaults: {
+        xtype: 'panel',
+        bodyPadding: 15,
+        collapsible: true,
+        split: false,
+        margin: 5
+    },
+    items: [{
+        region: 'north',
+        collapsible: false,
+        height: 60,
+        border: false,
+        html: 'Content 1'
+    }, {
+        title: 'Item 2',
+        region: 'east',
+        width: '20%',
+        html: 'Content 2'
+    }, {
+        title: 'Item 3',
+        region: 'west',
+        width: '20%',
+        html: 'Content 3'
+    }, {
+        region: 'center',
+        collapsible: false,
+        html: 'Content 4'
+    }, {
+        title: 'Item 5',
+        region: 'south',
+        maxHeight: 350,
+        collapsed: true,
+        html: 'Content 5'
+    }]
+});
+
+
+      win.show()
+    });
+  </script>

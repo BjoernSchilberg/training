@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>ExtJS Component Tree</title>
+  <!-- include a CSS stylesheet -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.2.0/classic/theme-triton/resources/theme-triton-all.css" type="text/css" />
+
+  <!-- include an external JavaScript file -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.2.0/ext-all.js"></script>
+</head>
+
+<body>
+  <script>
+    Ext.onReady(function() {
+      var win = Ext.create('Ext.container.Viewport', {
+        layout: 'border',
+        defaults: {
+          xtype: 'panel',
+          bodyPadding: 15,
+          collapsible: true,
+          split: false,
+          margin: 5
+        },
+        items: [{
+            xtype: 'gridpanel',
+            title: 'GridPanel',
+            region: 'south',
+            bodyPadding: 0,
+            maxHeight: 350,
+            collapsed: true,
+            columns: [{
+              text: 'First name',
+              dataIndex: 'firstName',
+              flex: 1
+            }, {
+              text: 'Last name',
+              dataIndex: 'lastName',
+              flex: 1
+            }, {
+              text: 'Instruments',
+              dataIndex: 'instruments',
+              flex: 1
+            }],
+            store: {
+              data: [{
+                firstName: 'Angus',
+                lastName: 'Young',
+                instruments: 'Guitar'
+              }, {
+                firstName: 'Cliff',
+                lastName: 'Williams',
+                instruments: 'Bass guitar, vocals'
+              }, {
+                firstName: 'Brian',
+                lastName: 'Johnson',
+                instruments: 'Vocals'
+              }, {
+                firstName: 'Stevie',
+                lastName: 'Young',
+                instruments: 'Guitar, vocals'
+              }, {
+                firstName: 'Chris',
+                lastName: 'Slade',
+                instruments: 'Drums, percussion'
+              }]
+            }
+          }
+
+
+
+        ]
+      });
+
+
+      win.show()
+    });
+  </script>
