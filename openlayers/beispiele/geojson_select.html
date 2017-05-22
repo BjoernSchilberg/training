@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>GeoJSON Style</title>
+  <title>GeoJSON Select</title>
   <!-- include a CSS stylesheet -->
   <!-- CSS-Deklarationen (Stil) -->
   <link rel="stylesheet" href="https://openlayers.org/en/v4.1.1/css/ol.css" type="text/css" />
@@ -19,25 +19,25 @@
 <!--HTML-Markup (Auszeichnung)-->
 
 <body>
-  <h1>GeoJSON Style</h1>
+  <h1>GeoJSON Select</h1>
   <!-- Container für den Karten-Viewport-->
   <div id="map"></div>
   <!-- JavaScript-Initialisierungs-Code (Verhalten) -->
   <script>
     var map = new ol.Map({
       interactions: ol.interaction.defaults().extend([
-          new ol.interaction.Select({
-            style: new ol.style.Style({
-              stroke: new ol.style.Stroke({
-                color: 'red',
-                width: 3
-              }),
-              fill: new ol.style.Fill({
-                color: 'rgba(0, 0, 255, 0.1)'
-              })
+        new ol.interaction.Select({
+          style: new ol.style.Style({
+            stroke: new ol.style.Stroke({
+              color: 'red',
+              width: 3
+            }),
+            fill: new ol.style.Fill({
+              color: 'rgba(0, 0, 255, 0.1)'
             })
           })
-        ]),
+        })
+      ]),
       // Wert des id-Attributs des Karten-Containers
       // Alternativ: document.getElementById("map")
       target: 'map',
