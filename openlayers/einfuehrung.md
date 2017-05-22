@@ -372,8 +372,25 @@ Testen Sie dies an dem ```GeoJSON```-Beispiel aus: https://bjoernschilberg.githu
 
 # Vektor Geometrieebenen stylen
 
+
+## Layer style
+Ein Vektorlayer akzeptiert als Wert für die style-Konfigurationsoption eine Instanz:
+- von ol.style.Style,
+- ein Array von ol.style.Style
+- oder eine Funktion. 
+
+Beispiel für die Verwendung eines statischen ```ol.style.Objektes``:
+```javascript
+var layer = new ol.layer.Vector({
+  source: new ol.source.Vector(),
+  style: new ol.style.Style({
+    // ...
+  })
+});
+```
+
 ## ol.style.Style-Objekt
-Vier Schlüssel:
+Besitzt vier Schlüssel:
 - fill
 - image
 - stroke 
@@ -382,7 +399,43 @@ Vier Schlüssel:
 Rückgabe:
 Array von ol.style.Style-Objekten.
 
-## Layer style
+Angenommen alle Features sollten rot gezeichnet werden, außer denjenigen, die
+ein class-Attribut mit dem Wert "someClass" haben (und diese sollen wie oben
+blau gefüllt sein und einen 1-Pixel breiten Rand in oliv haben), so könnte die
+Funktion wie folgt aussehen.
+
+```javascript
+style: (function() {
+  var someStyle = [new ol.style.Style({
+    fill: new ol.style.Fill({
+      color: 'blue'
+    }),
+    stroke: new ol.style.Stroke({
+      color: 'olive',
+      width: 1
+    })
+  })];
+  var otherStyle = [new ol.style.Style({
+    fill: new ol.style.Fill({
+      color: 'red'
+    })
+  })];
+  return function(feature, resolution) {
+    if (feature.get('class') === "someClass") {
+      return someStyle;
+    } else {
+      return otherStyle;
+    }
+  };
+}())
+```
+
+Wenn möglich, sollten die tatsächlichen Stil-Objekte außerhalb der Funktion
+möglichst nur einmal erzeugt werden, und in der Funktion nur Referenzen hierauf
+zurückgegeben werden. Wegen der besseren Performance und da die style Function mehrmals während des Renders aufgrufen wird, und ansonsten Artefakte beim Darstellen entstehen können.Im obigen Beispiel wird hierzu eine
+closure verwendet.
+
+Feature können auch in Abhängigkeit der ```resolution``` ausgestaltet werden.
 
 ## Stildeklarationsböcke: Symbolizer
 
@@ -436,7 +489,7 @@ new ol.style.Circle({
 -  [Vektor Geometrieebenen stylen (GeoJSON)](uebungen.md#vektor-geometrieebenen-stylen-geojson)
 
 ## Style-Funktion
-Ein Vektorlayer akzeptiert als Wert für die style-Konfigurationsoption aber
+Ein Vektorlayer akzeptiert als Wert für die style-Konfigurationsoption 
 auch eine Funktion, in welcher unterschiedliche Stile anhand von
 Featureattributen zurückgegeben werden kann. Ist zum Beispiel bei Klassifikation sinnvoll.
 
