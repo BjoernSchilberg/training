@@ -123,9 +123,9 @@ den Fokus auf die Einführung in GeoEXT beizubehalten.
 
 ## Komponenten
 https://docs.sencha.com/extjs/6.2.0/guides/core_concepts/components.html
-- Panel [beispiele/component-panel.html]()
-- Tree [beispiele/component-tree.html]()
-- Grid [beispiele/component-grid.html]()
+- Panel [beispiele/component-panel.html](beispiele/component-panel.html)
+- Tree [beispiele/component-tree.html](beispiele/component-tree.html)
+- Grid [beispiele/component-grid.html](beispiele/component-grid.html)
 
 ## Layout
 https://docs.sencha.com/extjs/6.2.0/guides/core_concepts/layouts.html
