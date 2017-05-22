@@ -57,18 +57,12 @@ var map = new ol.Map({
 https://bjoernschilberg.github.io/trainings/openlayers/beispiele/erste_karte.html
 
 
-### Erste Übung
+## Erste Übung
 - [Erste Karte](uebungen.md#erste-karte)
 
-## Interaktions-,Steuer- und Navigationsmöglichkeiten
+# Interaktions-,Steuer- und Navigationsmöglichkeiten
 
-- https://openlayers.org/en/latest/apidoc/ol.interaction.html
-  - Zooming per Doppelklick, Mausrad, Zoombar, Zoombox, Tastatur
-  - Panning per Drag&Drop
-  - Pan-Steuerkreuz, Tastatur
-  - Auswählen (Select)
-  - Zeichnen (Draw)
-
+## Steuerelemente
 - http://openlayers.org/en/latest/apidoc/ol.control.html
   - Übersichtskarte
   - ~~Ebenenübersicht~~
@@ -76,8 +70,19 @@ https://bjoernschilberg.github.io/trainings/openlayers/beispiele/erste_karte.htm
 - ~~Navigations-Historie~~
 
 ### Übungen
-- [Interaktionen einbinden](uebungen.md#interaktionen-einbinden)
 - [Steuerelemente einbinden](uebungen.md#steuerelemente-einbinden)
+
+## Interaktionen
+- https://openlayers.org/en/latest/apidoc/ol.interaction.html
+  - Zooming per Doppelklick, Mausrad, Zoombar, Zoombox, Tastatur
+  - Panning per Drag&Drop
+  - Pan-Steuerkreuz, Tastatur
+  - Auswählen (Select)
+  - Zeichnen (Draw)
+  - Ändern (Modify)
+
+### Übungen
+- [Interaktionen einbinden](uebungen.md#interaktionen-einbinden)
 
 ## Unterstütze Daten- & Layerquellen
 
