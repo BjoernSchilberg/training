@@ -57,22 +57,6 @@ var map = new ol.Map({
 https://bjoernschilberg.github.io/trainings/openlayers/beispiele/erste_karte.html
 
 
-## Unterstütze Daten- & Layerquellen
-
-| Freie Ebenen | Restriktive Ebenen |
-| --- | --- |
-| OGC WMS | ~~Google Maps~~ |
-| OGC WFS(-T) | ~~Yahoo! Maps~~ |
-| OGC TMS | ~~MSN Virtual Earth~~ |
-| OGC GML | ~~Map24~~ |
-| GeoRSS  | ~~Mulitmap~~ |
-| GeoJSON | Bing |
-| KML | |
-| OSM | |
-
-- Liste der direkt unterstützten Daten- & Layerquellen: http://openlayers.org/en/latest/apidoc/ol.source.html
-- Über zusätzliche Biblotheken, können auch CSV/Shape-Dateien/GeoTIFF direkt ein gebunden werden.
-
 ### Erste Übung
 - [Erste Karte](uebungen.md#erste-karte)
 
@@ -90,8 +74,36 @@ https://bjoernschilberg.github.io/trainings/openlayers/beispiele/erste_karte.htm
 - ~~Navigations-Historie~~
 
 ### Übungen
+- [Interaktionen einbinden](uebungen.md#interaktionen-einbinden)
 - [Steuerelemente einbinden](uebungen.md#steuerelemente-einbinden)
 
+## Unterstütze Daten- & Layerquellen
+
+| Freie Ebenen | Restriktive Ebenen |
+| --- | --- |
+| OGC WMS | ~~Google Maps~~ |
+| OGC WFS(-T) | ~~Yahoo! Maps~~ |
+| OGC TMS | ~~MSN Virtual Earth~~ |
+| OGC GML | ~~Map24~~ |
+| ~~GeoRSS~~  | ~~Mulitmap~~ |
+| GeoJSON | Bing |
+| KML | |
+| GPX | |
+| WKT | |
+| OSM | |
+
+- Liste der direkt unterstützten Daten- & Layerquellen:
+  - http://openlayers.org/en/latest/apidoc/ol.source.html
+  - http://openlayers.org/en/latest/apidoc/ol.format.html
+- Über zusätzliche Biblotheken, können auch CSV/Shape-Dateien/GeoTIFF direkt ein gebunden werden.
+  - https://github.com/mapbox/csv2geojson
+  - https://github.com/calvinmetcalf/shapefile-js
+    - https://github.com/mapbox/shp-write
+  - https://github.com/constantinius/geotiff.js
+
+### Übungen
+
+- [Weitere Daten- & Layerquellen einbinden](uebungen.md#weitere-daten---layerquellen-einbinden)
 
 # Anwendungsbeispiele
 
