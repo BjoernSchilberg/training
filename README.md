@@ -1,4 +1,4 @@
-# Die Trainigs-Box 
+# Die Trainings-Box 
 
 ## OpenLayers
 * [Einführung](openlayers/einfuehrung.md)
@@ -6,14 +6,15 @@
 * [Debugging](openlayers/debugging.md)
 
 ## GeoExt
-* [GeoExt](geoext/einfuehrung.md)
+* [Einführung](geoext/einfuehrung.md)
+* [Übungen](geoext/uebungen.md)
 
 ## Sencha Ext JS
-* [Sencha Ext JS](extjs/einfuehrung.md)
+* [Einführung](extjs/einfuehrung.md)
 
 ## Lizenz
 
-Die Trainigs sind frei verfügbar für eine weitere Nutzung im Sinne der [Creative
+Die Trainings sind frei verfügbar für eine weitere Nutzung im Sinne der [Creative
 Commons Attribution-Share Alike 3.0
 Lizenz](https://creativecommons.org/licenses/by-sa/3.0/de/deed.de) vorgesehen. 
 
