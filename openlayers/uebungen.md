@@ -179,6 +179,20 @@ Orientieren Sie sich dabei an dem bereits vorhandenen Style von
 ```ol.source.Vector```. Achten Sie dabei darauf sinnvolle und andere Angaben
 bei ```color``` zu wählen.
 
+## Features neuzeichnen
+Ändern Sie dazu das Beispiel:
+https://bjoernschilberg.github.io/trainings/openlayers/beispiele/geojson.html
+Neue Features können mittels ```ol.interaction.Draw``` gezeichnet werden. Eine
+Draw-Interaktion benötigt beim Initialisieren eine entsprechende Vektor-Source
+```source``` und einen Geometrietyp ```type```.
+
+### Features neuzeichnen (Erweitern)
+Geben Sie mittels des Eventhandler ```drawend``` die Koordinaten des
+gezeichnetes Feature auf der Konsole aus.
+
+- http://openlayers.org/en/latest/apidoc/ol.interaction.Draw.Event.html#event:drawend
+
+
 # Steuerelemente einbinden
 
 * http://openlayers.org/en/latest/apidoc/ol.control.html

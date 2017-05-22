@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>GeoJSON Draw</title>
+  <!-- include a CSS stylesheet -->
+  <!-- CSS-Deklarationen (Stil) -->
+  <link rel="stylesheet" href="https://openlayers.org/en/v4.1.1/css/ol.css" type="text/css" />
+  <style>
+    #map {
+      height: 256px;
+      width: 512px;
+    }
+  </style>
+  <!-- include an external JavaScript file -->
+  <script src="https://openlayers.org/en/v4.1.1/build/ol.js"></script>
+</head>
+<!--HTML-Markup (Auszeichnung)-->
+
+<body>
+  <h1>GeoJSON Draw</h1>
+  <!-- Container für den Karten-Viewport-->
+  <div id="map"></div>
+  <!-- JavaScript-Initialisierungs-Code (Verhalten) -->
+  <script>
+    var source = new ol.source.Vector({
+      url: 'data/westfalen_kreise.geojson',
+      format: new ol.format.GeoJSON()
+    });
+    var draw = new ol.interaction.Draw({
+      source: source,
+      type: 'Polygon'
+    });
+    var map = new ol.Map({
+      interactions: ol.interaction.defaults().extend([draw]),
+      // Wert des id-Attributs des Karten-Containers
+      // Alternativ: document.getElementById("map")
+      target: 'map',
+      //Liste (als JavaScript-Array) aller Kartenthemen
+      layers: [
+        new ol.layer.Tile({
+          source: new ol.source.OSM()
+        }),
+        new ol.layer.Vector({
+          title: 'Westfalen Kreise',
+          source: source
+        })
+      ],
+      //Kartenausschnitt
+      view: new ol.View({
+        //Kartenzentrum
+        center: ol.proj.fromLonLat([7.013056, 51.450833]),
+        //initialen Zoomlevel 
+        zoom: 6
+      })
+    });
+    draw.on('drawend', function(evt) {
+      var feature = evt.feature;
+      var p = feature.getGeometry();
+      console.log(p.getCoordinates());
+    });
+  </script>
+</body>
+
+</html>
