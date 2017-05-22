@@ -389,16 +389,18 @@ Array von ol.style.Style-Objekten.
 ## Style-Funktion
 
 ## Pseudoklassen
-In CSS sprechen die CSS-Pseudoklassen :hover, :active und :focus auf unmittelbare Interaktion des Benutzers an. Die Pseudoklassen selektieren Elemente, die
+In CSS sprechen die CSS-Pseudoklassen ```:hover```, ```:active``` und
+```:focus``` auf unmittelbare Interaktion des Benutzers an. Die Pseudoklassen
+selektieren Elemente, die
 - mit dem Mauszeiger berührt werden (:hover; englisch to hover: schweben),
-- den Fokus (:focus) erhalten, zum Beispiel durch die Tabulatortaste (↹ ) oder
-- aktuell angeklickt sind (:active).
+- den Fokus (```:focus```) erhalten, zum Beispiel durch die Tabulatortaste (↹ ) oder
+- aktuell angeklickt sind (```:active```).
 Ursprünglich für Verweise gedacht, sind diese Pseudoklassen in allen relevanten
 Browsern auf beliebige Elemente anwendbar.
 
 In OpenLayers gibt es mit ```ol.interaction.Select``` ein ähnliches Konzept.
 
-```
+```javascript
   new ol.interaction.Select({
           style: new ol.style.Style({
             stroke: new ol.style.Stroke({
