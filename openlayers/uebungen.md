@@ -359,6 +359,12 @@ https://bjoernschilberg.github.io/trainings/openlayers/beispiele/geojson_style.h
 ## OpenLayers WMS NRW GetFeatureInfo Beispiel
 Zoom-Anzeigen fixen.
 
+# Rotate geometries
+````javascript
+var geom = ol.geom.Polygon.fromExtent([-5, -5, 5, 5]);
+geom.rotate(Math.PI / 4);
+```
+
 ## Kartenlabel
 
 ## Reprojektion
