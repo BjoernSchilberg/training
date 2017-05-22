@@ -5,13 +5,13 @@
 * [Übungen](openlayers/uebungen.md)
 * [Debugging](openlayers/debugging.md)
 
-##GeoExt
+## GeoExt
 * [GeoExt](geoext/einfuehrung.md)
 
 ## Sencha Ext JS
 * [Sencha Ext JS](extjs/einfuehrung.md)
 
-##Lizenz
+## Lizenz
 
 Die Trainigs sind frei verfügbar für eine weitere Nutzung im Sinne der [Creative
 Commons Attribution-Share Alike 3.0
