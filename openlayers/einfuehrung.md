@@ -355,6 +355,8 @@ Details: https://github.com/openlayers/openlayers/pull/5196
 - forEachFeatureAtPixel etc.:
 - Freihandzeichnen (für Redlinining, nicht für digitalisieren geeignet)
 
+# Vektor Geometrieebenen stylen
+TODO
 
 # Todo
 - LonLat vs LatLon
