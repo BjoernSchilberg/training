@@ -97,7 +97,6 @@ erstellt werden.
      - ```format```: Suchen die dazu in der API nach ```GeoJSON```.
 
 ## Vektor Geometrieebenen stylen (GeoJSON)
-Todo
 
 ## Metadaten der Vektor Geometrieebene abfragen.
 Jede Fläche repräsentiert ein [ol.Feature](http://openlayers.org/en/latest/apidoc/ol.Feature.html) Objekt des
@@ -311,13 +310,15 @@ Fügen Sie der Karte folgende Controls hinzu:
 - ModifyFeature
 - Control zum Entfernen von Geometrien
 
-## Optional
+## Fortgeschrittene Themen (optional)
+
+### Popup
+
 ### Reprojektion
 
 ### ArcGIS Rest Feature Service
 https://openlayers.org/en/latest/examples/vector-esri.html
 mit https://services1.arcgis.com/W47q82gM5Y2xNen1/ArcGIS/rest/services
-
 
 ### weitere Vektoren (CSV,KML, GeoRSS)
 http://openlayers.org/workshop/en/layers/vector.html
