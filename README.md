@@ -1,37 +1,20 @@
-## Welcome to GitHub Pages
+# Die Trainigs-Box 
 
-You can use the [editor on GitHub](https://github.com/BjoernSchilberg/training/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+## OpenLayers
+* [Einführung](openlayers/einfuehrung.md)
+* [Übungen](openlayers/uebungen.md)
+* [Debugging](openlayers/debugging.md)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+##GeoExt
+* [GeoExt](geoext/einfuehrung.md)
 
-### Markdown
+## Sencha Ext JS
+* [Sencha Ext JS](extjs/einfuehrung.md)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+##Lizenz
 
-```markdown
-Syntax highlighted code block
+Die Trainigs sind frei verfügbar für eine weitere Nutzung im Sinne der [Creative
+Commons Attribution-Share Alike 3.0
+Lizenz](https://creativecommons.org/licenses/by-sa/3.0/de/deed.de) vorgesehen. 
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/BjoernSchilberg/training/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
