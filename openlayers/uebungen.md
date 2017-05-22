@@ -317,6 +317,9 @@ map.on('singleclick', function(evt) {
 
 ## Popup
 
+## OpenLayers WMS NRW GetFeatureInfo Beispiel
+Zoom-Anzeigen fixen.
+
 ## Reprojektion
 
 ## ArcGIS Rest Feature Service
