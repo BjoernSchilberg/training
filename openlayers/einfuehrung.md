@@ -54,6 +54,9 @@ var map = new ol.Map({
 });
 ```
 
+https://bjoernschilberg.github.io/trainings/openlayers/beispiele/erste_karte.html
+
+
 ## Unterstütze Daten- & Layerquellen
 
 | Freie Ebenen | Restriktive Ebenen |
@@ -70,7 +73,8 @@ var map = new ol.Map({
 - Liste der direkt unterstützten Daten- & Layerquellen: http://openlayers.org/en/latest/apidoc/ol.source.html
 - Über zusätzliche Biblotheken, können auch CSV/Shape-Dateien/GeoTIFF direkt ein gebunden werden.
 
-## Erste Übung
+### Erste Übung
+- [Erste Karte](openlayers/uebungen.md#erste-karte)
 
 ## Interaktions-,Steuer- und Navigationsmöglichkeiten
 
@@ -81,6 +85,10 @@ var map = new ol.Map({
 - Ebenenübersicht
 - ~~[Permalink](http://openlayers.org/en/latest/examples/permalink.html)~~
 - Navigations-Historie
+
+### Übungen
+- [Steuerelemente einbinden](uebungen.md#steuerelemente-einbinden)
+
 
 # Anwendungsbeispiele
 
