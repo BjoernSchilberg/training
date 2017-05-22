@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Die erste OpenLayers Karte.</title>
+  <!-- include a CSS stylesheet -->
+  <!-- CSS-Deklarationen (Stil) -->
+  <link rel="stylesheet" href="https://openlayers.org/en/v4.1.1/css/ol.css" type="text/css" />
+  <style>
+    #map {
+      height: 256px;
+      width: 512px;
+    }
+  </style>
+  <!-- include an external JavaScript file -->
+  <script src="https://openlayers.org/en/v4.1.1/build/ol.js"></script>
+</head>
+<!--HTML-Markup (Auszeichnung)-->
+
+<body>
+  <h1>Die erste OpenLayers Karte.</h1>
+  <!-- Container für den Karten-Viewport-->
+  <div id="map"></div>
+  <!-- JavaScript-Initialisierungs-Code (Verhalten) -->
+  <script>
+    var map = new ol.Map({
+      // Wert des id-Attributs des Karten-Containers
+      // Alternativ: document.getElementById("map")
+      target: 'map',
+      //Liste (als JavaScript-Array) aller Kartenthemen
+      layers: [
+        //repräsentiert ein reguläres Netz oder Grid von Bildern
+        new ol.layer.Tile({
+	  //Themenquelle
+          //Vorberechnete Kacheln (tiles)
+          source: new ol.source.OSM()
+        })
+      ],
+      //Kartenausschnitt
+      view: new ol.View({
+        //Kartenzentrum
+        center: ol.proj.fromLonLat([7.013056, 51.450833]),
+        //Alternative:
+        //center: ol.proj.transform([7.013056, 51.450833], 'EPSG:4326', 'EPSG:3857'),
+        //initialen Zoomlevel 
+        zoom: 12
+      })
+    });
+  </script>
+</body>
+
+</html>

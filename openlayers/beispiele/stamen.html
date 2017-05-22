@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Stamen</title>
+  <!-- include a CSS stylesheet -->
+  <link rel="stylesheet" href="https://openlayers.org/en/v4.1.1/css/ol.css" type="text/css" />
+  <style>
+    #map {
+      height: 256px;
+      width: 512px;
+    }
+  </style>
+  <!-- include an external JavaScript file -->
+  <script src="https://openlayers.org/en/v4.1.1/build/ol.js"></script>
+</head>
+
+<body>
+  <h1>Stamen</h1>
+  <div id="map"></div>
+  <script>
+    var map = new ol.Map({
+      target: 'map',
+      layers: [
+        new ol.layer.Tile({
+          source: new ol.source.Stamen({
+            layer: 'watercolor'
+          })
+        })
+      ],
+      view: new ol.View({
+        center: ol.proj.fromLonLat([7.013056, 51.450833]),
+        zoom: 12
+      })
+    });
+  </script>
+</body>
+
+</html>

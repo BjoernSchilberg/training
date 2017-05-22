@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Debugging</title>
+  <!-- include a CSS stylesheet -->
+  <!-- CSS-Deklarationen (Stil) -->
+  <link rel="stylesheet" href="https://openlayers.org/en/v4.1.1/css/ol.css" type="text/css" />
+  <style>
+    #map {
+      height: 256px;
+      width: 512px;
+    }
+  </style>
+  <!-- include an external JavaScript file -->
+  <script src="https://openlayers.org/en/v4.1.1/build/ol-debug.js"></script>
+</head>
+<!--HTML-Markup (Auszeichnung)-->
+
+<body>
+  <h1>Debugging</h1>
+  <!-- Container für den Karten-Viewport-->
+  <div id="map"></div>
+  <!-- JavaScript-Initialisierungs-Code (Verhalten) -->
+  <script>
+    var map = new ol.Map({
+      // Wert des id-Attributs des Karten-Containers
+      // Alternativ: document.getElementById("map")
+      target: 'map',
+      //Liste (als JavaScript-Array) aller Kartenthemen
+      layers: [
+        new ol.layer.Image({
+          source: new ol.source.OSM()
+        })
+      ],
+      //Kartenausschnitt
+      view: new ol.View({
+        //Kartenzentrum
+        center: ol.proj.fromLonLat([7.013056, 51.450833]),
+        //initialen Zoomlevel 
+        zoom: 12
+      })
+    });
+  </script>
+</body>
+
+</html>
