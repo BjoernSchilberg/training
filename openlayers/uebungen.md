@@ -179,18 +179,40 @@ Orientieren Sie sich dabei an dem bereits vorhandenen Style von
 ```ol.source.Vector```. Achten Sie dabei darauf sinnvolle und andere Angaben
 bei ```color``` zu wählen.
 
-## Features neuzeichnen
+## Features neuzeichnen (Teil 1)
 Ändern Sie dazu das Beispiel:
 https://bjoernschilberg.github.io/trainings/openlayers/beispiele/geojson.html
 Neue Features können mittels ```ol.interaction.Draw``` gezeichnet werden. Eine
 Draw-Interaktion benötigt beim Initialisieren eine entsprechende Vektor-Source
 ```source``` und einen Geometrietyp ```type```.
 
-### Features neuzeichnen (Erweitern)
+### Features neuzeichnen (Teil 2)
 Geben Sie mittels des Eventhandler ```drawend``` die Koordinaten des
 gezeichnetes Feature auf der Konsole aus.
 
 - http://openlayers.org/en/latest/apidoc/ol.interaction.Draw.Event.html#event:drawend
+
+### Features modifizieren
+Ändern Sie dazu das Beispiel:
+https://bjoernschilberg.github.io/trainings/openlayers/beispiele/geojson_select.html
+
+Um Features zu verändern, wird ```ol.interaction.Select``` mit
+```ol.interaction.Modify``` kombiniert. Diese Interaktionen teilen sich einen
+gemeinsame Menge an Features (``ol.Collection``). Features welche
+```ol.interaction.Select``` selektiert wurden, werden zu potentiellen
+Kandidaten für die Modifikation mittels ```ol.interaction.Modify```.
+
+- Es müssen zwei Interaktionen außerhalb der ```map```-Instanz hingefügt werden.
+- Eine Instanz von ```ol.interaction.Select``` um Features vor dem Editieren
+  auszuwählen, und eine Instanz von ```ol.interaction.Modify``` um die
+  Geometrien tatsächlich zu verändern.
+- Beiden Interaktionen wird die gleiche Instanz der Klasse ``ol.Collection`` zu
+  gewiesen. Der Interaktion ```ol.interaction.Select``` explizizt durch
+  ```features: select.getFeatures()```.
+
+- Die ```ol.interaction.Select``` ist wie im ```beispiele/geojson_select.html
+  ``` mit spezifischem Stil erzeugt worden, so dass Features während der
+  Selektion hervorgehoben werden.
 
 
 # Steuerelemente einbinden
@@ -277,20 +299,6 @@ Fügen Sie einer beliegenden Karte einen ZoomSilder hinzu. Indem Sie die Console
 map.addControl(new ol.control.ZoomSlider());
 ```
 
-# Zeichnen / Modifizieren / Entfernen eigener Geometrien (Features)
-TODO
-## Aufgabe 1
-Fügen Sie der Karte folgende Controls hinzu:
-- Control zum Zeichnen von Punkten
-- Control zum Zeichnen von Linien
-- Control zum Zeichnen von Polygonen
-- Control zum Zeichnen von Rechtecken
-
-## Aufgabe 2
-- DragFeature
-- ModifyFeature
-- Control zum Entfernen von Geometrien
-
 # Fortgeschrittene Themen (optional)
 
 ## WMS-Ebene einbinden
@@ -358,3 +366,10 @@ mit https://services1.arcgis.com/W47q82gM5Y2xNen1/ArcGIS/rest/services
 
 ## weitere Vektoren (CSV,KML, GeoRSS)
 http://openlayers.org/workshop/en/layers/vector.html
+
+## Zeichnen / Modifizieren / Entfernen eigener Geometrien (Features)
+Fügen Sie der Karte folgende Controls hinzu:
+- Control zum Zeichnen von Punkten
+- Control zum Zeichnen von Linien
+- Control zum Zeichnen von Polygonen
+- Control zum Zeichnen von Rechtecken
