@@ -298,7 +298,7 @@ geom.scale(2, 1);
 
 geom.scale(2, 1, [-1, -2]);
 ```
-
+- https://bjoernschilberg.github.io/trainings/openlayers/beispiele/scale.html
 - https://github.com/openlayers/openlayers/issues/5684
 - https://github.com/openlayers/openlayers/pull/5685
 
@@ -549,3 +549,4 @@ In OpenLayers gibt es mit ```ol.interaction.Select``` ein ähnliches Konzept.
 
 # weitere Quellen
 - http://openlayers.org/workshop/en/index.html 
+- https://github.com/marcjansen/openlayers-fossgis2017
