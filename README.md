@@ -11,9 +11,6 @@
 * [Einführung](geoext/einfuehrung.md)
 * [Übungen](geoext/uebungen.md)
 
-## Sencha Ext JS
-* [Einführung](extjs/einfuehrung.md)
-
 ## Lizenz
 
 Die Trainings sind frei verfügbar für eine weitere Nutzung im Sinne der [Creative
