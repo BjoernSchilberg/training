@@ -268,7 +268,7 @@ Passen Sie die CSS-Deklaration entsprechend an:
 
 ## Eine OverviewMap anzeigen
 - Fügen Sie [ol.control.OverviewMap](http://openlayers.org/en/latest/apidoc/ol.control.OverviewMap.html) hinzu.
-- Positionieren Sie die ```OverviewMap``` links oben. Passen Sie CSS-Deklaration entsprechend an.
+- Positionieren Sie die ```OverviewMap``` rechts oben. Passen Sie CSS-Deklaration entsprechend an.
 ```css
 .ol-custom-overviewmap,
 .ol-custom-overviewmap.ol-uncollapsible {
