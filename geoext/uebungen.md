@@ -76,7 +76,7 @@ items: [
 - Ändern Sie den Titel und machen Sie das Fenster größer.
 
 # Map (Viewport)
-Schauen Sie sich das Beispiel und den Quelltext in [beispiel/viewport.html](beispiel/viewport.html) genau an.
+Schauen Sie sich das Beispiel und den Quelltext in [beispiele/viewport.html](beispiele/viewport.html) genau an.
 
 ## Zusatzaufgaben zu ```beispiel/viewport.html```
 
