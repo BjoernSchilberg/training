@@ -211,9 +211,9 @@ Kandidaten für die Modifikation mittels ```ol.interaction.Modify```.
   gewiesen. Der Interaktion ```ol.interaction.Select``` explizizt durch
   ```features: select.getFeatures()```.
 
-- Die ```ol.interaction.Select``` ist wie im ```beispiele/geojson_select.html
-  ``` mit spezifischem Stil erzeugt worden, so dass Features während der
-  Selektion hervorgehoben werden.
+- Die ```ol.interaction.Select``` ist wie im
+  ```beispiele/geojson_select.html``` mit spezifischem Stil erzeugt worden, so
+  dass Features während der Selektion hervorgehoben werden.
 
 
 # Steuerelemente einbinden
@@ -355,16 +355,17 @@ Klassifizieren Sie die Einwohnerzahlen ```Einwohner``` Westfalen Kreise
 Sie können dazu das folgende Beispiel verwenden:
 https://bjoernschilberg.github.io/trainings/openlayers/beispiele/geojson_style.html
 
-## Popup
 
 ## OpenLayers WMS NRW GetFeatureInfo Beispiel
 Zoom-Anzeigen fixen.
 
 # Rotate geometries
-````javascript
+```javascript
 var geom = ol.geom.Polygon.fromExtent([-5, -5, 5, 5]);
 geom.rotate(Math.PI / 4);
 ```
+
+## Popup
 
 ## Kartenlabel
 
