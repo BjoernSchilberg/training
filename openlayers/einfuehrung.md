@@ -338,7 +338,6 @@ Details: https://github.com/openlayers/openlayers/pull/5196
 ## Übung
 Testen Sie dies an dem ```GeoJSON```-Beispiel aus: https://bjoernschilberg.github.io/trainings/openlayers/beispiele/geojson.html
 
-
 ## rotateWithView
 - Bspw. auf Kartenlabels anwendbar.
 - Diese drehen sich mit.
@@ -357,7 +356,7 @@ Testen Sie dies an dem ```GeoJSON```-Beispiel aus: https://bjoernschilberg.githu
 - view.animate() statt beforeRender
 - WebGL Vektor Support erweitert (immer noch experimentell, PR 5462)
 
-## Zukünftiges
+# Zukünftiges
 - Leichtere Wiederverwendbarkeit (u.a. wegen ES2015 Modulen & Co.)
 - Leichtere Partizipation am Projekt
 - WebGL Verbesserungen (hoffentlich)

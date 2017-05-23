@@ -17,7 +17,7 @@ DevTools) generieren.
 
 
 
-Produzieren Sie einen Fehler in der Datei ```debug.html```, indem Sie hierzu
+Produzieren Sie einen Fehler in der Datei [beispiele/debug.html](beispiele/debug.html), indem Sie hierzu
 den Layertyp von ```ol.layer.Tile``` zu ```ol.layer.Image``` ändern. Auf der
 Konsole sollte folgende Fehlermeldung angezeigt werden:
 
