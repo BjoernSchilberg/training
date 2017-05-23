@@ -128,13 +128,13 @@ OpenLayers erzeugt ein Rasterbild der Vektordaten mittels ```ol.layer.Vector```.
 Vorteil:
 - kein Neurendern der Vektoren, dadurch höhere Performance
 - Funtion von [forEachFeatureAtPixel](http://openlayers.org/en/latest/apidoc/ol.Map.html#forEachFeatureAtPixel) bleibt erhalten.
-Nachteil:
-- Daten weniger scharf gerendert,  Qualität des Renderings
-Sinvoll bei:
-- großen Datenmengen
-- Daten und Darstellungsstil ändern sich nicht (fix)
+- Nachteil:
+  - Daten weniger scharf gerendert,  Qualität des Renderings
+- Sinvoll bei:
+  - großen Datenmengen
+  - Daten und Darstellungsstil ändern sich nicht (fix)
 
-```javasript
+```javascript
 new ol.layer.Image({
           title: 'Westfalen Kreise',
           source: new ol.source.ImageVector({
