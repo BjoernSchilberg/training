@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Kreise Westfalen</title>
+  <title>Exercise | GeoExt Workshop</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.2.0/classic/theme-triton/resources/theme-triton-all.css" type="text/css" />
   <link rel="stylesheet" href="https://openlayers.org/en/v4.1.1/css/ol.css" type="text/css" />
 
@@ -13,63 +13,38 @@
 
   <script src="https://geoext.github.io/geoext3/v3.0.0/GeoExt.js"></script>
 
-  <style>
-    .gx-popup p {
-      padding: 5px 5px 0 5px;
-      border-radius: 7px;
-      background-color: rgba(255, 255, 255, 0.85);
-      border: 3px solid white;
-      margin: 0;
-      text-align: center;
-    }
-  </style>
 </head>
 
 <body>
   <script>
     var map;
     Ext.onReady(function() {
-
-
-      var redStyle = new ol.style.Style({
-        stroke: new ol.style.Stroke({
-          color: 'red',
-          width: 3
-        }),
-        fill: new ol.style.Fill({
-          color: 'rgba(255, 0, 0, 0.1)'
-        })
-      })
-
-
       var blueStyle = new ol.style.Style({
         stroke: new ol.style.Stroke({
           color: 'blue',
-          width: 1
+          width: 3
         }),
         fill: new ol.style.Fill({
           color: 'rgba(0, 0, 255, 0.1)'
         })
       })
-
-
+      // 1) OpenLayers
+      //
+      // Create an instance of an OpenLayers map:
       var vectorLayer = new ol.layer.Vector({
+        title: 'Westfalen Kreise',
         source: new ol.source.Vector({
           url: 'data/westfalen_kreise.geojson',
           format: new ol.format.GeoJSON()
         }),
-        name: 'Westfalen Kreise',
-        style: blueStyle
-      });
-
-      // 1) OpenLayers
-      //
-      // Create an instance of an OpenLayers map:
+        style: blueStyle,
+        name: `Westfalen Kreise`
+      })
       map = new ol.Map({
         layers: [
           new ol.layer.Tile({
             source: new ol.source.OSM(),
-            name: 'OpenStreetMap'
+            name: 'OSM'
           }),
           new ol.layer.Tile({
             source: new ol.source.TileWMS({
@@ -86,7 +61,7 @@
         ],
         view: new ol.View({
           center: ol.proj.fromLonLat([7.013056, 51.450833]),
-          zoom: 6
+          zoom: 12
         })
       });
 
@@ -95,30 +70,10 @@
       // Create an instance of the GeoExt map component with that map:
       var mapComponent = Ext.create('GeoExt.component.Map', {
         map: map,
-        region: 'center',
-        pointerRest: true,
-        pointerRestInterval: 750,
-        pointerRestPixelTolerance: 5
+        region: 'center'
       });
 
-      var popup = Ext.create('GeoExt.component.Popup', {
-        map: map,
-        width: 200
-      });
-
-      // Add a pointerrest handler to the map component to render the popup.
-      mapComponent.on('pointerrest', function(evt) {
-        var coordinate = evt.coordinate;
-        var lonlat = ol.proj.transform(coordinate, 'EPSG:3857', 'EPSG:4326');
-        var hdms = ol.coordinate.toStringHDMS(lonlat);
-        popup.setHtml('<p>' + hdms + '</p>');
-        popup.position(coordinate);
-        popup.show();
-      });
-
-      // hide the popup once it isn't on the map any longer
-      mapComponent.on('pointerrestout', popup.hide, popup);
-
+      // Creating an appropriate treestore
       var treeStore = Ext.create('GeoExt.data.store.LayersTree', {
         layerGroup: map.getLayerGroup()
       });
@@ -126,7 +81,7 @@
       var layerTreePanel = Ext.create('Ext.tree.Panel', {
         title: 'Kartenebenen',
         width: 300,
-        flex: 1,
+        region: 'west',
         store: treeStore,
         rootVisible: false,
         viewConfig: {
@@ -135,15 +90,17 @@
           }
         }
       });
-
       var featureStore = Ext.create('GeoExt.data.store.Features', {
         layer: vectorLayer,
         map: map
       });
-      var featureGrid = Ext.create('Ext.grid.Panel', {
+
+      // 3) Ext JS
+      //
+      // Create a viewport
+      var featurePanel = Ext.create('Ext.grid.Panel', {
+        title: 'Simpsons',
         store: featureStore,
-        region: 'south',
-        title: 'Westfalen Kreise',
         columns: [{
             xtype: 'widgetcolumn',
             width: 40,
@@ -173,63 +130,19 @@
             flex: 1
           }
         ],
-        listeners: {
-          selectionchange: function(sm, selected) {
-            // reset all selections
-            featureStore.each(function(rec) {
-              rec.getFeature().setStyle(null);
-            });
-            // highlight grid selection in map
-            Ext.each(selected, function(rec) {
-              rec.getFeature().setStyle(redStyle);
-            });
-            // update the grid rendering of the geometry
-            sm.view.refresh();
-          }
-        },
-        height: 300
+        height: 200,
+        region: 'south'
       });
 
-      var overview = Ext.create('GeoExt.component.OverviewMap', {
-        parentMap: map,
-        layers: [
-          new ol.layer.Tile({
-            source: new ol.source.OSM(),
-            name: 'OpenStreetMap',
-            opacity: 0.8
-          })
-        ]
-      });
-      var overviewPanel = Ext.create('Ext.panel.Panel', {
-        title: 'Übersichtskarte',
-        layout: 'fit',
-        items: overview,
-        height: 300,
-        width: 300,
-        collapsible: true
-      });
-
-      // 3) Ext JS
-      //
-      // Create a viewport
       var vp = Ext.create('Ext.container.Viewport', {
         layout: 'border',
         items: [
           mapComponent,
-          // below is the new wrapping container:
-          {
-            xtype: 'container',
-            region: 'west',
-            layout: 'vbox',
-            collapsible: true,
-            items: [
-              overviewPanel,
-              layerTreePanel
-            ]
-          },
-          featureGrid
+          layerTreePanel,
+          featurePanel
         ]
       });
+
     });
   </script>
 </body>
