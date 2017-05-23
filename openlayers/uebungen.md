@@ -111,10 +111,11 @@ die Funktion [forEachFeatureAtPixel](http://openlayers.org/en/latest/apidoc/ol.M
 weitere Informationen über den Kreis ausgibt.
 
 Tipps:
+HTML-Markup (Auszeichnung)
 ```html
 <div id="info"></div>
 ```
-
+JavaScript-Schnipsel
 ```javascript
 map.on('singleclick', function(e) {
 //map.forEachFeatureAtPixel()
