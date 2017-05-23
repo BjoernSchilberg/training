@@ -497,7 +497,7 @@ Der Funktion werden zwei Argumente übergeben: Das zu stylende ```feature``` und
 die aktuelle ```resolution```. Im folgenden Beispiel werden Features, welche
 ein Attribut ```class``` und ein Wert ```someClass``` besitzen speziell
 ausgestaltet.
-
+```javascript
 var layer = new ol.layer.Vector({
   source: new ol.source.Vector(),
   style: function(feature, resolution) {
@@ -507,6 +507,7 @@ var layer = new ol.layer.Vector({
     }
   },
 });
+```
 
 ### Übung
 
