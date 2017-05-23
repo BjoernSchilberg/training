@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- https://github.com/marcjansen/openlayers-fossgis2017/blob/master/examples/scale.html-->
+    <title>Scale</title>
+    <link rel="stylesheet" href="https://openlayers.org/en/v4.1.1/css/ol.css" type="text/css" />
+    <script src="https://openlayers.org/en/v4.1.1/build/ol.js"></script>
+    <style>
+      .map {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        background-repeat: repeat;
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAApSURBVBiVY7x///5/BjSgqKjIiC7GhC6ACwygQgxHMzAwMGDz4FDwDAD5/wevjSk4mwAAAABJRU5ErkJggg==);
+      }
+      ul.controls {
+        list-style: none;
+        background-color: rgba(255,255,255,0.5);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 0;
+        margin: 0;
+      }
+      ul.controls li {
+        display: inline;
+      }
+      ul.controls label {
+        display: inline-block;
+        margin-left: 5px;
+        margin-right: 1em;
+        font-weight: bold;
+        font-size: 1.3em;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map" class="map"></div>
+
+    <ul class="controls">
+      <li>
+        <label>
+          <input type="checkbox" id="scale1" value="scale1" onclick="toggleLayer(this);">
+          <code>scale(2)</code>
+        </label>
+      </li>
+      <li>
+        <label>
+          <input type="checkbox" id="scale2" value="scale2" onclick="toggleLayer(this);">
+          <code>scale(2, 1)</code>
+        </label>
+      </li>
+      <li>
+        <label>
+          <input type="checkbox" id="scale3" value="scale3" onclick="toggleLayer(this);">
+          <code>scale(2, 1, [-1, -2]);</code>
+        </label>
+      </li>
+    </ul>
+
+    <script>
+      var toggleLayer = function(cb) {
+        var layer;
+        switch (cb.id) {
+          case 'scale1':
+            layer = scaleLayer1;
+            break;
+          case 'scale2':
+            layer = scaleLayer2;
+            break;
+          case 'scale3':
+            layer = scaleLayer3;
+            break;
+          default:
+            break;
+        }
+        if(layer) {
+          layer.setVisible(!!cb.checked);
+        }
+      }
+
+      var origLayer = new ol.layer.Vector({
+        source: new ol.source.Vector({
+          features: []
+        }),
+        style: new ol.style.Style({
+          fill: new ol.style.Fill({
+            color: 'rgba(255,0,0,0.4)'
+          }),
+          stroke: new ol.style.Stroke({
+            color: 'rgb(255,0,0)',
+            width: 15
+          })
+        })
+      });
+
+      var scaleLayer1 = new ol.layer.Vector({
+        source: new ol.source.Vector({
+          features: []
+        }),
+        style: new ol.style.Style({
+          fill: new ol.style.Fill({
+            color: 'rgba(0,255,0,0.4)'
+          }),
+          stroke: new ol.style.Stroke({
+            color: 'rgb(0,255,0)',
+            width: 15
+          })
+        }),
+        visible: false
+      });
+
+      var scaleLayer2 = new ol.layer.Vector({
+        source: new ol.source.Vector({
+          features: []
+        }),
+        style: new ol.style.Style({
+          fill: new ol.style.Fill({
+            color: 'rgba(0,0,255,0.4)'
+          }),
+          stroke: new ol.style.Stroke({
+            color: 'rgb(0,0,255)',
+            width: 15
+          })
+        }),
+        visible: false
+      });
+
+      var scaleLayer3 = new ol.layer.Vector({
+        source: new ol.source.Vector({
+          features: []
+        }),
+        style: new ol.style.Style({
+          fill: new ol.style.Fill({
+            color: 'rgba(130,0,255,0.4)'
+          }),
+          stroke: new ol.style.Stroke({
+            color: 'rgb(130,0,255)',
+            width: 15
+          })
+        }),
+        visible: false
+      });
+
+      var geom = new ol.geom.Polygon([
+        [[-1, -2], [1, -2], [1, 2], [-1, 2], [-1, -2]]
+      ]);
+      var feature = new ol.Feature(geom);
+      origLayer.getSource().addFeature(feature);
+
+      var scaleGeom1 = geom.clone();
+      scaleGeom1.scale(2);
+      var scaleFeature1 = new ol.Feature(scaleGeom1);
+      scaleLayer1.getSource().addFeature(scaleFeature1);
+
+      var scaleGeom2 = geom.clone();
+      scaleGeom2.scale(2, 1);
+      var scaleFeature2 = new ol.Feature(scaleGeom2);
+      scaleLayer2.getSource().addFeature(scaleFeature2);
+
+      var scaleGeom3 = geom.clone();
+      scaleGeom3.scale(2, 1, [-1, -2]);
+      var scaleFeature3 = new ol.Feature(scaleGeom3);
+      scaleLayer3.getSource().addFeature(scaleFeature3);
+
+      // Create the map, the view is centered on the triangle. Zooming and panning is
+      // restricted to a sane area
+      var map = new ol.Map({
+        layers: [
+          origLayer,
+          scaleLayer1,
+          scaleLayer2,
+          scaleLayer3
+        ],
+        target: 'map',
+        controls: [],
+        view: new ol.View({
+          center: [0, 0],
+          //extent: [-100, -100, 100, 100],
+          extent: [-10, -10, 10, 10],
+          resolution: 0.02,
+          minResolution: 0.01,
+          maxResolution: 0.04
+        })
+      });
+    </script>
+  </body>
+</html>
