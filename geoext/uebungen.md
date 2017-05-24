@@ -79,6 +79,7 @@ items: [
 Schauen Sie sich das Beispiel und den Quelltext in [beispiele/viewport.html](beispiele/viewport.html) genau an.
 
 ## Zusatzaufgaben zu ```beispiel/viewport.html```
+Motivation: https://bjoernschilberg.github.io/trainings/geoext/beispiele/viewport_aufgaben.html
 
 ### Konfiguration des OpenLayers-Teils
 
@@ -93,6 +94,13 @@ konfiguriert, werden diese Änderung in der eigentlich Applikation beeinflussen.
   - ```ol.control.ScaleLine```
   - ```ol.control.MousePosition```
 
+### Konfiguration des GeoExt-Teils
+
+- Ändern Sie die Zentrierung der Karte anstatt über OpenLayers direkt mit GeoExt.
+  - https://geoext.github.io/geoext3/master/docs/#!/api/GeoExt.component.Map-method-setCenter
+- Fügen Sie einen Layer mit GeoExt hinzu.
+  - https://geoext.github.io/geoext3/master/docs/#!/api/GeoExt.component.Map-method-addLayer
+
 ### Konfiguration des ExtJS-Teils
 
 Ändern Sie folgende Aspekte der ExtJS components:
@@ -103,12 +111,6 @@ konfiguriert, werden diese Änderung in der eigentlich Applikation beeinflussen.
 - Binden Sie ```GeoExt.component.Map``` in einem [Ext.panel.Panel](http://docs.sencha.com/extjs/6.2.0/classic/Ext.panel.Panel.html) mit einem ```title``` ein.
 - Damit das Layout sinnvoll geändert werden kann führen Sie ein weiteres [Ext.panel.Panel](http://docs.sencha.com/extjs/6.2.0/classic/Ext.panel.Panel.html) ein.
 
-### Konfiguration des GeoExt-Teils
-
-- Ändern Sie die Zentrierung der Karte anstatt über OpenLayers direkt mit GeoExt.
-  - https://geoext.github.io/geoext3/master/docs/#!/api/GeoExt.component.Map-method-setCenter
-- Fügen Sie einen Layer mit GeoExt hinzu.
-  - https://geoext.github.io/geoext3/master/docs/#!/api/GeoExt.component.Map-method-addLayer
 
 # Motivation
 https://bjoernschilberg.github.io/trainings/geoext/beispiele/final.html
