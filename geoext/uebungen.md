@@ -106,6 +106,7 @@ konfiguriert, werden diese Änderung in der eigentlich Applikation beeinflussen.
 Ändern Sie folgende Aspekte der ExtJS components:
 - Ändern Sie das Layout des Viewports. Dies sollte an 2 Stellen erfolgen:
   - Layout config des viewport.
+    - ```layout: 'border'```
   - Abhängig vom gewählten Layout ist die Konfiguration der Kinder-Komponenten
     (in unserem Fall ```mapComponent```). Ggf. werden weitere properties Angaben benötigt.
 - Binden Sie ```GeoExt.component.Map``` in einem [Ext.panel.Panel](http://docs.sencha.com/extjs/6.2.0/classic/Ext.panel.Panel.html) mit einem ```title``` ein.
