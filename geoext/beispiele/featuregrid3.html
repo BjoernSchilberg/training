@@ -12,8 +12,6 @@
 
   <script src="https://geoext.github.io/geoext3/v3.0.0/GeoExt.js"></script>
 
-  <style>
-  </style>
 </head>
 
 <body>
@@ -99,7 +97,7 @@
       var layerTreePanel = Ext.create('Ext.tree.Panel', {
         title: 'Kartenebenen',
         width: 300,
-        flex: 1,
+        region: 'west',
         store: treeStore,
         rootVisible: false,
         viewConfig: {
@@ -160,7 +158,8 @@
             sm.view.refresh();
           }
         },
-        height: 300
+        height: 200,
+        region: 'south'
       });
 
       // 3) Ext JS
@@ -170,16 +169,7 @@
         layout: 'border',
         items: [
           mapComponent,
-          // below is the new wrapping container:
-          {
-            xtype: 'container',
-            region: 'west',
-            layout: 'vbox',
-            collapsible: true,
-            items: [
-              layerTreePanel
-            ]
-          },
+          layerTreePanel,
           featureGrid
         ]
       });
