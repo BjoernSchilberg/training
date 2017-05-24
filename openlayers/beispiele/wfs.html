@@ -24,7 +24,7 @@
       url: function(extent) {
         return 'https://www.wfs.nrw.de/geobasis/wfs_nw_dvg?service=WFS&' +
           'version=1.1.0&request=GetFeature&typename=dvg:nw_dvg1_krs&' +
-          'outputFormat=text/xml;%20subtype=gml/2.1.2&srsname=EPSG:4326&' +
+          'outputFormat=text/xml;%20subtype=gml/2.1.2&srsname=EPSG:3857&' +
           'bbox=' + extent.join(',');
       },
       strategy: ol.loadingstrategy.bbox
@@ -47,8 +47,8 @@
       target: 'map',
       layers: [raster, vector],
       view: new ol.View({
-        projection: 'EPSG:4326',
-        center: [7.112222, 51.430556],
+        projection: 'EPSG:3857',
+        center: ol.proj.fromLonLat([7.013056, 51.450833]),
         zoom: 6,
       })
     });

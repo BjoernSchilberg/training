@@ -370,7 +370,7 @@ Fügen Sie zusätzlich noch eine geeignete Hintergrundkarte hinzu.
       url: function(extent) {
         return 'https://www.wfs.nrw.de/geobasis/wfs_nw_dvg?service=WFS&' +
           'version=1.1.0&request=GetFeature&typename=dvg:nw_dvg1_krs&' +
-          'outputFormat=text/xml;%20subtype=gml/2.1.2&srsname=EPSG:4326&' +
+          'outputFormat=text/xml;%20subtype=gml/2.1.2&srsname=EPSG:3857&' +
           'bbox=' + extent.join(',');
       },
       strategy: ol.loadingstrategy.bbox
