@@ -100,13 +100,15 @@ konfiguriert, werden diese Änderung in der eigentlich Applikation beeinflussen.
   - Layout config des viewport.
   - Abhängig vom gewählten Layout ist die Konfiguration der Kinder-Komponenten
     (in unserem Fall ```mapComponent```). Ggf. werden weitere properties Angaben benötigt.
-- Binden Sie ```GeoExt.component.Map``` in einem Panel mit einem Titel ein.
-- Damit das Layout sinnvoll geändert werden kann führen Sie ein weiteres Panel ein.
+- Binden Sie ```GeoExt.component.Map``` in einem [Ext.panel.Panel](http://docs.sencha.com/extjs/6.2.0/classic/Ext.panel.Panel.html) mit einem ```title``` ein.
+- Damit das Layout sinnvoll geändert werden kann führen Sie ein weiteres [Ext.panel.Panel](http://docs.sencha.com/extjs/6.2.0/classic/Ext.panel.Panel.html) ein.
 
 ### Konfiguration des GeoExt-Teils
 
 - Ändern Sie die Zentrierung der Karte anstatt über OpenLayers direkt mit GeoExt.
+  - https://geoext.github.io/geoext3/master/docs/#!/api/GeoExt.component.Map-method-setCenter
 - Fügen Sie einen Layer mit GeoExt hinzu.
+  - https://geoext.github.io/geoext3/master/docs/#!/api/GeoExt.component.Map-method-addLayer
 
 # LayerTree
 
@@ -201,11 +203,11 @@ layerGroup: /* http://openlayers.org/en/latest/apidoc/ol.Map.html#getLayerGroup 
 ## Ein Feature grid vorbereiten
 
 - Machen Sie mit dem Stand aus der Layertree Übung weiter.
-- Das zukünftige Feature grid soll in der ```region: south``` positioniert werden.
+- Das zukünftige Feature grid soll in der ```region: 'south'``` positioniert werden.
 - Für die Erstellung eines beispielhaften Ext Grids machen Sie sich mit der Dokumentation vertraut:
 http://docs.sencha.com/extjs/6.2.0/classic/Ext.grid.Panel.html
 - Integrieren Sie das Beispiel aus der Dokumentation in Ihrer Anwendungen. Tipps:
-  - ```storeId`` und ```store: Ext.data.StoreManager.lookup('simpsonsStore')``` werden nicht benötigt. Da eine Variable zur Referenzierung des '''Ext.data.Store''' verwendet werden soll.
+  - ```storeId``` und ```store: Ext.data.StoreManager.lookup('simpsonsStore')``` werden nicht benötigt. Da eine Variable zur Referenzierung des [Ext.data.Store](http://docs.sencha.com/extjs/6.2.0/modern/Ext.data.Store.html) verwendet werden soll.
   - ```renderTo``` und ```width``` wird wegen dem Border Layout nicht benötigt.
   - Nicht vergessen das ```featurePanel```/```Ext.grid.Panel``` dem Viewport hinzuzufügen.
 - Werfen Sie einen Blick in Browser.
@@ -219,7 +221,7 @@ http://docs.sencha.com/extjs/6.2.0/classic/Ext.grid.Panel.html
 - Das Grid soll keine statischen Daten mehr anzeigen, sondern die Daten aus dem Layer "Westfalen Kreise"
 - Ersetzen Sie den generischen ``Ext.data.Store`` durch [GeoExt.data.store.Features](https://geoext.github.io/geoext3/master/docs/#!/api/GeoExt.data.store.Features). Setzen Sie dort den ```layer:  vectorLayer```.
 - Konfigurieren Sie die ```columns``` im ```Ext.grid.Panel``` entsprechend.
-{{{javascript
+```javascript
 columns: [
   { 
   text: 'Kreisname', 
@@ -237,7 +239,7 @@ columns: [
   flex: 1 
   }
 ]
-}}}
+```
 - Zusätzlich können die einzelnen Geometrien und Styles der einzelnen Features dem Grid hinzugefügt werden. Fügen Sie dazu die folgenden Zeilen der ```columns```-Definition hinzu:
 ```javascript
 {
@@ -254,7 +256,7 @@ columns: [
   }
 }
 ```
-- Das jeweilige selektierte Feature im Grid/Tabelle so auf der Karte hervorgehoben werden. Verwenden Sie dazu die optional Konfiguration:
+- Das jeweilige selektierte Feature im Grid/Tabelle so auf der Karte hervorgehoben werden. Verwenden Sie dazu die optional Konfiguration ```listeners```:
 http://docs.sencha.com/extjs/6.2.0/classic/Ext.grid.Panel.html#cfg-listeners
 - Der Listener sollte auf das Event ``` selectionchange``` lauschen.
   - http://docs.sencha.com/extjs/6.2.0/classic/Ext.grid.selection.SpreadsheetModel.html#event-selectionchange

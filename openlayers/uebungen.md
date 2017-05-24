@@ -302,6 +302,12 @@ map.addControl(new ol.control.ZoomSlider());
 
 # Fortgeschrittene Themen (optional)
 
+## Vektor Geometrieebenen klassifizieren (GeoJSON)
+Klassifizieren Sie die Einwohnerzahlen ```Einwohner``` Westfalen Kreise
+```data/data/westfalen_kreise.geojson``` mittels einer Style-Funktion.
+Sie können dazu das folgende Beispiel verwenden:
+https://bjoernschilberg.github.io/trainings/openlayers/beispiele/geojson_style.html
+
 ## WMS-Ebene einbinden
 - Dienst, welcher Rasterdaten konform zur [OGC Web Map Service (WMS)-Spezifikation](http://www.opengeospatial.org/standards/wmshttp://www.opengeospatial.org/standards/wms) ausliefert
 - dynamisch berechneten Bildern
@@ -310,7 +316,7 @@ map.addControl(new ol.control.ZoomSlider());
 ```javascript
 layers: [
         new ol.layer.Tile({
-          title: 'Global Imagery',
+          title: 'wms_nw_dop20',
           source: new ol.source.TileWMS({
             url: 'https://www.wms.nrw.de/geobasis/wms_nw_dop20',
             params: {
@@ -346,18 +352,63 @@ map.on('singleclick', function(evt) {
     document.getElementById('info').innerHTML = '<iframe width=650 height=570 seamless src="' + url + '"></iframe>';
   }
 });
-
 ```
 
-## Vektor Geometrieebenen klassifizieren (GeoJSON)
-Klassifizieren Sie die Einwohnerzahlen ```Einwohner``` Westfalen Kreise
-```data/data/westfalen_kreise.geojson``` mittels einer Style-Funktion.
-Sie können dazu das folgende Beispiel verwenden:
-https://bjoernschilberg.github.io/trainings/openlayers/beispiele/geojson_style.html
-
+Beachten Sie die Funktion ```singleclick``` eine ```wmsSource``` erwartet!
 
 ## OpenLayers WMS NRW GetFeatureInfo Beispiel
 Zoom-Anzeigen fixen.
+
+
+## WFS Dienst einbinden
+Fügen Sie WFS-Feature mit dem ```typename=dvg:nw_dvg1_krs``` des Dienstes https://www.wfs.nrw.de/geobasis/wfs_nw_dvg?service=WFS als ```ol.source.Vector``` dem ```ol.layer.Vector``` hinzu. Fügen Sie den Vektor Layer der Karte (```map```) hinzu.
+
+Fügen Sie zusätzlich noch eine geeignete Hintergrundkarte hinzu.
+```javascript
+    var vectorSource = new ol.source.Vector({
+      format: new ol.format.GML2(),
+      url: function(extent) {
+        return 'https://www.wfs.nrw.de/geobasis/wfs_nw_dvg?service=WFS&' +
+          'version=1.1.0&request=GetFeature&typename=dvg:nw_dvg1_krs&' +
+          'outputFormat=text/xml;%20subtype=gml/2.1.2&srsname=EPSG:4326&' +
+          'bbox=' + extent.join(',');
+      },
+      strategy: ol.loadingstrategy.bbox
+    });
+
+    var vector = new ol.layer.Vector({
+      source: vectorSource,
+      style: new ol.style.Style({
+        stroke: new ol.style.Stroke({
+          color: 'rgba(0, 0, 255, 1.0)',
+          width: 2
+        })
+      })
+    });
+```
+
+
+## Metadaten der WFS Vektor Geometrieebene abfragen.
+Jede Fläche repräsentiert ein [ol.Feature](http://openlayers.org/en/latest/apidoc/ol.Feature.html) Objekt des
+[ol.layer.Vector](http://openlayers.org/en/latest/apidoc/ol.layer.Vector.html), und jedes Feature hat bspw. die Attribute
+```GN```.  Registrieren Sie eine Funktion,
+die bei jedem [singleclick](http://openlayers.org/en/latest/apidoc/ol.MapBrowserEvent.html#event:singleclick)-Event, welcher auf der ol.Map gefeuert wird,
+die Funktion
+[forEachFeatureAtPixel](http://openlayers.org/en/latest/apidoc/ol.Map.html#forEachFeatureAtPixel)
+der ```map``` aufruft und gegebenenfalls
+weitere Informationen über den Kreis ausgibt.
+
+Tipps:
+HTML-Markup (Auszeichnung)
+```html
+<div id="info"></div>
+```
+JavaScript-Schnipsel
+```javascript
+map.on('singleclick', function(e) {
+//map.forEachFeatureAtPixel()
+});
+```
 
 ## Rotate geometries
 ```javascript
