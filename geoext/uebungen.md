@@ -177,7 +177,7 @@ http://docs.sencha.com/extjs/6.2.0/classic/Ext.tree.Panel.html
   - Der ```store``` kann übernommen werden.
   - Das ```Ext.tree.Panel``` muss angepasst werden.
     - ```height``` wird nicht benötigt
-    - ```region`` wird benötigt
+    - ```region``` wird benötigt
     - ```renderTo``` wird nicht benötigt
 
 
