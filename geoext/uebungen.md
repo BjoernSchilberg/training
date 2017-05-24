@@ -331,7 +331,7 @@ var vp = Ext.create('Ext.container.Viewport', {
 Motivation: https://bjoernschilberg.github.io/trainings/geoext/beispiele/overview2.html
 - Fügen Sie nun eine [GeoExt.component.OverviewMapView](https://geoext.github.io/geoext3/master/docs/#!/api/GeoExt.component.OverviewMap) hinzu.
 - Passen Sie das ```overviewPanel``` an.
-  - ersetzen Sie ```html: 'TODO'``` mit ```items: overview```
+  - ersetzen Sie ```html: 'TODO'``` mit ```items: [overview]```
 
 ## Einen anderen Layer für die Übersichtskarte definieren
 Motivation: https://bjoernschilberg.github.io/trainings/geoext/beispiele/overview3.html
