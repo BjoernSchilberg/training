@@ -329,6 +329,7 @@ var vp = Ext.create('Ext.container.Viewport', {
 
 ## Übersichtskarte einfügen 
 Motivation: https://bjoernschilberg.github.io/trainings/geoext/beispiele/overview2.html
+- Achtung z.Z nur mit OpenLayer 3.20.1 100% funktional. Nicht mit OpenLayer 4.1.1.
 - Fügen Sie nun eine [GeoExt.component.OverviewMap](https://geoext.github.io/geoext3/master/docs/#!/api/GeoExt.component.OverviewMap) hinzu.
 - Passen Sie das ```overviewPanel``` an.
   - ersetzen Sie ```html: 'TODO'``` mit ```items: [overview]```
