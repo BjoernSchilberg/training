@@ -49,9 +49,9 @@
     });
     map.on('singleclick', function(evt) {
       document.getElementById('info').innerHTML = '';
-      var viewResolution = /** @type {number} */ (view.getResolution());
+      var viewResolution = /** @type {number} */ (map.getView().getResolution());
       var url = wmsSource.getGetFeatureInfoUrl(
-        evt.coordinate, viewResolution, 'EPSG:4326', {
+        evt.coordinate, viewResolution, map.getView().getProjection(), {
           'INFO_FORMAT': 'text/html'
         });
       if (url) {
