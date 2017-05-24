@@ -74,6 +74,21 @@
         map: map
       });
 
+      mapComponent.setCenter(ol.proj.fromLonLat([8, 52]));
+      mapComponent.addLayer(
+        new ol.layer.Tile({
+          source: new ol.source.TileWMS({
+            title: 'nw_dop20',
+            url: 'https://www.wms.nrw.de/geobasis/wms_nw_dop20',
+            params: {
+              layers: 'nw_dop20',
+              TILED: true
+            }
+          }),
+          name: 'nw_dop20'
+        }),
+      );
+
       //ExtJS-Teil
       //http://docs.sencha.com/extjs/6.2.0/classic/Ext.container.Viewport.html
       // A specialized container representing the viewable application area (the browser viewport).
@@ -116,21 +131,6 @@
       });
 
 
-
-      mapComponent.setCenter(ol.proj.fromLonLat([8, 52]));
-      mapComponent.addLayer(
-        new ol.layer.Tile({
-          source: new ol.source.TileWMS({
-            title: 'nw_dop20',
-            url: 'https://www.wms.nrw.de/geobasis/wms_nw_dop20',
-            params: {
-              layers: 'nw_dop20',
-              TILED: true
-            }
-          }),
-          name: 'nw_dop20'
-        }),
-      );
 
 
     });
