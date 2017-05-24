@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Kreise Westfalen</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.2.0/classic/theme-triton/resources/theme-triton-all.css" type="text/css" />
+  <link rel="stylesheet" href="https://openlayers.org/en/v4.1.1/css/ol.css" type="text/css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.2.0/ext-all.js"></script>
+  <script src="https://openlayers.org/en/v4.1.1/build/ol.js"></script>
+
+  <script src="https://geoext.github.io/geoext3/v3.0.0/GeoExt.js"></script>
+
+</head>
+
+<body>
+  <script>
+    var map;
+    Ext.onReady(function() {
+
+
+      var redStyle = new ol.style.Style({
+        stroke: new ol.style.Stroke({
+          color: 'red',
+          width: 3
+        }),
+        fill: new ol.style.Fill({
+          color: 'rgba(255, 0, 0, 0.1)'
+        })
+      })
+
+
+      var blueStyle = new ol.style.Style({
+        stroke: new ol.style.Stroke({
+          color: 'blue',
+          width: 1
+        }),
+        fill: new ol.style.Fill({
+          color: 'rgba(0, 0, 255, 0.1)'
+        })
+      })
+
+
+      var vectorLayer = new ol.layer.Vector({
+        source: new ol.source.Vector({
+          url: 'data/westfalen_kreise.geojson',
+          format: new ol.format.GeoJSON()
+        }),
+        name: 'Westfalen Kreise',
+        style: blueStyle
+      });
+
+      // 1) OpenLayers
+      //
+      // Create an instance of an OpenLayers map:
+      map = new ol.Map({
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM(),
+            name: 'OpenStreetMap'
+          }),
+          new ol.layer.Tile({
+            source: new ol.source.TileWMS({
+              title: 'nw_dop20',
+              url: 'https://www.wms.nrw.de/geobasis/wms_nw_dop20',
+              params: {
+                layers: 'nw_dop20',
+                TILED: true
+              }
+            }),
+            name: 'nw_dop20'
+          }),
+          vectorLayer
+        ],
+        view: new ol.View({
+          center: ol.proj.fromLonLat([7.013056, 51.450833]),
+          zoom: 6
+        })
+      });
+
+      // 2) GeoExt
+      //
+      // Create an instance of the GeoExt map component with that map:
+      var mapComponent = Ext.create('GeoExt.component.Map', {
+        map: map,
+        region: 'center',
+        pointerRest: true,
+        pointerRestInterval: 750,
+        pointerRestPixelTolerance: 5
+      });
+
+      var treeStore = Ext.create('GeoExt.data.store.LayersTree', {
+        layerGroup: map.getLayerGroup()
+      });
+
+      var layerTreePanel = Ext.create('Ext.tree.Panel', {
+        title: 'Kartenebenen',
+        width: 300,
+        flex: 1,
+        store: treeStore,
+        rootVisible: false,
+        viewConfig: {
+          plugins: {
+            ptype: 'treeviewdragdrop'
+          }
+        }
+      });
+
+      var featureStore = Ext.create('GeoExt.data.store.Features', {
+        layer: vectorLayer,
+        map: map
+      });
+      var featureGrid = Ext.create('Ext.grid.Panel', {
+        store: featureStore,
+        region: 'south',
+        title: 'Westfalen Kreise',
+        columns: [{
+            xtype: 'widgetcolumn',
+            width: 40,
+            widget: {
+              xtype: 'gx_renderer'
+            },
+            onWidgetAttach: function(column, gxRenderer, rec) {
+              gxRenderer.update({
+                feature: rec.getFeature(),
+                symbolizers: GeoExt.component.FeatureRenderer.determineStyle(rec)
+              });
+            }
+          },
+          {
+            text: 'Kreisname',
+            dataIndex: 'Kreisname',
+            flex: 3
+          },
+          {
+            text: 'Einwohner',
+            dataIndex: 'Einwohner',
+            flex: 1
+          },
+          {
+            text: 'Oberbürgermeister',
+            dataIndex: 'Oberbürgermeister',
+            flex: 1
+          }
+        ],
+        listeners: {
+          selectionchange: function(sm, selected) {
+            // reset all selections
+            featureStore.each(function(rec) {
+              rec.getFeature().setStyle(null);
+            });
+            // highlight grid selection in map
+            Ext.each(selected, function(rec) {
+              rec.getFeature().setStyle(redStyle);
+            });
+            // update the grid rendering of the geometry
+            sm.view.refresh();
+          }
+        },
+        height: 200,
+        region: 'south'
+      });
+
+      var overview = Ext.create('GeoExt.component.OverviewMap', {
+        parentMap: map,
+        layers: [
+          new ol.layer.Tile({
+            title: 'nw_dop20',
+            source: new ol.source.TileWMS({
+              url: 'https://www.wms.nrw.de/geobasis/wms_nw_dop20',
+              params: {
+                LAYERS: 'nw_dop20',
+                TILED: true,
+              }
+            })
+          })
+        ]
+      });
+
+
+      // 3) Ext JS
+      var overviewPanel = Ext.create('Ext.panel.Panel', {
+        title: 'Overview',
+        layout: 'fit',
+        items: overview,
+        height: 300,
+        width: 300
+      });
+
+      // Create a viewport
+      var vp = Ext.create('Ext.container.Viewport', {
+        layout: 'border',
+        items: [
+          mapComponent,
+          // below is the new wrapping container:
+          {
+            xtype: 'container',
+            region: 'west',
+            layout: 'vbox',
+            collapsible: true,
+            items: [
+              overviewPanel,
+              layerTreePanel
+            ]
+          },
+          featureGrid
+        ]
+      });
+    });
+  </script>
+</body>
+
+</html>

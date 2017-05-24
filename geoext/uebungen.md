@@ -285,14 +285,74 @@ http://docs.sencha.com/extjs/6.2.0/classic/Ext.grid.Panel.html#cfg-listeners
 }
 ```
 
-# Overview map hinzufügen
+# Übersichtskarte (overview map) hinzufügen
+
+## Übersichtskarte vorbereiten
+Motivation: https://bjoernschilberg.github.io/trainings/geoext/beispiele/overview1.html
+- Arbeiten Sie mit dem vorherigen Beispiel weiter.
+- Fügen Sie eine Übersichtskarte auf der linke der Anwendung ein.
+- Erstellen Sie ein ```Ext.panel.Panel``` welche die zukünftige Übersichtskarte enthalten soll.
+```javascript
+var overviewPanel = Ext.create('Ext.panel.Panel', {
+        title: 'Übersichtskarte',
+        layout: 'fit',
+        html: 'TODO',
+        height: 300,
+        width: 300,
+        collapsible: true
+      });
+
+```
+- Anstatt ```region: 'west'``` dem Layertree Panel zu zuweisen, soll ein Container ```xtype: 'container'``` mit dem ```vbox```-Layout erstellt werden, welcher anschließend zu der ```items```-Liste des ```Ext.container.Viewport``` hingefügt werden soll.
+```javascript
+var vp = Ext.create('Ext.container.Viewport', {
+  layout: 'border',
+  items: [
+    mapComponent,
+    // below is the new wrapping container:
+    {
+      xtype: 'container',
+      region: 'west',
+      layout: 'vbox',
+      collapsible: true,
+      items: [
+        overviewPanel,
+        layerTreePanel
+      ]
+    },
+    featureGrid
+  ]
+});
+```
+- Wird zusätzlich in ```layerTreePanel``` die Angabe ```flex: 1``` eingetragen, wird die ```region```-Property nicht mehr benötigt.
+
+## Übersichtskarte einfügen 
+Motivation: https://bjoernschilberg.github.io/trainings/geoext/beispiele/overview2.html
+- Fügen Sie nun eine [GeoExt.component.OverviewMapView](https://geoext.github.io/geoext3/master/docs/#!/api/GeoExt.component.OverviewMap) hinzu.
+- Passen Sie das ```overviewPanel``` an.
+  - ersetzen Sie ```html: 'TODO'``` mit ```items: overview```
+
+## Einen anderen Layer für die Übersichtskarte definieren
+Motivation: https://bjoernschilberg.github.io/trainings/geoext/beispiele/overview3.html
+```javascript
+var overview = Ext.create('GeoExt.component.OverviewMap', {
+  parentMap: map,
+  layers: [
+  new ol.layer.Tile({
+          title: 'nw_dop20',
+          source: new ol.source.TileWMS({
+            url: 'https://www.wms.nrw.de/geobasis/wms_nw_dop20',
+            params: {
+              LAYERS: 'nw_dop20',
+              TILED: true,
+            }
+          })
+        })
+  ]
+});
+```
 
 # Popup hinzufügen
-
-
-
-
-
 
 # Fortgeschrittene Themen
 
