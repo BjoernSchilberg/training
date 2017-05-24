@@ -32,17 +32,11 @@
     var wmsLayer = new ol.layer.Tile({
       source: wmsSource
     });
-    var wmsSource2 = new ol.source.TileWMS({
-      url: 'https://www.wms.nrw.de/geobasis/wms_nw_dtk25',
-      params: {
-        LAYERS: 'nw_dtk25_col',
-        TILED: true,
-      }
+
+    var osm = new ol.layer.Tile({
+      source: new ol.source.OSM({})
     });
 
-    var wmsLayer2 = new ol.layer.Tile({
-      source: wmsSource2
-    });
     var view = new ol.View({
       projection: 'EPSG:4326',
       center: [7.112222, 51.430556],
@@ -50,7 +44,7 @@
     });
     var map = new ol.Map({
       target: 'map',
-      layers: [wmsLayer2, wmsLayer],
+      layers: [osm, wmsLayer],
       view: view
     });
     map.on('singleclick', function(evt) {
