@@ -184,15 +184,12 @@ http://docs.sencha.com/extjs/6.2.0/classic/Ext.tree.Panel.html
 ## Einen realen LayerTree erstellen 
 Motivation: https://bjoernschilberg.github.io/trainings/geoext/beispiele/layertree3.html
 
-- Anstatt eine statische Liste aus dem vorherigen Beispiel soll der LayerTree
+- Arbeiten Sie dazu am Ihrem ```layertree.html``` Beispiel weiter.
+- Anstatt eine statischem Tree aus dem vorherigen Beispiel soll der LayerTree
   nun mit der Karte verbunden werden. 
-
 - Dafür muss der allgemeine ```Ext.data.TreeStore``` durch den
   [GeoExt.data.store.LayersTree](https://geoext.github.io/geoext3/master/docs/#!/api/GeoExt.data.store.LayersTree)
 ausgetauscht werden.
-
-- Arbeiten Sie dazu am Ihrem ```layertree.html``` Beispiel weiter.
-
 - Machen Sie sich mit Dokumentation zum [GeoExt.data.store.LayersTree](https://geoext.github.io/geoext3/master/docs/#!/api/GeoExt.data.store.LayersTree) vertraut.
 
 - Erstellen Sie ein Instanz der ```GeoExt.data.store.LayersTree``` Klasse und fügen Sie folgendes Konfigurationsobjekt hinzu:
@@ -201,12 +198,13 @@ layerGroup: /* http://openlayers.org/en/latest/apidoc/ol.Map.html#getLayerGroup 
 ```
 - Überprüfen Sie den Stand im Browser.
 
-- Wählen geben Sie Ihrem Layer einen sinvolleren Namen anstatt ```Unamed Layer```.
+### Zusatzaufgaben
+- Geben Sie Ihrem Layer einen sinvolleren Namen anstatt ```Unamed Layer```.
   - Tipp: ```name: 'OSM'```
 
 - Fügen Sie einen weiteren Layer hinzu. Bspw. "WMS NRW"
 
-- Lesen die Dokumentation für [Ext.tree.plugin.TreeViewDragDrop](http://docs.sencha.com/extjs/6.2.0/classic/Ext.tree.plugin.TreeViewDragDrop.html) und finden Sie raus was passiert wenn Sie dieses PlugIn zu Ihrem ```Ext.tree.Panel``` hinzufügen.
+- Lesen die Dokumentation für [Ext.tree.plugin.TreeViewDragDrop](http://docs.sencha.com/extjs/6.2.0/classic/Ext.tree.plugin.TreeViewDragDrop.html) und finden Sie raus was passiert, wenn Sie dieses PlugIn zu Ihrem ```Ext.tree.Panel``` hinzufügen.
 
 # Feature grid
 
