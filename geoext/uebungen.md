@@ -260,12 +260,6 @@ Motivation: https://bjoernschilberg.github.io/trainings/geoext/beispiele/feature
   width: 40,
   widget: {
     xtype: 'gx_renderer'
-  },
-  onWidgetAttach: function(column, gxRenderer, rec) {
-      gxRenderer.update({
-        feature: rec.getFeature(),
-        symbolizers: GeoExt.component.FeatureRenderer.determineStyle(rec)
-      });
   }
 }
 ```
@@ -276,12 +270,19 @@ http://docs.sencha.com/extjs/6.2.0/classic/Ext.grid.Panel.html#cfg-listeners
 - ```selectionchange``` sollte den Style Features auf der Karte ändern, wenn das entsprechende Feature im Grid ausgewählt. Definieren Sie dazu einen weiteren Style, bspw. ```redStyle```.
 - Bonusaufgabe. Der Stil soll sich nicht nur auf der Karte ändern sondern auch das kleine Feature in der Tabelle soll seinen Stil ändern.
 ```javascript
-onWidgetAttach: function(column, gxRenderer, rec) {
-                gxRenderer.update({
-                  feature: rec.getFeature(),
-                  symbolizers: GeoExt.component.FeatureRenderer.determineStyle(rec)
-                });
-              }
+{
+  xtype: 'widgetcolumn',
+  width: 40,
+  widget: {
+    xtype: 'gx_renderer'
+  },
+  onWidgetAttach: function(column, gxRenderer, rec) {
+      gxRenderer.update({
+        feature: rec.getFeature(),
+        symbolizers: GeoExt.component.FeatureRenderer.determineStyle(rec)
+      });
+  }
+}
 ```
 
 # Overview map hinzufügen
