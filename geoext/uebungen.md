@@ -248,6 +248,10 @@ columns: [
   flex: 1 
   }
 ]
+
+## Das Feature grid um weitere Funktionalitäten erweitern
+Motivation: https://bjoernschilberg.github.io/trainings/geoext/beispiele/featuregrid3.html
+
 ```
 - Zusätzlich können die einzelnen Geometrien und Styles der einzelnen Features dem Grid hinzugefügt werden. Fügen Sie dazu die folgenden Zeilen der ```columns```-Definition hinzu:
 ```javascript
