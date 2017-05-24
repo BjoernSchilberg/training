@@ -248,6 +248,7 @@ columns: [
   flex: 1 
   }
 ]
+```
 
 ## Das Feature grid um weitere Funktionalitäten erweitern
 Motivation: https://bjoernschilberg.github.io/trainings/geoext/beispiele/featuregrid3.html
