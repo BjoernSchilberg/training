@@ -110,9 +110,14 @@ konfiguriert, werden diese Änderung in der eigentlich Applikation beeinflussen.
 - Fügen Sie einen Layer mit GeoExt hinzu.
   - https://geoext.github.io/geoext3/master/docs/#!/api/GeoExt.component.Map-method-addLayer
 
+# Motivation
+https://bjoernschilberg.github.io/trainings/geoext/beispiele/final.html
+
 # LayerTree
 
 ## Einen LayerTree vorbereiten
+Motivation: https://bjoernschilberg.github.io/trainings/geoext/beispiele/layertree1.html
+
 Kopieren Sie sich die Datei  [beispiele/template.html](beispiele/template.html)
 nach ```layertree.html```.
 
@@ -156,6 +161,7 @@ var vp = Ext.create('Ext.container.Viewport', {
 - Laden Sie die Anwendung im Browser neu und schauen Sie sich die Änderungen an.
 
 ## Einen LayerTree erstellen
+Motivation: https://bjoernschilberg.github.io/trainings/geoext/beispiele/layertree2.html
 
 - Tauschen Sie den Platzhalter für den Layertree ```Ext.panel.Panel``` durch einen richtigen [Ext.tree.Panel](http://docs.sencha.com/extjs/6.2.0/classic/Ext.tree.Panel.html) aus.
 
@@ -173,6 +179,7 @@ http://docs.sencha.com/extjs/6.2.0/classic/Ext.tree.Panel.html
 
 
 ## Einen realen LayerTree erstellen 
+Motivation: https://bjoernschilberg.github.io/trainings/geoext/beispiele/layertree3.html
 
 - Anstatt eine statische Liste aus dem vorherigen Beispiel soll der LayerTree
   nun mit der Karte verbunden werden. 
@@ -201,6 +208,7 @@ layerGroup: /* http://openlayers.org/en/latest/apidoc/ol.Map.html#getLayerGroup 
 # Feature grid
 
 ## Ein Feature grid vorbereiten
+Motivation: https://bjoernschilberg.github.io/trainings/geoext/beispiele/featuregrid1.html
 
 - Machen Sie mit dem Stand aus der Layertree Übung weiter.
 - Das zukünftige Feature grid soll in der ```region: 'south'``` positioniert werden.
@@ -216,6 +224,7 @@ http://docs.sencha.com/extjs/6.2.0/classic/Ext.grid.Panel.html
 
 
 ## Ein Feature grid erstellen
+Motivation: https://bjoernschilberg.github.io/trainings/geoext/beispiele/featuregrid2.html
 
 - Machen Sie mit dem Stand aus der letzten Übung weiter.
 - Das Grid soll keine statischen Daten mehr anzeigen, sondern die Daten aus dem Layer "Westfalen Kreise"
