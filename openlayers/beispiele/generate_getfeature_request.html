@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- include a CSS stylesheet -->
+  <link rel="stylesheet" href="https://openlayers.org/en/v4.1.1/css/ol.css" type="text/css" />
+  <style>
+    #map {
+      height: 256px;
+      width: 512px;
+    }
+  </style>
+  <title>OpenLayers WFS NRW 25832 Beispiel</title>
+  <!-- include an external JavaScript file -->
+  <script src="https://openlayers.org/en/v4.1.1/build/ol-debug.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.4.3/proj4.js"></script>
+  <script src="https://epsg.io/25832.js"></script>
+</head>
+
+<body>
+  <h1>OpenLayers WFS 25832 NRW Beispiel</h1>
+  <div id="map"></div>
+  <script type="text/javascript">
+
+    //  <BoundingBox SRS="EPSG:25832" minx="270100" miny="5.55e+06" maxx="550000" maxy="5.85e+06"/>
+    
+
+
+    var projection = new ol.proj.Projection({
+      code: 'EPSG:25832',
+      extent: [270100, 5550000, 550000, 5850000]
+    });
+//var proj = new ol.proj.Projection({ code: 'http://epsg.io/25832.gml', axis: 'enu' });
+//ol.proj.addEquivalentProjections([ol.proj.get('EPSG:25832'), proj]);
+    var vectorSource = new ol.source.Vector();
+
+    var vector = new ol.layer.Vector({
+      source: vectorSource,
+      style: new ol.style.Style({
+        stroke: new ol.style.Stroke({
+          color: 'rgba(0, 0, 255, 1.0)',
+          width: 2
+        })
+      })
+    });
+    var map = new ol.Map({
+      target: 'map',
+      layers: [
+        new ol.layer.Tile({
+          title: 'nw_dop20',
+          source: new ol.source.TileWMS({
+            url: 'https://www.wms.nrw.de/geobasis/wms_nw_dop20',
+            projection: projection,
+            params: {
+              LAYERS: 'nw_dop20',
+              TILED: true,
+            }
+          })
+        }),
+        vector
+      ],
+      view: new ol.View({
+        projection: projection,
+        center: ol.proj.transform([7.013056, 51.450833], 'EPSG:4326', projection),
+        zoom: 3,
+      })
+    });
+
+
+
+// generate a GetFeature request
+      var featureRequest = new ol.format.WFS().writeGetFeature({
+        srsName: 'EPSG:25832',
+        featureNS: 'http://repository.gdi-de.org/schemas/adv/produkt/alkis-vereinfacht/1.0',
+        featurePrefix: 'ave',
+        featureTypes: ['VerwaltungsEinheit'],
+        outputFormat: 'text/xml; subtype=gml/3.2.1',
+        geometryName: 'geometrie',
+        maxFeatures: 2
+      });
+// then post the request and add the received features to a layer
+      fetch('http://localhost:6779/proxy?url=http://www.wfs.nrw.de/geobasis/wfs_nw_alkis_vereinfacht', {
+        method: 'POST',
+        body: new XMLSerializer().serializeToString(featureRequest)
+      }).then(function(response) {
+        console.log(response)
+        return response.text();
+      }).then(function(text) {
+        console.log(text)
+      });
+  </script>
+</body>
+
+</html>
