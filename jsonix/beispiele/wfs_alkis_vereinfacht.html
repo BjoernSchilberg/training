@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- include a CSS stylesheet -->
+  <link rel="stylesheet" href="https://openlayers.org/en/v4.1.1/css/ol.css" type="text/css" />
+  <style>
+    #map {
+      height: 256px;
+      width: 512px;
+    }
+  </style>
+  <title>GML Feature ALKIS vereinfacht</title>
+  <!-- include an external JavaScript file -->
+<script src="https://rawgit.com/highsource/jsonix/master/dist/Jsonix-all.js"></script>
+<script src="https://cdn.rawgit.com/highsource/w3c-schemas/master/scripts/lib/XLink_1_0.js"></script>
+<script src="https://cdn.rawgit.com/highsource/ogc-schemas/master/scripts/lib/GML_3_2_1.js"></script>
+</head>
+
+<body>
+  <h1>GML Feature ALKIS vereinfacht</h1>
+  <script type="text/javascript">
+
+var MyModule = {
+  name: 'MyModule',
+  typeInfos: [{
+    type: 'classInfo',
+    localName: 'AnyElementType',
+    propertyInfos: [{
+      type: 'anyElement',
+      allowDom: true,
+      allowTypedObject: true,
+      name: 'Verwaltungseinheit',
+      collection: true
+    }
+
+]
+  }],
+  elementInfos: [{
+    elementName: {
+      namespaceURI: 'http://repository.gdi-de.org/schemas/adv/produkt/alkis-vereinfacht/1.0',
+      localPart: 'VerwaltungsEinheit'
+    },
+    // 'sos:Capabilities',
+    typeInfo: 'MyModule.AnyElementType',
+  }
+]
+};
+
+var context = new Jsonix.Context([XLink_1_0, GML_3_2_1,MyModule], {
+    namespacePrefixes: {
+        "http://www.opengis.net/ogc": "ogc",
+        "http://www.opengis.net/gml/3.2": "gml",
+        "http://repository.gdi-de.org/schemas/adv/produkt/alkis-vereinfacht/1.0": "ave",
+    }
+});
+
+
+var unmarshaller = context.createUnmarshaller();
+unmarshaller.unmarshalURL('data/feature-alkis-vereinfacht.xml', function(element) {
+console.log(element);
+    
+});
+  </script>
+</body>
+
+</html>
