@@ -21,17 +21,18 @@
   <h1>OpenLayers WFS 25832 NRW Beispiel</h1>
   <div id="map"></div>
   <script type="text/javascript">
+    PROXY = '/proxy?url=';
 
     //  <BoundingBox SRS="EPSG:25832" minx="270100" miny="5.55e+06" maxx="550000" maxy="5.85e+06"/>
-    
+
 
 
     var projection = new ol.proj.Projection({
       code: 'EPSG:25832',
       extent: [270100, 5550000, 550000, 5850000]
     });
-//var proj = new ol.proj.Projection({ code: 'http://epsg.io/25832.gml', axis: 'enu' });
-//ol.proj.addEquivalentProjections([ol.proj.get('EPSG:25832'), proj]);
+    //var proj = new ol.proj.Projection({ code: 'http://epsg.io/25832.gml', axis: 'enu' });
+    //ol.proj.addEquivalentProjections([ol.proj.get('EPSG:25832'), proj]);
     var vectorSource = new ol.source.Vector();
 
     var vector = new ol.layer.Vector({
@@ -68,26 +69,28 @@
 
 
 
-// generate a GetFeature request
-      var featureRequest = new ol.format.WFS().writeGetFeature({
-        srsName: 'EPSG:25832',
-        featureNS: 'http://repository.gdi-de.org/schemas/adv/produkt/alkis-vereinfacht/1.0',
-        featurePrefix: 'ave',
-        featureTypes: ['VerwaltungsEinheit'],
-        outputFormat: 'text/xml; subtype=gml/3.2.1',
-        geometryName: 'geometrie',
-        maxFeatures: 2
-      });
-// then post the request and add the received features to a layer
-      fetch('http://localhost:6779/proxy?url=http://www.wfs.nrw.de/geobasis/wfs_nw_alkis_vereinfacht', {
-        method: 'POST',
-        body: new XMLSerializer().serializeToString(featureRequest)
-      }).then(function(response) {
-        console.log(response)
-        return response.text();
-      }).then(function(text) {
-        console.log(text)
-      });
+    // generate a GetFeature request
+    var featureRequest = new ol.format.WFS().writeGetFeature({
+      srsName: 'EPSG:25832',
+      featureNS: 'http://repository.gdi-de.org/schemas/adv/produkt/alkis-vereinfacht/1.0',
+      featurePrefix: 'ave',
+      featureTypes: ['VerwaltungsEinheit'],
+      outputFormat: 'text/xml; subtype=gml/3.2.1',
+      geometryName: 'geometrie',
+      maxFeatures: 2
+    });
+    // then post the request and add the received features to a layer
+    //fetch(PROXY+'http://www.wfs.nrw.de/geobasis/wfs_nw_alkis_vereinfacht', {
+    fetch('http://www.wfs.nrw.de/geobasis/wfs_nw_alkis_vereinfacht', {
+      method: 'POST',
+      mode: 'no-cors',
+      body: new XMLSerializer().serializeToString(featureRequest)
+    }).then(function(response) {
+      console.log(response)
+      return response.text();
+    }).then(function(text) {
+      console.log(text)
+    });
   </script>
 </body>
 
