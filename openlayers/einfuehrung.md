@@ -274,7 +274,7 @@ Nachher
 view.setZoom(1.5);
 view.getZoom(); // 1.5
 ```
-Details: 
+Details:
 - https://github.com/openlayers/openlayers/issues/4333
 - https://github.com/openlayers/openlayers/pull/5674
 
@@ -377,7 +377,7 @@ Testen Sie dies an dem ```GeoJSON```-Beispiel aus: https://bjoernschilberg.githu
 Ein Vektorlayer akzeptiert als Wert für die style-Konfigurationsoption eine Instanz:
 - von ol.style.Style,
 - ein Array von ol.style.Style
-- oder eine Funktion. 
+- oder eine Funktion.
 
 Beispiel für die Verwendung eines statischen ```ol.style.Objektes``:
 ```javascript
@@ -393,9 +393,9 @@ var layer = new ol.layer.Vector({
 Besitzt vier Schlüssel:
 - fill
 - image
-- stroke 
+- stroke
 - text
-- zIndex (optional) 
+- zIndex (optional)
 Rückgabe:
 Array von ol.style.Style-Objekten.
 
@@ -489,7 +489,7 @@ new ol.style.Circle({
 -  [Vektor Geometrieebenen stylen (GeoJSON)](uebungen.md#vektor-geometrieebenen-stylen-geojson)
 
 ## Style-Funktion
-Ein Vektorlayer akzeptiert als Wert für die style-Konfigurationsoption 
+Ein Vektorlayer akzeptiert als Wert für die style-Konfigurationsoption
 auch eine Funktion, in welcher unterschiedliche Stile anhand von
 Featureattributen zurückgegeben werden kann. Ist zum Beispiel bei Klassifikation sinnvoll.
 
@@ -549,5 +549,5 @@ In OpenLayers gibt es mit ```ol.interaction.Select``` ein ähnliches Konzept.
 - http://openlayers.org/en/v3.5.0/builder/ nur für v3 nicht für v4!?
 
 # weitere Quellen
-- http://openlayers.org/workshop/en/index.html 
+- http://openlayers.org/workshop/en/index.html
 - https://github.com/marcjansen/openlayers-fossgis2017
