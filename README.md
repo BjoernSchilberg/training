@@ -3,8 +3,8 @@
 * [Starter](starter.md)
 
 ## OpenLayers
-* [Einführung](openlayers/einfuehrung.md)
-* [Übungen](openlayers/uebungen.md)
+* [Einführung](openlayers/README.md)
+* [Übungen](openlayers/uebungen/README.md)
 * [Debugging](openlayers/debugging.md)
 
 ## GeoExt
@@ -13,6 +13,6 @@
 
 ## Lizenz
 
-Die Trainings sind frei verfügbar für eine weitere Nutzung im Sinne der [Creative
-Commons Attribution-Share Alike 3.0
+Die Trainings sind frei verfügbar für eine weitere Nutzung im Sinne der
+[Creative Commons Attribution-Share Alike 3.0
 Lizenz](https://creativecommons.org/licenses/by-sa/3.0/de/deed.de) vorgesehen.
