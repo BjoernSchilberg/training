@@ -58,7 +58,7 @@ var map = new ol.Map({
 
 
 ## Erste Übung
-- [Erste Karte](uebungen.md#erste-karte)
+- [Erste Karte](uebungen/README.md#erste-karte)
 
 # Interaktions-,Steuer- und Navigationsmöglichkeiten
 
@@ -70,7 +70,7 @@ var map = new ol.Map({
 - ~~Navigations-Historie~~
 
 ### Übungen
-- [Steuerelemente einbinden](uebungen.md#steuerelemente-einbinden)
+- [Steuerelemente einbinden](uebungen/README.md#steuerelemente-einbinden)
 
 ## Interaktionen
 - <https://openlayers.org/en/latest/apidoc/ol.interaction.html>
@@ -82,7 +82,7 @@ var map = new ol.Map({
   - Ändern (Modify)
 
 ### Übungen
-- [Interaktionen einbinden](uebungen.md#interaktionen-einbinden)
+- [Interaktionen einbinden](uebungen/README.md#interaktionen-einbinden)
 
 ## Unterstütze Daten- & Layerquellen
 
@@ -110,7 +110,7 @@ var map = new ol.Map({
 
 ### Übungen
 
-- [Weitere Daten- & Layerquellen einbinden](uebungen.md#weitere-daten---layerquellen-einbinden)
+- [Weitere Daten- & Layerquellen einbinden](uebungen/README.md#weitere-daten---layerquellen-einbinden)
 
 # Anwendungsbeispiele
 
@@ -370,7 +370,7 @@ Testen Sie dies an dem `GeoJSON`-Beispiel aus:
 - Freihandzeichnen (für Redlinining, nicht für digitalisieren geeignet)
 
 ## Übung
-- [Metadaten der Vektor Geometrieebene abfragen](uebungen.md#metadaten-der-vektor-geometrieebene-abfragen)
+- [Metadaten der Vektor Geometrieebene abfragen](uebungen/README.md#metadaten-der-vektor-geometrieebene-abfragen)
 
 # Vektor Geometrieebenen stylen
 
@@ -488,7 +488,7 @@ new ol.style.Circle({
 ```
 
 ### Übung
--  [Vektor Geometrieebenen stylen (GeoJSON)](uebungen.md#vektor-geometrieebenen-stylen-geojson)
+-  [Vektor Geometrieebenen stylen (GeoJSON)](uebungen/README.md#vektor-geometrieebenen-stylen-geojson)
 
 ## Style-Funktion
 Ein Vektorlayer akzeptiert als Wert für die style-Konfigurationsoption auch
@@ -540,7 +540,7 @@ In OpenLayers gibt es mit `ol.interaction.Select` ein ähnliches Konzept.
 ```
 
 ### Übung
--  [Features selektieren](uebungen.md#features-selektieren)
+- [Features selektieren](uebungen/README.md#features-selektieren)
 
 
 # Todo
