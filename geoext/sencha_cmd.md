@@ -4,7 +4,7 @@
 - Sencha CMD ist installiert
 - ExtJS 6.2 heruntergeladen
 
-##App-Skeleton mit Sencha CMD erzeugen
+## App-Skeleton mit Sencha CMD erzeugen
 ```sh
 sencha -sdk "/path/to/ext-6.2.0/" generate app MyFirstGeoExtApp MyFirstGeoExtApp
 cd MyFirstGeoExtApp
