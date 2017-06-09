@@ -180,7 +180,7 @@ var map = new ol.Map({
 <https://github.com/openlayers/openlayers/releases>
 
 # Version3
-# v3.4.0
+## v3.4.0
 - Dateline wrapping tile-sources
 - Circles in Draw interaction
 ## v3.4.0 — v3.10.0
