@@ -8,8 +8,8 @@
 * [Debugging](openlayers/debugging.md)
 
 ## GeoExt
-* [Einführung](geoext/einfuehrung.md)
-* [Übungen](geoext/uebungen.md)
+* [Einführung](geoext/README.md)
+* [Übungen](geoext/uebungen/README.md)
 
 ## Lizenz
 
