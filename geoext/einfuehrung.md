@@ -1,5 +1,4 @@
 # Was ist GeoExt?
-
 - JavaScript Bibiothek
 - GeoExt vereinigt OpenLayers und ExtJS.
 - Erweitert dazu das ExtJS Framework
@@ -9,7 +8,7 @@
 - Unter einer Freien Lizenz (BSD Lizenz)
 - Die Community: Mailinglisten, IRC, ...
 - Webseite: geoext.org
-- API-Dokumentation: https://geoext.github.io/geoext3/master/docs/
+- API-Dokumentation: <https://geoext.github.io/geoext3/master/docs/>
 
 # Abhängigkeiten und Versionen
 
@@ -31,12 +30,12 @@ Aktuell ist GeoExt 3.0.0. Allerdings noch ohne OpenLayers 4 und ExtJS 6.5.0 Unte
 - Ermöglicht die Entwicklung von Desktop-ähnlichen Webanwendungen
   - mit ExtJS 6 bessere mobile Unterstützung
 - Bietet eine große Anzahl Oberflächenelementen
-  - http://examples.sencha.com/extjs/6.2.0/examples/
+  - <http://examples.sencha.com/extjs/6.2.0/examples/>
 - Unterstützt das MVC-Pattern
-- Für OpenSource-Projekte unter der GPL(GNU Public License) erhältlich
-  - https://www.sencha.com/legal/gpl/
-- Webseite: https://www.sencha.com/legal/gpl/
-- API-Dokumentation: http://docs.sencha.com/extjs/6.2.0/modern/Ext.html
+- Für OpenSource-Projekte unter der GPL (GNU Public License) erhältlich
+  - Allerdings: <https://www.sencha.com/legal/gpl/>
+- Webseite: <https://www.sencha.com/legal/gpl/>
+- API-Dokumentation: <http://docs.sencha.com/extjs/6.2.0/modern/Ext.html>
 
 # Zusammenführen von GeoExt und ExtJS
 
@@ -54,26 +53,26 @@ Aktuell ist GeoExt 3.0.0. Allerdings noch ohne OpenLayers 4 und ExtJS 6.5.0 Unte
 - Datenelemente (Reader und Stores)
 - Baumelemente (Tree)
 - Plugins
-- API-Dokumentation: http://docs.sencha.com/extjs/6.2.0/modern/Ext.html
+- API-Dokumentation: <http://docs.sencha.com/extjs/6.2.0/modern/Ext.html>
 
 # Nützliches
 ## ExtJS
 - API Dokumentation
-  - Classic toolkit: https://docs.sencha.com/extjs/6.2.0/classic/Ext.html
-  - Modern toolkit: https://docs.sencha.com/extjs/6.2.0/modern/Ext.html
+  - Classic toolkit: <https://docs.sencha.com/extjs/6.2.0/classic/Ext.html>
+  - Modern toolkit: <https://docs.sencha.com/extjs/6.2.0/modern/Ext.html>
 - Examples
-  - https://examples.sencha.com/extjs/6.2.0/examples/
+  - <https://examples.sencha.com/extjs/6.2.0/examples/>
 - sonstiges
-  - https://fiddle.sencha.com/
-  - https://www.sencha.com/forum/
+  - <https://fiddle.sencha.com/>
+  - <https://www.sencha.com/forum/>
 
 ## GeoExt
 
-- Homepage: https://geoext.github.io/geoext3/
+- Homepage: <https://geoext.github.io/geoext3/>:
 - API Dokumentation
-  - https://geoext.github.io/geoext3/v3.0.0/docs/
+  - <https://geoext.github.io/geoext3/v3.0.0/docs/>
 - Beispiele
-   - https://geoext.github.io/geoext3/
+   - <https://geoext.github.io/geoext3/>
 
 # ExtJS 6
 - Zusammenführung ExtJS / Sencha Touch
@@ -81,7 +80,7 @@ Aktuell ist GeoExt 3.0.0. Allerdings noch ohne OpenLayers 4 und ExtJS 6.5.0 Unte
 - Build profiles
 - Besseres Theming (fashion)
 - Model-View-Controller & Model-View-ViewModel
-- Ext.Widget ... Ext.list.Tree
+- `Ext.Widget` ... `Ext.list.Tree`
 
 # Ziel ExtJS 6: Universale Applikationen
 - Eine Codebasis => multiple builds
@@ -104,34 +103,34 @@ Aktuell ist GeoExt 3.0.0. Allerdings noch ohne OpenLayers 4 und ExtJS 6.5.0 Unte
 
 ```
 
-# Was ist erstmal nicht geplant
-
-## Keine Beispiele zu ```Ext.application``` oder ```MVC / MVVM```
-
-Für produktive Anwendunge empfehlen wir die Verwendung von
-```Ext.application``` / ```Ext.app.Application``` und auch die Verwendung von
-MVC oder MVVM Konzepten. Für diese Einführung würde die Verwendung den Einstieg
-vermutlich erschweren.
-
-## ```Keine Verwendung von sencha cmd```
-
-Aufgrund des erhöhten Installations- / Konifgurations- / Erlern-Aufwand
-verzichten wir in dieser Schulung auf die Verwendung von ```sencha cmd``` um
-den Fokus auf die Einführung in GeoEXT beizubehalten.
-
 # Exkurs ExtJS (Kernkonzepte)
 
 ## Komponenten
-https://docs.sencha.com/extjs/6.2.0/guides/core_concepts/components.html
+<https://docs.sencha.com/extjs/6.2.0/guides/core_concepts/components.html>
 - Panel [beispiele/component-panel.html](beispiele/component-panel.html)
 - Tree [beispiele/component-tree.html](beispiele/component-tree.html)
 - Grid [beispiele/component-grid.html](beispiele/component-grid.html)
 
 ## Layout
-https://docs.sencha.com/extjs/6.2.0/guides/core_concepts/layouts.html
+<https://docs.sencha.com/extjs/6.2.0/guides/core_concepts/layouts.html>
 - Column [beispiele/layout-column.html](beispiele/layout-column.html)
 - HBox [beispiele/layout-hbox.html](beispiele/layout-hbox.html)
 - VBox [beispiele/layout-vbox.html](beispiele/layout-vbox.html)
 - Accordion [beispiele/layout-accordion.html](beispiele/layout-accordion.html)
 - Table [beispiele/layout-table.html](beispiele/layout-table.html)
 - Border [beispiele/layout-border.html](beispiele/layout-border.html)
+
+# Was ist erstmal nicht geplant?
+
+## Keine Beispiele zu `Ext.application` oder `MVC / MVVM`
+
+Für produktive Anwendungen empfehlen wir die Verwendung von `Ext.application` /
+`Ext.app.Application` und auch die Verwendung von MVC oder MVVM Konzepten. Für
+diese Einführung würde die Verwendung den Einstieg vermutlich erschweren.
+
+## Keine Verwendung von `sencha cmd`
+
+Aufgrund des erhöhten Installations- / Konifgurations- / Erlern-Aufwandes
+verzichten wir auf die Verwendung von `sencha cmd` um
+den Fokus auf die Einführung in GeoExt beizubehalten.
+
