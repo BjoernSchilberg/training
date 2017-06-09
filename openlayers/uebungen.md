@@ -9,14 +9,14 @@
 - OpenLayers-Beispiele: http://openlayers.org/en/latest/examples/
 - erstmal kein Web-Server nötig (läuft lokal im Browser)!
 - später wenn doch mal schnell ein Webserver benötigt wird:
-  - ```python -m SimpleHTTPServer```
-  - ```python3 -m http.server```
-  - ```php -S localhost:8000```
+  - `python -m SimpleHTTPServer`
+  - `python3 -m http.server`
+  - `php -S localhost:8000`
 
 ## Erste Karte
-- Kopieren Sie das Template aus [uebungen/template.html](uebungen/template.html) nach ```erste_karte.html```.
+- Kopieren Sie das Template aus [uebungen/template.html](uebungen/template.html) nach `erste_karte.html`.
 - Fügen Sie die nachfolgenden Bestandteile (HTML-Markup, CSS-Deklarationen, JavaScript-Initialisierungs-Code) einer OpenLayers-Karte an die richtige Stellen des kopierten Templates ein.
-- Ändern Sie den Titel ```<title>``` und die Überschrift ```<h1>``` sinvoll.
+- Ändern Sie den Titel `<title>` und die Überschrift `<h1>` sinvoll.
 
 # Bestandteile einer OpenLayers-Karte
 ## HTML-Markup (Auszeichnung)
@@ -35,10 +35,10 @@
   }
 </style>
 ```
-- Diese Regel ist direkt im ```<head>``` der HTML-Seite innerhalb eines ```<style>```-Elementes angegeben.
+- Diese Regel ist direkt im `<head>` der HTML-Seite innerhalb eines `<style>`-Elementes angegeben.
 - Alternativ können solche Angaben in einem seperaten Stylesheet definiert werden.
 - OpenLayers macht keine Annahmen zur Größe der Karte (bzw. des Elementes welches die Karte enthalten wird).
-  - CSS-Selektor ```#map``` (id des Ziel-```<div>```)
+  - CSS-Selektor `#map` (id des Ziel-`<div>`)
   - Breite (512px) und Höhe (256px) des Karten-Containers.
 
 
@@ -68,44 +68,44 @@
 
 # Weitere Daten- & Layerquellen einbinden
 
-## Neue ```source``` für die erste_karten.html einbinden
+## Neue `source` für die erste_karten.html einbinden
 
 - Geben Sie eine neue [ol.source](http://openlayers.org/en/latest/apidoc/ol.source.html) für [ol.layer.Tile](http://openlayers.org/en/latest/apidoc/ol.layer.Tile.html) an.
-- Bspw. den ```Layer source for the Stamen tile server```.
+- Bspw. den `Layer source for the Stamen tile server`.
   - http://maps.stamen.com/watercolor
-- Suchen Sie dazu in der API nach ```stamen```.
+- Suchen Sie dazu in der API nach `stamen`.
   - https://openlayers.org/en/latest/apidoc/
 
 ## Bing Maps einbinden
-- Suchen Sie dazu in der API nach ```BingMaps```.
+- Suchen Sie dazu in der API nach `BingMaps`.
   - https://openlayers.org/en/latest/apidoc/
-- ```imagerySet:``` auswählen: https://msdn.microsoft.com/en-us/library/ff701716.aspx#Anchor_0
-- ```key: 'AlIhy1q8XYJ5x5tIpN2qys34e_ZRO8k90J8ykC4RiJdKuz6O-pe4BVl78rhG6UA3'```
+- `imagerySet:` auswählen: <https://msdn.microsoft.com/en-us/library/ff701716.aspx#Anchor_0>
+- `key: 'AlIhy1q8XYJ5x5tIpN2qys34e_ZRO8k90J8ykC4RiJdKuz6O-pe4BVl78rhG6UA3'`
 
-Die Bing-API kann nur mit einem API-Schlüssel ``key`` verwendet werden. Die
+Die Bing-API kann nur mit einem API-Schlüssel `key` verwendet werden. Die
 Übungsaufgabe / das Beispiel verwendet einen solchen Schlüssel, dieser sollte
 nicht für Ihre eigenen Anwendungen verwendet werden. Ein eigener Bing-API-Schlüssel
-kann kostenlos nach der Registrierung unter https://www.bingmapsportal.com/
+kann kostenlos nach der Registrierung unter <https://www.bingmapsportal.com/>
 erstellt werden.
 
 ## Vektor Geometrieebene einbinden (GeoJSON)
-- Binden Sie die Westfalen Kreise ```data/data/westfalen_kreise.geojson``` als
+- Binden Sie die Westfalen Kreise `data/data/westfalen_kreise.geojson` als
   zusätzliches Vektor-Kartenthema in Ihre Karte ein. (erstmal ohne Style-Informationen).
 - Quelle der Daten: https://www.webgis-westfalen.de/
 - Nützliche Hinweise:
  - http://openlayers.org/en/latest/apidoc/ol.layer.Vector.html
-   - ```source```: http://openlayers.org/en/latest/apidoc/ol.source.Vector.html
-     - ```format``` und ```url``` angeben.
-     - ```format```: Suchen die dazu in der API nach ```GeoJSON```.
+   - `source`: http://openlayers.org/en/latest/apidoc/ol.source.Vector.html
+     - `format` und `url` angeben.
+     - `format`: Suchen die dazu in der API nach `GeoJSON`.
 
 ## Vektor Geometrieebenen stylen (GeoJSON)
 
-Stylen Sie die Westfalen Kreise nach Ihren Vorstellungen neu. Setzen Sie dazu am Layer ```ol.layer.Vector``` einen neuen ```ol.style.Style```, welcher die Linien ```ol.style.Stroke```der Polygone in Farbe ```color``` und Dicke ```width``` ausgestaltet. Wählen Sie für die Fläche der Polygone eine ansprechende Füllung mittels ```ol.style.Fill```.
+Stylen Sie die Westfalen Kreise nach Ihren Vorstellungen neu. Setzen Sie dazu am Layer `ol.layer.Vector` einen neuen `ol.style.Style`, welcher die Linien `ol.style.Stroke`der Polygone in Farbe `color` und Dicke `width` ausgestaltet. Wählen Sie für die Fläche der Polygone eine ansprechende Füllung mittels `ol.style.Fill`.
 
 ## Metadaten der Vektor Geometrieebene abfragen.
 Jede Fläche repräsentiert ein [ol.Feature](http://openlayers.org/en/latest/apidoc/ol.Feature.html) Objekt des
 [ol.layer.Vector](http://openlayers.org/en/latest/apidoc/ol.layer.Vector.html), und jedes Feature hat bspw. die Attribute
-```Kreisname``` und ```Oberbürgermeister```.  Registrieren Sie eine Funktion,
+`Kreisname` und `Oberbürgermeister`.  Registrieren Sie eine Funktion,
 die bei jedem [singleclick](http://openlayers.org/en/latest/apidoc/ol.MapBrowserEvent.html#event:singleclick)-Event, welcher auf der ol.Map gefeuert wird,
 die Funktion [forEachFeatureAtPixel](http://openlayers.org/en/latest/apidoc/ol.Map.html#forEachFeatureAtPixel) der map aufruft und gegebenenfalls
 weitere Informationen über den Kreis ausgibt.
@@ -124,7 +124,7 @@ map.on('singleclick', function(e) {
 
 
 ## Statische Vektoren (ImageVector)
-OpenLayers erzeugt ein Rasterbild der Vektordaten mittels ```ol.layer.Vector```.
+OpenLayers erzeugt ein Rasterbild der Vektordaten mittels `ol.layer.Vector`.
 Vorteil:
 - kein Neurendern der Vektoren, dadurch höhere Performance
 - Funtion von [forEachFeatureAtPixel](http://openlayers.org/en/latest/apidoc/ol.Map.html#forEachFeatureAtPixel) bleibt erhalten.
@@ -155,7 +155,7 @@ new ol.layer.Image({
         })
 
 ```
-```style``` wird  nicht mehr dem Layer sondern der ```ol.source.ImageVector``` mitgegeben!
+`style` wird  nicht mehr dem Layer sondern der `ol.source.ImageVector` mitgegeben!
 
 # Interaktionen einbinden
 
@@ -163,7 +163,7 @@ new ol.layer.Image({
 
 ## Drag, Rotate und Zoom
 
-Fügen Sie die Interaktion ```DragRotateAndZoom``` Ihrer Karte (```Map```) hinzu. Tip:
+Fügen Sie die Interaktion `DragRotateAndZoom` Ihrer Karte (`Map`) hinzu. Tip:
 
 ```javascript
 interactions: ol.interaction.defaults().extend([
@@ -174,21 +174,21 @@ interactions: ol.interaction.defaults().extend([
 ## Features selektieren
 Ändern Sie dazu das Beispiel:
 [beispiele/geojson.html](beispiele/geojson.html)
-Erweitern Sie die vorhanden Interaktionen um ```ol.interaction.Select```.
-Erweitern Sie ```ol.interaction.Select``` um eine ```style```-Option.
+Erweitern Sie die vorhanden Interaktionen um `ol.interaction.Select`.
+Erweitern Sie `ol.interaction.Select` um eine `style`-Option.
 Orientieren Sie sich dabei an dem bereits vorhandenen Style von
-```ol.source.Vector```. Achten Sie dabei darauf sinnvolle und andere Angaben
-bei ```color``` zu wählen.
+`ol.source.Vector`. Achten Sie dabei darauf sinnvolle und andere Angaben
+bei `color` zu wählen.
 
 ## Features neuzeichnen (Teil 1)
 Ändern Sie dazu das Beispiel:
 [beispiele/geojson.html](beispiele/geojson.html)
-Neue Features können mittels ```ol.interaction.Draw``` gezeichnet werden. Eine
+Neue Features können mittels `ol.interaction.Draw` gezeichnet werden. Eine
 Draw-Interaktion benötigt beim Initialisieren eine entsprechende Vektor-Source
-```source``` und einen Geometrietyp ```type```.
+`source` und einen Geometrietyp `type`.
 
 ### Features neuzeichnen (Teil 2)
-Geben Sie mittels des Eventhandler ```drawend``` die Koordinaten des
+Geben Sie mittels des Eventhandler `drawend` die Koordinaten des
 gezeichnetes Feature auf der Konsole aus.
 
 - http://openlayers.org/en/latest/apidoc/ol.interaction.Draw.Event.html#event:drawend
@@ -197,22 +197,22 @@ gezeichnetes Feature auf der Konsole aus.
 Ändern Sie dazu das Beispiel:
 [beispiele/geojson_select.html](beispiele/geojson_select.html)
 
-Um Features zu verändern, wird ```ol.interaction.Select``` mit
-```ol.interaction.Modify``` kombiniert. Diese Interaktionen teilen sich einen
+Um Features zu verändern, wird `ol.interaction.Select` mit
+`ol.interaction.Modify` kombiniert. Diese Interaktionen teilen sich einen
 gemeinsame Menge an Features (``ol.Collection``). Features welche
-```ol.interaction.Select``` selektiert wurden, werden zu potentiellen
-Kandidaten für die Modifikation mittels ```ol.interaction.Modify```.
+`ol.interaction.Select` selektiert wurden, werden zu potentiellen
+Kandidaten für die Modifikation mittels `ol.interaction.Modify`.
 
-- Es müssen zwei Interaktionen außerhalb der ```map```-Instanz hingefügt werden.
-- Eine Instanz von ```ol.interaction.Select``` um Features vor dem Editieren
-  auszuwählen, und eine Instanz von ```ol.interaction.Modify``` um die
+- Es müssen zwei Interaktionen außerhalb der `map`-Instanz hingefügt werden.
+- Eine Instanz von `ol.interaction.Select` um Features vor dem Editieren
+  auszuwählen, und eine Instanz von `ol.interaction.Modify` um die
   Geometrien tatsächlich zu verändern.
-- Beiden Interaktionen wird die gleiche Instanz der Klasse ``ol.Collection`` zu
-  gewiesen. Der Interaktion ```ol.interaction.Select``` explizizt durch
-  ```features: select.getFeatures()```.
+- Beiden Interaktionen wird die gleiche Instanz der Klasse `ol.Collection` zu
+  gewiesen. Der Interaktion `ol.interaction.Select` explizizt durch
+  `features: select.getFeatures()`.
 
-- Die ```ol.interaction.Select``` ist wie im
-  ```beispiele/geojson_select.html``` mit spezifischem Stil erzeugt worden, so
+- Die `ol.interaction.Select` ist wie im
+  `beispiele/geojson_select.html` mit spezifischem Stil erzeugt worden, so
   dass Features während der Selektion hervorgehoben werden.
 
 
@@ -223,7 +223,7 @@ Kandidaten für die Modifikation mittels ```ol.interaction.Modify```.
 ## Einen Maßstabsbalken anzeigen
 - http://openlayers.org/en/latest/apidoc/ol.control.ScaleLine.html
 
-Fügen Sie den nachfolgenden Code-Schnipsel irgendwo innerhalb der ```ol.Map```-Konfiguration hinzu:
+Fügen Sie den nachfolgenden Code-Schnipsel irgendwo innerhalb der `ol.Map`-Konfiguration hinzu:
 ```javascript
 controls: ol.control.defaults().extend([
   new ol.control.ScaleLine()
@@ -240,12 +240,12 @@ In der CSS-Deklaration:
 ```
 
 ## Maßstabsbalken auslagern
-Der Maßstabsbalken soll in ein separates ```<div>```-Element außerhalb der Karte plaziert werden.
+Der Maßstabsbalken soll in ein separates `<div>`-Element außerhalb der Karte plaziert werden.
 ```html
 <div id="scale-line" class="scale-line"></div>
 ```
 
-Passen Sie die ```controls```-Konfiguration entsprechend an:
+Passen Sie die `controls`-Konfiguration entsprechend an:
 ```javascript
 new ol.control.ScaleLine({
     className: 'ol-scale-line',
@@ -268,7 +268,7 @@ Passen Sie die CSS-Deklaration entsprechend an:
 
 ## Eine OverviewMap anzeigen
 - Fügen Sie [ol.control.OverviewMap](http://openlayers.org/en/latest/apidoc/ol.control.OverviewMap.html) hinzu.
-- Positionieren Sie die ```OverviewMap``` rechts oben. Passen Sie CSS-Deklaration entsprechend an.
+- Positionieren Sie die `OverviewMap` rechts oben. Passen Sie CSS-Deklaration entsprechend an.
 ```css
 .ol-custom-overviewmap,
 .ol-custom-overviewmap.ol-uncollapsible {
@@ -285,33 +285,33 @@ className: 'ol-overviewmap ol-custom-overviewmap'
 ## MousePosition anzeigen
 
 - Fügen Sie der Karten die MousePostion hinzu.
-- Wird diese in lat lon angezeigt? Wenn nicht ändern Sie die Anzeige zu lat lon mit der Angabe von ```projection```.
-- Werden Ihnen zuviele Nachkommastellen angezeigt? ```coordinateFormat``` in Verbindung mit ```ol.coordinate``` schafft Abhilfe.
+- Wird diese in lat lon angezeigt? Wenn nicht ändern Sie die Anzeige zu lat lon mit der Angabe von `projection`.
+- Werden Ihnen zuviele Nachkommastellen angezeigt? `coordinateFormat` in Verbindung mit `ol.coordinate` schafft Abhilfe.
 
 ## ZoomToMaxExtent
 Zoomen Sie auf die Ausdehnung von Deutschland. Die BoundingBox kann über http://boundingbox.klokantech.com/ ermittelt werden.
-Achtung: Die Angaben sind in ```EPSG:4326``` und müssen in OpenLayers-Standardprojektion ```EPSG:3857``` transformiert werden. Tip: ```ol.proj.transformExtent```
+Achtung: Die Angaben sind in `EPSG:4326` und müssen in OpenLayers-Standardprojektion `EPSG:3857` transformiert werden. Tip: `ol.proj.transformExtent`
 - https://de.wikipedia.org/wiki/World_Geodetic_System_1984
 - https://en.wikipedia.org/wiki/Web_Mercator
 
 ## ZoomSlider
 Fügen Sie einer beliegenden Karte einen ZoomSilder hinzu. Indem Sie die Console der [Firefox Developer Tools](https://developer.mozilla.org/son/docs/Tools) oder [Chrome DevTools](https://developer.chrome.com/devtools) benutzen.
-```javascript
+`javascript
 map.addControl(new ol.control.ZoomSlider());
-```
+`
 
 # Fortgeschrittene Themen (optional)
 
 ## Vektor Geometrieebenen klassifizieren (GeoJSON)
-Klassifizieren Sie die Einwohnerzahlen ```Einwohner``` Westfalen Kreise
-```data/data/westfalen_kreise.geojson``` mittels einer Style-Funktion.
+Klassifizieren Sie die Einwohnerzahlen `Einwohner` Westfalen Kreise
+`data/data/westfalen_kreise.geojson` mittels einer Style-Funktion.
 Sie können dazu das folgende Beispiel verwenden:
 https://bjoernschilberg.github.io/trainings/openlayers/beispiele/geojson_style.html
 
 ## WMS-Ebene einbinden
 - Dienst, welcher Rasterdaten konform zur [OGC Web Map Service (WMS)-Spezifikation](http://www.opengeospatial.org/standards/wmshttp://www.opengeospatial.org/standards/wms) ausliefert
 - dynamisch berechneten Bildern
-- ```ol.source.TileWMS``` oder ```ol.source.ImageWMS```
+- `ol.source.TileWMS` oder `ol.source.ImageWMS`
 
 ```javascript
 layers: [
@@ -328,13 +328,15 @@ layers: [
       ],
 ```
 - Wählen Sie eine andere WMS-Ebene/Layer aus.
-- Ändern Sie den Code dahingehend ab, dass statt vieler einzelner Kacheln nur noch ein einzelnes Bild beim WMS angefragt wird.
-- Überprüfen Sie mittels der Developer Tools des Browsers, ob tatsächlich nur noch ein Bild angefordert wird, statt der 256x256 Pixel großen Kacheln.
+- Ändern Sie den Code dahingehend ab, dass statt vieler einzelner Kacheln nur
+  noch ein einzelnes Bild beim WMS angefragt wird.
+- Überprüfen Sie mittels der Developer Tools des Browsers, ob tatsächlich nur
+  noch ein Bild angefordert wird, statt der 256x256 Pixel großen Kacheln.
 
 
 ## Abfrage von Informationen mittels GetFeatureInfo (WMS)
 
-Fügen Sie den Layer ```nw_dtk25_info``` des Dienstes https://www.wms.nrw.de/geobasis/wms_nw_dtk25 als wmsSource dem wmsLayer hinzu. Fügen Sie den wmsLayer der Karte (```map```) hinzu.
+Fügen Sie den Layer `nw_dtk25_info` des Dienstes https://www.wms.nrw.de/geobasis/wms_nw_dtk25 als wmsSource dem wmsLayer hinzu. Fügen Sie den wmsLayer der Karte (`map`) hinzu.
 
 Registrieren Sie eine Funktion, die bei jedem
 [singleclick](http://openlayers.org/en/latest/apidoc/ol.MapBrowserEvent.html#event:singleclick)-Event,
@@ -354,14 +356,17 @@ map.on('singleclick', function(evt) {
 });
 ```
 
-Beachten Sie die Funktion ```singleclick``` eine ```wmsSource``` erwartet!
+Beachten Sie die Funktion `singleclick` eine `wmsSource` erwartet!
 
 ## OpenLayers WMS NRW GetFeatureInfo Beispiel
 Zoom-Anzeigen fixen.
 
 
 ## WFS Dienst einbinden
-Fügen Sie WFS-Feature mit dem ```typename=dvg:nw_dvg1_krs``` des Dienstes https://www.wfs.nrw.de/geobasis/wfs_nw_dvg?service=WFS als ```ol.source.Vector``` dem ```ol.layer.Vector``` hinzu. Fügen Sie den Vektor Layer der Karte (```map```) hinzu.
+Fügen Sie WFS-Feature mit dem `typename=dvg:nw_dvg1_krs` des Dienstes
+https://www.wfs.nrw.de/geobasis/wfs_nw_dvg?service=WFS als `ol.source.Vector`
+dem `ol.layer.Vector` hinzu. Fügen Sie den Vektor Layer der Karte (`map`)
+hinzu.
 
 Fügen Sie zusätzlich noch eine geeignete Hintergrundkarte hinzu.
 ```javascript
@@ -389,14 +394,16 @@ Fügen Sie zusätzlich noch eine geeignete Hintergrundkarte hinzu.
 
 
 ## Metadaten der WFS Vektor Geometrieebene abfragen.
-Jede Fläche repräsentiert ein [ol.Feature](http://openlayers.org/en/latest/apidoc/ol.Feature.html) Objekt des
-[ol.layer.Vector](http://openlayers.org/en/latest/apidoc/ol.layer.Vector.html), und jedes Feature hat bspw. die Attribute
-```GN```.  Registrieren Sie eine Funktion,
-die bei jedem [singleclick](http://openlayers.org/en/latest/apidoc/ol.MapBrowserEvent.html#event:singleclick)-Event, welcher auf der ol.Map gefeuert wird,
-die Funktion
+Jede Fläche repräsentiert ein
+[ol.Feature](http://openlayers.org/en/latest/apidoc/ol.Feature.html) Objekt des
+[ol.layer.Vector](http://openlayers.org/en/latest/apidoc/ol.layer.Vector.html),
+und jedes Feature hat bspw. die Attribute `GN`.  Registrieren Sie eine
+Funktion, die bei jedem
+[singleclick](http://openlayers.org/en/latest/apidoc/ol.MapBrowserEvent.html#event:singleclick)-Event,
+welcher auf der ol.Map gefeuert wird, die Funktion
 [forEachFeatureAtPixel](http://openlayers.org/en/latest/apidoc/ol.Map.html#forEachFeatureAtPixel)
-der ```map``` aufruft und gegebenenfalls
-weitere Informationen über den Kreis ausgibt.
+der `map` aufruft und gegebenenfalls weitere Informationen über den Kreis
+ausgibt.
 
 Tipps:
 HTML-Markup (Auszeichnung)
