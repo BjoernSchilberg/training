@@ -76,7 +76,7 @@ items: [
 
 # Map (Viewport)
 Schauen Sie sich das Beispiel und den Quelltext in
-[beispiele/viewport.html](beispiele/viewport.html) genau an.
+[beispiele/viewport.html](../beispiele/viewport.html) genau an.
 
 ## Zusatzaufgaben zu `beispiel/viewport.html`
 Motivation: <https://bjoernschilberg.github.io/trainings/geoext/beispiele/viewport_aufgaben.html>
@@ -121,7 +121,7 @@ konfiguriert, werden diese Änderung in der eigentlich Applikation beeinflussen.
 ## Einen LayerTree vorbereiten
 Motivation: <https://bjoernschilberg.github.io/trainings/geoext/beispiele/layertree1.html>
 
-Kopieren Sie sich die Datei  [beispiele/template.html](beispiele/template.html)
+Kopieren Sie sich die Datei  [beispiele/template.html](../beispiele/template.html)
 nach `layertree.html`.
 
 - Ändern Sie das Layout des [Ext.container.Viewport](http://docs.sencha.com/extjs/6.2.0/classic/Ext.container.Viewport.html) wie folgt:
