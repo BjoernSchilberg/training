@@ -181,7 +181,7 @@ interactions: ol.interaction.defaults().extend([
 
 ## Features selektieren
 Ändern Sie dazu das Beispiel:
-[beispiele/geojson.html](beispiele/geojson.html)
+[beispiele/geojson.html](../beispiele/geojson.html)
 Erweitern Sie die vorhanden Interaktionen um `ol.interaction.Select`.
 Erweitern Sie `ol.interaction.Select` um eine `style`-Option.
 Orientieren Sie sich dabei an dem bereits vorhandenen Style von
@@ -190,7 +190,7 @@ bei `color` zu wählen.
 
 ## Features neuzeichnen (Teil 1)
 Ändern Sie dazu das Beispiel:
-[beispiele/geojson.html](beispiele/geojson.html)
+[beispiele/geojson.html](../beispiele/geojson.html)
 Neue Features können mittels `ol.interaction.Draw` gezeichnet werden. Eine
 Draw-Interaktion benötigt beim Initialisieren eine entsprechende Vektor-Source
 `source` und einen Geometrietyp `type`.
@@ -203,7 +203,7 @@ gezeichnetes Feature auf der Konsole aus.
 
 ## Features modifizieren
 Ändern Sie dazu das Beispiel:
-[beispiele/geojson_select.html](beispiele/geojson_select.html)
+[beispiele/geojson_select.html](../beispiele/geojson_select.html)
 
 Um Features zu verändern, wird `ol.interaction.Select` mit
 `ol.interaction.Modify` kombiniert. Diese Interaktionen teilen sich einen
