@@ -91,10 +91,10 @@ erstellt werden.
 ## Vektor Geometrieebene einbinden (GeoJSON)
 - Binden Sie die Westfalen Kreise `data/data/westfalen_kreise.geojson` als
   zusätzliches Vektor-Kartenthema in Ihre Karte ein. (erstmal ohne Style-Informationen).
-- Quelle der Daten: https://www.webgis-westfalen.de/
+- Quelle der Daten: <https://www.webgis-westfalen.de/>
 - Nützliche Hinweise:
- - http://openlayers.org/en/latest/apidoc/ol.layer.Vector.html
-   - `source`: http://openlayers.org/en/latest/apidoc/ol.source.Vector.html
+ - <http://openlayers.org/en/latest/apidoc/ol.layer.Vector.html>
+   - `source`: <http://openlayers.org/en/latest/apidoc/ol.source.Vector.html>
      - `format` und `url` angeben.
      - `format`: Suchen die dazu in der API nach `GeoJSON`.
 
@@ -159,7 +159,7 @@ new ol.layer.Image({
 
 # Interaktionen einbinden
 
-* https://openlayers.org/en/latest/apidoc/ol.interaction.html
+* <https://openlayers.org/en/latest/apidoc/ol.interaction.html>
 
 ## Drag, Rotate und Zoom
 
@@ -191,7 +191,7 @@ Draw-Interaktion benötigt beim Initialisieren eine entsprechende Vektor-Source
 Geben Sie mittels des Eventhandler `drawend` die Koordinaten des
 gezeichnetes Feature auf der Konsole aus.
 
-- http://openlayers.org/en/latest/apidoc/ol.interaction.Draw.Event.html#event:drawend
+- <http://openlayers.org/en/latest/apidoc/ol.interaction.Draw.Event.html#event:drawend>
 
 ### Features modifizieren
 Ändern Sie dazu das Beispiel:
@@ -218,10 +218,10 @@ Kandidaten für die Modifikation mittels `ol.interaction.Modify`.
 
 # Steuerelemente einbinden
 
-* http://openlayers.org/en/latest/apidoc/ol.control.html
+* <http://openlayers.org/en/latest/apidoc/ol.control.html>
 
 ## Einen Maßstabsbalken anzeigen
-- http://openlayers.org/en/latest/apidoc/ol.control.ScaleLine.html
+- <http://openlayers.org/en/latest/apidoc/ol.control.ScaleLine.html>
 
 Fügen Sie den nachfolgenden Code-Schnipsel irgendwo innerhalb der `ol.Map`-Konfiguration hinzu:
 ```javascript
@@ -267,7 +267,9 @@ Passen Sie die CSS-Deklaration entsprechend an:
 ```
 
 ## Eine OverviewMap anzeigen
-- Fügen Sie [ol.control.OverviewMap](http://openlayers.org/en/latest/apidoc/ol.control.OverviewMap.html) hinzu.
+- Fügen Sie
+  [ol.control.OverviewMap](http://openlayers.org/en/latest/apidoc/ol.control.OverviewMap.html)
+  hinzu.
 - Positionieren Sie die `OverviewMap` rechts oben. Passen Sie CSS-Deklaration entsprechend an.
 ```css
 .ol-custom-overviewmap,
@@ -285,11 +287,13 @@ className: 'ol-overviewmap ol-custom-overviewmap'
 ## MousePosition anzeigen
 
 - Fügen Sie der Karten die MousePostion hinzu.
-- Wird diese in lat lon angezeigt? Wenn nicht ändern Sie die Anzeige zu lat lon mit der Angabe von `projection`.
-- Werden Ihnen zuviele Nachkommastellen angezeigt? `coordinateFormat` in Verbindung mit `ol.coordinate` schafft Abhilfe.
+- Wird diese in lat lon angezeigt? Wenn nicht ändern Sie die Anzeige zu lat lon
+  mit der Angabe von `projection`.
+- Werden Ihnen zuviele Nachkommastellen angezeigt? `coordinateFormat` in
+  Verbindung mit `ol.coordinate` schafft Abhilfe.
 
 ## ZoomToMaxExtent
-Zoomen Sie auf die Ausdehnung von Deutschland. Die BoundingBox kann über http://boundingbox.klokantech.com/ ermittelt werden.
+Zoomen Sie auf die Ausdehnung von Deutschland. Die BoundingBox kann über <http://boundingbox.klokantech.com/> ermittelt werden.
 Achtung: Die Angaben sind in `EPSG:4326` und müssen in OpenLayers-Standardprojektion `EPSG:3857` transformiert werden. Tip: `ol.proj.transformExtent`
 - https://de.wikipedia.org/wiki/World_Geodetic_System_1984
 - https://en.wikipedia.org/wiki/Web_Mercator
