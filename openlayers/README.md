@@ -8,7 +8,7 @@
 
 # Was ist OpenLayers?
 
-## Selbstdarstellung
+## Selbstdarstellung des Projektes
 > A high-performance, feature-packed library for all your mapping needs.
 
 <http://openlayers.org/>
