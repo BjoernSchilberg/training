@@ -6,7 +6,7 @@
 
 ## ol-debug.js
 
-```ol-debug.js``` ist eine menschenlesbare Version von ol3, die zum Debuggen &
+`ol-debug.js` ist eine menschenlesbare Version von `ol.js` , die zum Debuggen &
 Fehler melden verwendet werden sollte.
 
 Wenn Sie einen Fehler feststellen, ist es wichtig, dass das Debugging des
