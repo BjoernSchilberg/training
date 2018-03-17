@@ -617,12 +617,30 @@ In OpenLayers gibt es mit `ol.interaction.Select` ein ähnliches Konzept.
 
 - [Features selektieren](uebungen/README.md#features-selektieren)
 
-# Todo
+# Exkurse
 
-- LonLat vs LatLon
+## LonLat vs LatLon
+
+- https://de.wikipedia.org/wiki/Geographische_Koordinaten
+  - https://de.wikipedia.org/wiki/Geographische_Breite
+  - https://de.wikipedia.org/wiki/Geographische_L%C3%A4nge
+
+```text
+ Bei der Angabe von Ortskoordinaten ist die Breite stets zuerst anzugeben, dann erst die Länge: „B vor L, wie im Alphabet“. Bei den englischen Bezeichnung „Latitude“ und „Longitude“ funktioniert die alphabetische Regel ebenso. Ihren Grund hat diese Konvention in der Geschichte: die Breite konnte bereits Jahrhunderte vor der Länge ziemlich exakt bestimmt werden.
+ ```
+
+  Diese Regel gilt leider aber nicht immer und nicht für alle Formate oder Dienste, wie der folgende Überlick zeigt:
+
+- <https://macwright.org/lonlat/>
+
+## Webpack
+
+Sinnvoller Einsatz vermutlich ab v5.0.0 möglich.
+
 - <https://medium.com/webpack/webpack-and-rollup-the-same-but-different-a41ad427058c> (Rollup für Biblotheken, Webpack für apps)
+- Webpack example <https://gist.github.com/ThomasG77/064382a2462f65cfc78fe18d4254290e>
 
-# OpenLayers Builder
+## OpenLayers Builder
 
 - <http://openlayers.org/en/v3.5.0/builder/> nur für v3 nicht für v4!?
 
