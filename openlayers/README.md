@@ -63,8 +63,7 @@ var map = new ol.Map({
 
 <https://bjoernschilberg.github.io/trainings/openlayers/beispiele/erste_karte.html>
 
-
-## Erste Übung
+## Übung 1
 
 - [Erste Karte](uebungen/README.md#erste-karte)
 
@@ -78,7 +77,7 @@ var map = new ol.Map({
   - ~~[Permalink](http://openlayers.org/en/latest/examples/permalink.html)~~
 - ~~Navigations-Historie~~
 
-### Übungen
+### Übung 2
 
 - [Steuerelemente einbinden](uebungen/README.md#steuerelemente-einbinden)
 
@@ -92,7 +91,7 @@ var map = new ol.Map({
   - Zeichnen (Draw)
   - Ändern (Modify)
 
-### Übungen
+### Übung 3
 
 - [Interaktionen einbinden](uebungen/README.md#interaktionen-einbinden)
 
@@ -260,13 +259,13 @@ var map = new ol.Map({
   - Tip: Release Notes lesen.
 - Einführung: [Semantic versioning](http://semver.org/lang/de/)
 
-## Wiederverwendbarkeit
+## Wiederverwendbarkeit 1
 
 - Beta: npmjs.com/package/ol
 - ~~ES6~~ ES2015 Module
 - Hintergrund: <https://github.com/openlayers/openlayers/pull/6302>
 
-## Exkurs ES2015
+### Exkurs ES2015
 
 ```javascript
 import Map from 'ol/map';
@@ -292,7 +291,7 @@ new Map({
 Komplette Anleitung für die Verwendung mit [rollup.js](https://rollupjs.org/)
 unter <https://gist.github.com/tschaub/32a5692bedac5254da24fa3b12072f35>.
 
-## Wiederverwendbarkeit
+## Wiederverwendbarkeit 2
 
 - Ermöglicht die Verwendung in JavaScript module bundler ([webpack](https://webpack.js.org/), [rollup.js](https://rollupjs.org/))
 - <https://webpack.github.io/assets/what-is-webpack.png>
@@ -321,7 +320,7 @@ Details:
 - <https://github.com/openlayers/openlayers/issues/4333>
 - <https://github.com/openlayers/openlayers/pull/5674>
 
-### Übung
+### Übung 4
 
 Testen Sie `setZoom` und `getZoom` in der Browser Console der Developer
 Tools/DevTools am Beispiel der
@@ -386,7 +385,7 @@ Sinnvoll bei nicht überlappenden Geometrien. Vorteil höhere Ausführungsgeschw
 
 Details: <https://github.com/openlayers/openlayers/pull/5196>
 
-## Übung
+## Übung 5
 
 Testen Sie dies an dem `GeoJSON`-Beispiel aus:
 <https://bjoernschilberg.github.io/trainings/openlayers/beispiele/geojson.html>.
@@ -424,7 +423,7 @@ Testen Sie dies an dem `GeoJSON`-Beispiel aus:
 - forEachFeatureAtPixel
 - Freihandzeichnen (für Redlinining, nicht für digitalisieren geeignet)
 
-## Übung
+## Übung 6
 
 - [Metadaten der Vektor Geometrieebene abfragen](uebungen/README.md#metadaten-der-vektor-geometrieebene-abfragen)
 
@@ -556,9 +555,9 @@ new ol.style.Circle({
 });
 ```
 
-### Übung
+### Übung 7
 
--  [Vektor Geometrieebenen stylen (GeoJSON)](uebungen/README.md#vektor-geometrieebenen-stylen-geojson)
+- [Vektor Geometrieebenen stylen (GeoJSON)](uebungen/README.md#vektor-geometrieebenen-stylen-geojson)
 
 ## Style-Funktion
 
@@ -583,7 +582,7 @@ var layer = new ol.layer.Vector({
 });
 ```
 
-### Übung
+### Übung 8
 
 ## Pseudoklassen
 
@@ -614,7 +613,7 @@ In OpenLayers gibt es mit `ol.interaction.Select` ein ähnliches Konzept.
         })
 ```
 
-### Übung
+### Übung 9
 
 - [Features selektieren](uebungen/README.md#features-selektieren)
 
