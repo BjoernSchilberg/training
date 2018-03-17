@@ -3,11 +3,13 @@
 * [Starter](starter.md)
 
 ## OpenLayers
+
 * [Einführung](openlayers/README.md)
 * [Übungen](openlayers/uebungen/README.md)
 * [Debugging](openlayers/debugging.md)
 
 ## GeoExt
+
 * [Einführung](geoext/README.md)
 * [Übungen](geoext/uebungen/README.md)
 
