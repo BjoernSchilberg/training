@@ -32,7 +32,7 @@
 ## CSS-Deklarationen (Stil)
 
 ```css
-<link rel="stylesheet" href="https://openlayers.org/en/v4.1.1/css/ol.css" type="text/css" />
+<link rel="stylesheet" href="https://openlayers.org/en/v4.6.4/css/ol.css" type="text/css" />
 
 <style>
   #map {
