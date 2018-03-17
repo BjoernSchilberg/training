@@ -20,10 +20,12 @@
   <div id="map"></div>
   <div id="info"></div>
   <script type="text/javascript">
+    PROXY = '/proxy?url=';
+
     var vectorSource = new ol.source.Vector({
       format: new ol.format.GML2(),
       url: function(extent) {
-        return 'https://www.wfs.nrw.de/geobasis/wfs_nw_dvg?service=WFS&' +
+        return PROXY+'https://www.wfs.nrw.de/geobasis/wfs_nw_dvg?service=WFS&' +
           'version=1.1.0&request=GetFeature&typename=dvg:nw_dvg1_krs&' +
           'outputFormat=text/xml;%20subtype=gml/2.1.2&srsname=EPSG:4326&' +
           'bbox=' + extent.join(',');
