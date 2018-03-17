@@ -1,18 +1,22 @@
 # GeoExt mit Sencha CMD
 
 ## Voraussetzungen
+
 - Sencha CMD ist installiert
 - ExtJS 6.2 heruntergeladen
 
 ## App-Skeleton mit Sencha CMD erzeugen
-```sh
+
+```shell
 sencha -sdk "/path/to/ext-6.2.0/" generate app MyFirstGeoExtApp MyFirstGeoExtApp
 cd MyFirstGeoExtApp
 sencha app watch
 ```
 
 ## OpenLayers zur Anwendung hinzufügen
+
 In `app.json` Property `js` wie folgt erweitern:
+
 ```javascript
 "js": [{
     "path": "https://openlayers.org/en/v3.20.1/build/ol.js",
@@ -24,12 +28,16 @@ In `app.json` Property `js` wie folgt erweitern:
 ```
 
 ## GeoExt zur Anwendung hinzufügen
+
 GeoExt-Quellen per git beziehen oder git submodule.
-```sh
+
+```shell
 cd packages
 git clone https://github.com/geoext/geoext3.git
 ```
+
  In `app.json` zum `classpath` hinzufügen.
+
 ```javascript
 "classpath": [
     "app",
@@ -39,15 +47,19 @@ git clone https://github.com/geoext/geoext3.git
 ```
 
 ## Karten-View erzeugen
+
  Standard ExtJS-View erzeugen
-```sh
+
+```shell
 sencha generate view main.Map
 ```
+
 - Anpassungen erzeugter View (`app/view/main/Map.js`)
   - Ableitung von `GeoExt.component.Map` anstelle von `Ext.panel.Panel`
   - Zuweisung des `xtype: 'mappanel'` (Klassenalias)
   - Hinzufügen eines Properties `map` (OpenLayers Karte)
   - Entfernen des `html` Properties
+
 ```javascript
 Ext.define("MyFirstGeoExtApp.view.main.Map",{
     // extend: "Ext.panel.Panel",
@@ -84,8 +96,10 @@ Ext.define("MyFirstGeoExtApp.view.main.Map",{
 ```
 
 ## Karten-View in die Anwendung einhängen
+
 In `classic/src/view/main/Main.js` und `modern/src/view/main/Main.js` folgendes
 in das Property `items` einfügen:
+
 ```javascript
 {
     title: 'GeoExt3 OL3 Map',
@@ -98,6 +112,7 @@ in das Property `items` einfügen:
 ```
 
 ## Anwendung starten
-```sh
+
+```shell
 sencha app watch
 ```

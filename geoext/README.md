@@ -1,4 +1,5 @@
 # Was ist GeoExt?
+
 - JavaScript Bibiothek
 - GeoExt vereinigt OpenLayers und ExtJS.
 - Erweitert dazu das ExtJS Framework
@@ -19,6 +20,7 @@
 | 1.1 | 3 | 2 |
 
 Aktuell ist GeoExt 3.0.0. Allerdings noch ohne OpenLayers 4 und ExtJS 6.5.0 Unterstützung.
+
 - ExtJS 6 im März 2016 veröffentlicht. GeoExt 3.0.0 mit ExtJS 6 Unterstützung im März 20017.
 - ExtJS 5 im Juni 2014 veröffentlicht. GeoExt 2.1.0 mit ExtJS 5 Unterstützung im November 2015.
 - ExtJS 4 im April 2011 veröffentlicht. GeoExt 2.0.0 mit ExtJS 4 Unterstützung im Oktober 2013.
@@ -39,12 +41,12 @@ Aktuell ist GeoExt 3.0.0. Allerdings noch ohne OpenLayers 4 und ExtJS 6.5.0 Unte
 
 # Zusammenführen von GeoExt und ExtJS
 
- - GeoExt-Elemente verhalten sich wie Ext ExtJS Elemente
- - GeoExt- und ExtJS-Elemente sind anpassbar durch Attribute
- - Üblicherweise werden GeoExt Elemente in ExtJS Containern eingebettet.
- - Ist es erforderlich, ExtJS zu nutzen, wenn man GeoExt einsetzt?
-   - GeoExt-Elemente sind erweiterte ExtJS-Elemente!
-   - GeoExt ist daher selbst ebenfalls erweiterbar!
+- GeoExt-Elemente verhalten sich wie Ext ExtJS Elemente
+- GeoExt- und ExtJS-Elemente sind anpassbar durch Attribute
+- Üblicherweise werden GeoExt Elemente in ExtJS Containern eingebettet.
+- Ist es erforderlich, ExtJS zu nutzen, wenn man GeoExt einsetzt?
+  - GeoExt-Elemente sind erweiterte ExtJS-Elemente!
+  - GeoExt ist daher selbst ebenfalls erweiterbar!
 
 # GeoExt API
 
@@ -56,7 +58,9 @@ Aktuell ist GeoExt 3.0.0. Allerdings noch ohne OpenLayers 4 und ExtJS 6.5.0 Unte
 - API-Dokumentation: <http://docs.sencha.com/extjs/6.2.0/modern/Ext.html>
 
 # Nützliches
+
 ## ExtJS
+
 - API Dokumentation
   - Classic toolkit: <https://docs.sencha.com/extjs/6.2.0/classic/Ext.html>
   - Modern toolkit: <https://docs.sencha.com/extjs/6.2.0/modern/Ext.html>
@@ -72,9 +76,10 @@ Aktuell ist GeoExt 3.0.0. Allerdings noch ohne OpenLayers 4 und ExtJS 6.5.0 Unte
 - API Dokumentation
   - <https://geoext.github.io/geoext3/v3.0.0/docs/>
 - Beispiele
-   - <https://geoext.github.io/geoext3/>
+  - <https://geoext.github.io/geoext3/>
 
 # ExtJS 6
+
 - Zusammenführung ExtJS / Sencha Touch
 - Toolkits classic & modern
 - Build profiles
@@ -83,15 +88,17 @@ Aktuell ist GeoExt 3.0.0. Allerdings noch ohne OpenLayers 4 und ExtJS 6.5.0 Unte
 - `Ext.Widget` ... `Ext.list.Tree`
 
 # Ziel ExtJS 6: Universale Applikationen
+
 - Eine Codebasis => multiple builds
 - Weniger Reibungsverluste
 - Wiederverwendung von Code
 - UI weitestgehend abhängig von Endgerät
 
 # Beispiel für Universale Applikation
+
 - BrandenburgViewer mobile
 
-# Was ist nötig, um GeoExt nutzen zu können?
+# Was ist nötig, um GeoExt nutzen zu können
 
 ```html
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.2.0/classic/theme-triton/resources/theme-triton-all.css" type="text/css" />
@@ -100,19 +107,22 @@ Aktuell ist GeoExt 3.0.0. Allerdings noch ohne OpenLayers 4 und ExtJS 6.5.0 Unte
 <link rel="stylesheet" href="http://geoext.github.io/geoext3/v3.0.0/resources/css/gx-popup.css" type="text/css" />
 <script src="https://openlayers.org/en/v4.1.1/build/ol.js"></script>
 <script src="https://geoext.github.io/geoext3/v3.0.0/GeoExt.js"></script>
-
 ```
 
 # Exkurs ExtJS (Kernkonzepte)
 
 ## Komponenten
+
 <https://docs.sencha.com/extjs/6.2.0/guides/core_concepts/components.html>
+
 - Panel [beispiele/component-panel.html](beispiele/component-panel.html)
 - Tree [beispiele/component-tree.html](beispiele/component-tree.html)
 - Grid [beispiele/component-grid.html](beispiele/component-grid.html)
 
 ## Layout
+
 <https://docs.sencha.com/extjs/6.2.0/guides/core_concepts/layouts.html>
+
 - Column [beispiele/layout-column.html](beispiele/layout-column.html)
 - HBox [beispiele/layout-hbox.html](beispiele/layout-hbox.html)
 - VBox [beispiele/layout-vbox.html](beispiele/layout-vbox.html)
@@ -133,4 +143,3 @@ diese Einführung würde die Verwendung den Einstieg vermutlich erschweren.
 Aufgrund des erhöhten Installations- / Konifgurations- / Erlern-Aufwandes
 verzichten wir auf die Verwendung von `sencha cmd` um
 den Fokus auf die Einführung in GeoExt beizubehalten.
-
