@@ -22,7 +22,7 @@
   <div id="map"></div>
   <script type="text/javascript">
     //  <BoundingBox SRS="EPSG:25832" minx="270100" miny="5.55e+06" maxx="550000" maxy="5.85e+06"/>
-
+    PROXY = '/proxy?url=';
 
     var projection = new ol.proj.Projection({
       code: 'EPSG:25832',
@@ -31,7 +31,7 @@
     var vectorSource = new ol.source.Vector({
       format: new ol.format.GML2(),
       url: function(extent) {
-        return 'https://www.wfs.nrw.de/geobasis/wfs_nw_dvg?SERVICE=WFS&' +
+        return PROXY+'https://www.wfs.nrw.de/geobasis/wfs_nw_dvg?SERVICE=WFS&' +
           'VERSION=1.1.0&REQUEST=GetFeature&TYPENAMES=dvg:nw_dvg1_krs&' +
 	  'outputFormat=text/xml;%20subtype=gml/2.1.2&srsName=EPSG:25832&' +
           'BBOX=' + extent.join(',');
