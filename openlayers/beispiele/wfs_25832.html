@@ -12,8 +12,8 @@
   </style>
   <title>OpenLayers WFS NRW 25832 Beispiel</title>
   <!-- include an external JavaScript file -->
-  <script src="https://openlayers.org/en/v5.2.0/build/ol-debug.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.4.3/proj4.js"></script>
+  <script src="https://openlayers.org/en/v5.2.0/build/ol.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.5.0/proj4.js"></script>
   <script src="https://epsg.io/25832.js"></script>
 </head>
 
@@ -23,7 +23,8 @@
   <script type="text/javascript">
     //  <BoundingBox SRS="EPSG:25832" minx="270100" miny="5.55e+06" maxx="550000" maxy="5.85e+06"/>
     PROXY = '/proxy?url=';
-
+    // 25832.js
+    ol.proj.proj4.register(proj4);
     var projection = new ol.proj.Projection({
       code: 'EPSG:25832',
       extent: [270100, 5550000, 550000, 5850000]
