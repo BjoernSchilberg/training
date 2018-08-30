@@ -159,19 +159,18 @@ Vorteil:
 ```javascript
 new ol.layer.Image({
           title: 'Westfalen Kreise',
-          source: new ol.source.ImageVector({
-            source: new ol.source.Vector({
-              url: 'data/westfalen_kreise.geojson',
-              format: new ol.format.GeoJSON(),
+          renderMode: 'image',
+          source: new ol.source.Vector({
+            url: 'data/westfalen_kreise.geojson',
+            format: new ol.format.GeoJSON(),
+          }),
+          style: new ol.style.Style({
+            stroke: new ol.style.Stroke({
+              color: 'blue',
+              width: 3
             }),
-            style: new ol.style.Style({
-              stroke: new ol.style.Stroke({
-                color: 'blue',
-                width: 3
-              }),
-              fill: new ol.style.Fill({
-                color: 'rgba(0, 0, 255, 0.1)'
-              })
+            fill: new ol.style.Fill({
+              color: 'rgba(0, 0, 255, 0.1)'
             })
           })
         })
