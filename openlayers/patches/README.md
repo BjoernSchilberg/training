@@ -3,8 +3,8 @@
 ## Einrichtung der Entwicklungsumgebung
 
 Für die Erstellung eines modifizierten OpenLayers Build wird zunächst der
-Quellcode von OpenLayers in der Version 4.6.4 benötigt. Dieser ist unter
-`https://github.com/openlayers/openlayers/archive/v4.6.4.zip` herunterzuladen.
+Quellcode von OpenLayers in der Version 5.2.0 benötigt. Dieser ist unter
+`https://github.com/openlayers/openlayers/archive/v5.2.0.zip` herunterzuladen.
 In dem entpackten Archiv ist eine `README`-Datei enthalten, mit dessen Hilfe
 eine Entwicklungsumgebung für OpenLayers eingerichtet werden kann.
 
@@ -15,7 +15,7 @@ Quellcode-Dateien in das `src` Verzeichnis des OpenLayers Repositorys abgelegt
 werden.
 
 Am Beispiel der `patches/advgml3.js` sollte die Datei in das Verzeichnis
-`openlayers-4.6.4/src/ol/format` gelegt werden.
+`openlayers-5.2.0/src/ol/format` gelegt werden.
 
 Der build kann danach mit dem Befehl
 

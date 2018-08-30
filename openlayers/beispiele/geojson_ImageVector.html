@@ -6,7 +6,7 @@
   <title>ImageVector</title>
   <!-- include a CSS stylesheet -->
   <!-- CSS-Deklarationen (Stil) -->
-  <link rel="stylesheet" href="https://openlayers.org/en/v4.6.4/css/ol.css" type="text/css" />
+  <link rel="stylesheet" href="https://openlayers.org/en/v5.2.0/css/ol.css" type="text/css" />
   <style>
     #map {
       height: 256px;
@@ -14,7 +14,7 @@
     }
   </style>
   <!-- include an external JavaScript file -->
-  <script src="https://openlayers.org/en/v4.6.4/build/ol.js"></script>
+  <script src="https://openlayers.org/en/v5.2.0/build/ol.js"></script>
 </head>
 <!--HTML-Markup (Auszeichnung)-->
 
@@ -34,21 +34,20 @@
         new ol.layer.Tile({
           source: new ol.source.OSM()
         }),
-        new ol.layer.Image({
+        new ol.layer.Vector({
           title: 'Westfalen Kreise',
-          source: new ol.source.ImageVector({
-            source: new ol.source.Vector({
-              url: 'data/westfalen_kreise.geojson',
-              format: new ol.format.GeoJSON(),
+          renderMode: 'image',
+          source: new ol.source.Vector({
+            url: 'data/westfalen_kreise.geojson',
+            format: new ol.format.GeoJSON(),
+          }),
+          style: new ol.style.Style({
+            stroke: new ol.style.Stroke({
+              color: 'blue',
+              width: 3
             }),
-            style: new ol.style.Style({
-              stroke: new ol.style.Stroke({
-                color: 'blue',
-                width: 3
-              }),
-              fill: new ol.style.Fill({
-                color: 'rgba(0, 0, 255, 0.1)'
-              })
+            fill: new ol.style.Fill({
+              color: 'rgba(0, 0, 255, 0.1)'
             })
           })
         })
