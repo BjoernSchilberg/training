@@ -342,9 +342,10 @@ OpenLayers-Standardprojektion `EPSG:3857` transformiert werden. Tipp:
 ## ZoomSlider
 
 Fügen Sie einer beliegenden Karte einen ZoomSilder hinzu. Indem Sie die Console der [Firefox Developer Tools](https://developer.mozilla.org/son/docs/Tools) oder [Chrome DevTools](https://developer.chrome.com/devtools) benutzen.
-`javascript
+
+```javascript
 map.addControl(new ol.control.ZoomSlider());
-`
+```
 
 # Fortgeschrittene Themen (optional)
 
@@ -491,8 +492,8 @@ geom.rotate(Math.PI / 4);
 
 Siehe dazu die folgende Beispiele:
 
-- [beispiele/wms_25832.html](beispiele/wms_25832.html)
-- [beispiele/wfs_25832.html](beispiele/wfs_25832.html)
+- [beispiele/wms_25832.html](../beispiele/wms_25832.html)
+- [beispiele/wfs_25832.html](../beispiele/wfs_25832.html)
 
 ## ArcGIS Rest Feature Service
 
