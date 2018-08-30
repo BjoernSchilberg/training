@@ -489,6 +489,11 @@ geom.rotate(Math.PI / 4);
 
 ## Reprojektion
 
+Siehe dazu die folgende Beispiele:
+
+- [beispiele/wms_25832.html](beispiele/wms_25832.html)
+- [beispiele/wfs_25832.html](beispiele/wfs_25832.html)
+
 ## ArcGIS Rest Feature Service
 
 <https://openlayers.org/en/latest/examples/vector-esri.html>
