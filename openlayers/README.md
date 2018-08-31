@@ -320,6 +320,36 @@ Details:
 - <https://github.com/openlayers/openlayers/issues/4333>
 - <https://github.com/openlayers/openlayers/pull/5674>
 
+## Version 5
+
+Das Hauptthema der Version v5.0.0 ist eine verbesserte
+Entwickler-/Benutzererfahrung mit OpenLayers. Zu diesem Zweck wurd die
+Bibliothek als eine Reihe von ES-Modulen überarbeitet, um jegliche
+Abhängigkeit vom Closure Compiler zu beseitigen und die Kompatibilität mit
+Mainstream-Modul-Bundlern zu verbessern.
+
+- <https://openlayers.org/en/latest/doc/tutorials/bundle.html>
+
+```javascript
+import 'ol/ol.css';
+import {Map, View} from 'ol';
+import TileLayer from 'ol/layer/Tile';
+import OSM from 'ol/source/OSM';
+
+const map = new Map({
+  target: 'map',
+  layers: [
+    new TileLayer({
+      source: new OSM()
+    })
+  ],
+  view: new View({
+    center: [0, 0],
+    zoom: 0
+  })
+});
+```
+
 ### Übung 4
 
 Testen Sie `setZoom` und `getZoom` in der Browser Console der Developer
