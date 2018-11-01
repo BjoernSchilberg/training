@@ -10,7 +10,7 @@
       width: 512px;
     }
   </style>
-  <title>OpenLayers GML 25832 Beispiel</title>
+  <title>OpenLayers GML3 25832 Beispiel</title>
   <meta charset="utf-8">
   <!-- include an external JavaScript file -->
   <script src="https://openlayers.org/en/v5.2.0/build/ol.js"></script>
@@ -18,7 +18,7 @@
 </head>
 
 <body>
-  <h1>GML 25832 Beispiel </h1>
+  <h1>GML3 25832 Beispiel </h1>
 
   Ausgabe steht in der Browser Console. Zum Öffnen der Browser-Console <code>F12</code> drücken.
   <script type="text/javascript">
@@ -27,13 +27,17 @@
     
     ol.proj.proj4.register(proj4);
     
-    var geom = new ol.geom.Point([ 759477.225937109, 6657973.862183606 ]);
+    // Eingabe ist longitude/latitude (XY)
+    // https://epsg.io/transform
+    // https://epsg.io/transform#s_srs=4326&t_srs=25832&x=8.0000000&y=52.0000000
+    var geom = new ol.geom.Point([ 431350.30,5761510.32]);
     
     var feat = new ol.Feature({geometry: geom, name: "my"});
     feat.setId("FUPU.159835.1")
     
     var format = new ol.format.GML3({ featureNS: "http://www.lwl.org/delos", featureType: "FUPU", srsName: "EPSG:25832"});
     
+    // Ausgabe ist latitude/longitude (YX)
     var out = format.writeFeatures([feat],{dataProjection: "EPSG:25832"});
     
     console.log(out);
