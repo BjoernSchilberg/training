@@ -28,9 +28,14 @@
     var feat = new ol.Feature({geometry: geom, name: "my"});
     feat.setId("FUPU.159835.1")
 
-    var format = new ol.format.GML({ featureNS: "http://www.lwl.org/delos", srsName: "EPSG:4326",featureType: 'delos'}); 
+    var format = new ol.format.GML3({ featureNS: "http://www.lwl.org/delos", srsName: "EPSG:4326",featureType: 'delos'}); 
 
-    // Ausgabe ist latitude/longitude (YX)
+    
+    // GML doesn't make any statement about coordinate order: it allows the
+    // Datum to dictate the order, so some data may be longitude, latitude and other
+    // Data the reverse.
+    
+     // Ausgabe ist latitude/longitude (YX) gemäß WGS 84 (EPSG:4326)
     var out = format.writeFeatures([feat]);
 
     console.log(out);

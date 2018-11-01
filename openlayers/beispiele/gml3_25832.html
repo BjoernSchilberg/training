@@ -37,7 +37,11 @@
     
     var format = new ol.format.GML3({ featureNS: "http://www.lwl.org/delos", featureType: "FUPU", srsName: "EPSG:25832"});
     
-    // Ausgabe ist latitude/longitude (YX)
+    // GML doesn't make any statement about coordinate order: it allows the
+    // Datum to dictate the order, so some data may be longitude, latitude and other
+    // Data the reverse.
+
+    // Ausgabe ist longitude/latitude (XY)
     var out = format.writeFeatures([feat],{dataProjection: "EPSG:25832"});
     
     console.log(out);
