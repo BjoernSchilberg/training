@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+  <!-- include a CSS stylesheet -->
+  <link rel="stylesheet" href="https://openlayers.org/en/v5.2.0/css/ol.css" type="text/css" />
+  <style>
+    #map {
+      height: 256px;
+      width: 512px;
+    }
+  </style>
+  <title>OpenLayers GML3 Beispiel</title>
+  <meta charset="utf-8">
+  <!-- include an external JavaScript file -->
+  <script src="https://openlayers.org/en/v5.2.0/build/ol.js"></script>
+</head>
+
+<body>
+  <h1>GML3 Beispiel </h1>
+
+  Ausgabe steht in der Browser Console. Zum Öffnen der Browser-Console <code>F12</code> drücken.
+  <script type="text/javascript">
+
+    // Eingabe ist longitude/latitude (XY)
+    var geom = new ol.geom.Point([ 8,52]);
+
+    var feat = new ol.Feature({geometry: geom, name: "my"});
+    feat.setId("FUPU.159835.1")
+
+    var format = new ol.format.GML({ featureNS: "http://www.lwl.org/delos", srsName: "EPSG:4326",featureType: 'delos'}); 
+
+    // Ausgabe ist latitude/longitude (YX)
+    var out = format.writeFeatures([feat]);
+
+    console.log(out);
+
+  </script>
+</body>
+
+</html>
