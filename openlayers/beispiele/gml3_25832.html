@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+  <!-- include a CSS stylesheet -->
+  <link rel="stylesheet" href="https://openlayers.org/en/v5.2.0/css/ol.css" type="text/css" />
+  <style>
+    #map {
+      height: 256px;
+      width: 512px;
+    }
+  </style>
+  <title>OpenLayers GML 25832 Beispiel</title>
+  <meta charset="utf-8">
+  <!-- include an external JavaScript file -->
+  <script src="https://openlayers.org/en/v5.2.0/build/ol.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.5.0/proj4.js"></script>
+</head>
+
+<body>
+  <h1>GML 25832 Beispiel </h1>
+
+  Ausgabe steht in der Browser Console. Zum Öffnen der Browser-Console <code>F12</code> drücken.
+  <script type="text/javascript">
+
+    proj4.defs("EPSG:25832","+proj=utm +zone=32 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs");
+    
+    ol.proj.proj4.register(proj4);
+    
+    var geom = new ol.geom.Point([ 759477.225937109, 6657973.862183606 ]);
+    
+    var feat = new ol.Feature({geometry: geom, name: "my"});
+    feat.setId("FUPU.159835.1")
+    
+    var format = new ol.format.GML3({ featureNS: "http://www.lwl.org/delos", featureType: "FUPU", srsName: "EPSG:25832"});
+    
+    var out = format.writeFeatures([feat],{dataProjection: "EPSG:25832"});
+    
+    console.log(out);
+
+  </script>
+</body>
+
+</html>
